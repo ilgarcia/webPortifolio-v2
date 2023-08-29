@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white bg-theme-dark;
+  }
+
+  button {
+    @apply cursor-pointer outline-none no-underline;
+  }
+
+  a {
+    @apply outline-none text-inherit;
+  }
+
+  ol,
+  ul {
+    @apply list-none;
+  }
+
+  ol li {
+    @apply relative mb-1 pl-5 before:content-['▹'] before:absolute before:left-0 before:text-orange-300;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 border-solid border-theme-dark rounded-full;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-theme-dark;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:relative before:bottom-[1px] before:text-orange-400 before:mr-1 before:text-right before:text-[10px] duration-300 ease-in-out hover:text-orange-400;
+  }
+}
+@layer utilities {
+}
