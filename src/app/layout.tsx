@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code, Sriracha } from "next/font/google";
 
+import Header from "@/components/Header";
+
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "l.garcia",
@@ -40,7 +43,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} ${firaCode.variable} ${sriracha.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

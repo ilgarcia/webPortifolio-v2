@@ -3,7 +3,6 @@
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import { AdditiveBlending } from "three";
 
 type Props = {
   count: number;
@@ -79,7 +78,7 @@ function Particles({ count, mouse }: Props) {
       <pointLight ref={light} distance={10} intensity={8} color="lightblue" />
       <instancedMesh ref={mesh} args={[, , count]}>
         <dodecahedronGeometry args={[0.2, 0]} />
-        <meshStandardMaterial color="#6366F1" blending={AdditiveBlending}/>
+        <meshStandardMaterial color="#6366F1" blending={THREE.AdditiveBlending}/>
       </instancedMesh>
     </>
   );

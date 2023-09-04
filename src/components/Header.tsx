@@ -1,43 +1,76 @@
-"use client"
+"use client";
 
-import { motion as m } from "framer-motion";
+import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import { motion as m, Variants, useCycle } from "framer-motion";
+
+import { NavigationToggle } from "@/components/NavigationToggle";
+import Navigation from "@/components/Navigation";
+import Logo from "@/components/Logo";
+
+
+const sidebarVariant: Variants = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 49px) 30.5px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: `circle(20px at calc(100% - 49px) 30.5px)`,
+    transition: {
+      delay: 0.2,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
 
 function Header() {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
+  // Testando
+  useEffect(() => {
+    if (isDesktop) {
+      document.body.classList.remove("toggleBlur");
+    } else if (!isDesktop && isOpen) {
+      document.body.classList.add("toggleBlur");
+    } else if (!isOpen) return;
+
+    return;
+  }, [isDesktop, isOpen]);
+
+  function changeToggle() {
+    document.body.classList.toggle("toggleBlur");
+    toggleOpen();
+  }
+
   return (
-    <header className="sticky top-0 flex items-center max-w-7xl mx-auto px-12 xl:px-0 py-4 z-40">
-      <m.div
-        className="text-2xl font-neon drop-shadow-neon"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
-      >
-        <a href="/#">
-          L<span className="ml-0.5 text-orange-400">.</span>Garcia
-          
-        </a>
-      </m.div>
-      <nav className="flex flex-1 items-center justify-end space-x-8 font-fira text-xs">
-        <ul className="flex items-center space-x-6 ">
-          <li className="nav-link">
-            <a href="#">About</a>
-          </li>
-          <li className="nav-link">
-            <a>Projects</a>
-          </li>
-          <li className="nav-link">
-            <a>Skills</a>
-          </li>
-          <li className="nav-link">
-            <a>Experience</a>
-          </li>
-          <li className="nav-link">
-            <a>Contact</a>
-          </li>
-        </ul>
-        <a className="border border-solid border-orange-400 shadow-[4px_4px] shadow-orange-400 text-orange-400 font-semibold rounded py-1.5 px-5 ease-in-out duration-200 hover:shadow-[2px_2px] hover:translate-x-[2px] hover:translate-y-[2px]">
-          Blog
-        </a>
-      </nav>
+    <header className="fixed top-0 left-0  w-screen  z-40">
+      <div className="flex items-center max-w-7xl mx-auto px-12 xl:px-0 py-4">
+        <m.div>
+          <Logo />
+        </m.div>
+        <m.nav
+          className="flex flex-1 justify-end"
+          initial={false}
+          animate={isOpen || isDesktop ? "open" : "closed"}
+        >
+          <m.div
+            className="fixed top-0 bottom-0 right-0 h-screen [width:min(70vw,300px)] bg-indigo-950  outline-0 shadow-2xl lg:hidden"
+            variants={sidebarVariant}
+          />
+          <Navigation isDesktop={isDesktop} />
+          <NavigationToggle toggle={() => changeToggle()} />
+        </m.nav>
+      </div>
     </header>
   );
 }

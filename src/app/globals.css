@@ -39,8 +39,22 @@
 
 @layer components {
   .nav-link {
-    @apply [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:relative before:bottom-[1px] before:text-orange-400 before:mr-1 before:text-right before:text-[10px] duration-300 ease-in-out hover:text-orange-400;
+    @apply [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:relative before:bottom-[1px] before:text-orange-400 before:mr-1 before:mb-0.5 before:text-right before:text-[12px] duration-300 ease-in-out hover:text-orange-400;
+  }
+
+  .toggleBlur {
+    @apply overflow-hidden;
+  }
+
+  .toggleBlur main > * {
+    @apply blur pointer-events-none select-none;
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b  px-6 py-4 text-gray-500 placeholder-gray-500 transition-all  border-gray-500  focus:text-indigo-500/60 focus:border-indigo-500 hover:border-indigo-500
   }
 }
+
+
 @layer utilities {
 }
