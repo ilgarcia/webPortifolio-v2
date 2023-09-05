@@ -6,7 +6,7 @@ function Skills() {
   return (
     <section className="max-w-5xl min-h-screen mx-auto px-12 lg:px-0">
       <h2 className="title-h2 title-numbered">My Expertise</h2>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center space-y-10 mt-10">
         <div className="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3">
           <div className="p-8 border-white border-solid border-2">
             <div className="flex items-center mb-4">
