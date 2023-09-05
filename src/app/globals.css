@@ -50,9 +50,23 @@
     @apply blur pointer-events-none select-none;
   }
 
+  .markup {
+    @apply block relative after:absolute after:bottom-[13.5%] after:-z-10 after:h-2 after:w-[104%] after:-left-0.5 after:-rotate-1;
+  }
+
+  .mk-purple {
+    @apply after:bg-orange-400;
+  }
+
+  .mk-orange {
+    @apply after:bg-indigo-500;
+  }
+
+
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b  px-6 py-4 text-gray-500 placeholder-gray-500 transition-all  border-gray-500  focus:text-indigo-500/60 focus:border-indigo-500 hover:border-indigo-500
   }
+
 }
 
 

@@ -7,7 +7,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "l.garcia",
+  title: "ilgarcia",
   description:
     "Hi, my name is Igor Lima Garcia i'm a software engineer specializing in building exceptional and practical digital experiences and this is my portfolio",
 };

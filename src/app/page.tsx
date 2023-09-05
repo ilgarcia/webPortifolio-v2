@@ -1,4 +1,3 @@
-
 import AboutMe from "@/components/AboutMe";
 import Contacts from "@/components/Contacts";
 import Introduction from "@/components/Introduction";
