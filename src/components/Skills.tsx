@@ -2,10 +2,16 @@ import { SiReact } from "react-icons/si";
 
 import Badges from "./Badges";
 
-function Skills() {
+// import * as Si from "react-icons/si";
+
+type Props = {
+  skills: Skill[];
+};
+
+function Skills({ skills }: Props) {
   return (
-    <section className="max-w-5xl min-h-screen mx-auto px-12 lg:px-0">
-      <h2 className="title-h2 title-numbered">My Expertise</h2>
+    <section className="max-w-6xl min-h-screen mx-auto px-4 xl:px-0 h-screen snap-center">
+      <h2 className="title-home title-numbered">My Expertise</h2>
       <div className="flex flex-col justify-center items-center space-y-10 mt-10">
         <div className="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3">
           <div className="p-8 border-white border-solid border-2">
@@ -57,25 +63,16 @@ function Skills() {
             </p>
           </div>
 
-          <div className="hidden md:inline-block lg:hidden">Teste texto de efeito</div>
+          <div className="hidden md:inline-block lg:hidden">
+            Teste texto de efeito
+          </div>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-4 mx-auto">
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
-          <Badges />
+          {skills.map((skill) => (
+            <div key={skill._id}>
+              <Badges skill={skill}/>
+            </div>
+          ))}
         </div>
       </div>
     </section>

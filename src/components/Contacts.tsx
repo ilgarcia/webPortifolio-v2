@@ -26,7 +26,7 @@ function Contacts() {
   };
 
   return (
-    <section className="relative">
+    <section className="relative mb-12 lg:mb-0 h-screen snap-center">
       <Image
         src={"./bg-contacts.svg"}
         alt={"background contacts"}
@@ -37,7 +37,7 @@ function Contacts() {
       <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(80%_50%_at_50%_100%,_#268CF530_0%,_#268CF500_40%)] -z-40" />
 
 
-      <div className="flex flex-col items-center justify-center relative h-screen max-w-6xl w-full mx-auto px-12 xl:px-0">
+      <div className="flex flex-col items-center justify-center relative h-screen max-w-6xl w-full mx-auto px-4 xl:px-0">
         <div className="relative top-6 font-semibold text-6xl opacity-10 z-10">
           CONTACT ME
         </div>

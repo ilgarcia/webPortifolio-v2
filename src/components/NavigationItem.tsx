@@ -2,6 +2,7 @@ import { motion as m } from "framer-motion";
 
 const variants = {
   open: {
+    display: "block",
     y: 0,
     opacity: 1,
     transition: {
@@ -14,6 +15,7 @@ const variants = {
     transition: {
       y: { stiffness: 1000 },
     },
+    transitionEnd: { display: "none" },
   },
 };
 

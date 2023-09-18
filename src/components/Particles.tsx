@@ -34,11 +34,11 @@ function Particles({ count, mouse }: Props) {
   // The innards of this hook will run every frame
   useFrame(() => {
     // Makes the light follow the mouse
-    light.current.position.set(
-      mouse.current[0] / aspect,
-      -mouse.current[1] / aspect,
-      0
-    );
+    // light.current.position.set(
+    //   mouse.current[0] / aspect,
+    //   -mouse.current[1] / aspect,
+    //   0
+    // );
     // Run through the randomized data to calculate some movement
     particles.forEach((particle, i) => {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;

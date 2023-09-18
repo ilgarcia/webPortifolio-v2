@@ -3,8 +3,7 @@ import { Inter, Fira_Code, Sriracha } from "next/font/google";
 
 import Header from "@/components/Header";
 
-import "./globals.css";
-import Footer from "@/components/Footer";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "ilgarcia",
@@ -46,7 +45,6 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
