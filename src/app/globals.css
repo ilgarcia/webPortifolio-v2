@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply text-sm md:text-base scroll-smooth;
+  }
+
   body {
     @apply text-slate-50 bg-theme-dark;
   }
@@ -63,19 +67,15 @@
   }
 
   .mk-purple {
-    @apply after:bg-orange-400;
+    @apply after:bg-indigo-500;
   }
 
   .mk-orange {
-    @apply after:bg-indigo-500;
+    @apply after:bg-orange-400;
   }
 
   .contactInput {
     @apply outline-none bg-slate-900/80 rounded-sm border-b px-6 py-3 text-gray-500 placeholder-gray-500 transition-all  border-gray-500  focus:text-indigo-500/60 focus:border-indigo-500 hover:border-indigo-500;
-  }
-
-  .corners {
-    @apply before:absolute before:-top-0.5 before:-left-0.5 before:rounded-tl-lg before:content-[""] before:w-32 before:h-32 before:bg-gradient-to-br before:from-indigo-500 before:to-indigo-500/10 before:-z-10 after:absolute after:-bottom-0.5 after:-right-0.5 after:rounded-br-lg after:content-[""] after:w-32 after:h-32 after:bg-gradient-to-br after:from-indigo-500/10 after:to-indigo-500 after:-z-10;
   }
 }
 

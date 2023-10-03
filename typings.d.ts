@@ -6,6 +6,14 @@ type Base = {
   _updatedAt: string;
 };
 
+interface Block {
+  _key: string;
+  _type: "block";
+  children: Span[];
+  markDefs: any[];
+  style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+}
+
 interface Category extends Base {
   title: string;
 }
@@ -23,4 +31,13 @@ interface Skill extends Base {
   title: string;
   icon: string;
   display: boolean;
+}
+
+interface WorkExperience extends Base {
+  title: string;
+  company: string;
+  startedAt: string;
+  endedAt: string;
+  display: boolean;
+  body: Block[];
 }

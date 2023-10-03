@@ -4,6 +4,8 @@ import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
 
+import Footer from "@/components/Footer";
+
 const socials = {
   email: "limagarcia.igor@gmail.com",
   github: "https://github.com/ilgarcia",
@@ -36,13 +38,15 @@ function Contacts() {
       />
       <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(80%_50%_at_50%_100%,_#268CF530_0%,_#268CF500_40%)] -z-40" />
 
-
-      <div className="flex flex-col items-center justify-center relative h-screen max-w-6xl w-full mx-auto px-4 xl:px-0">
-        <div className="relative top-6 font-semibold text-6xl opacity-10 z-10">
+      <div className="flex flex-col items-center justify-center relative h-screen max-w-6xl w-full mx-auto px-4 xl:px-0 pb-10">
+        {/* <div className="relative top-6 font-semibold text-6xl opacity-10 z-10">
           CONTACT ME
         </div>
-        <h2 className="font-semibold text-3xl mt-0">CONTACT ME</h2>
-        <div className="mt-20 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4">
+        <h2 className="font-semibold text-3xl mt-0">CONTACT ME</h2> */}
+        <h2 className="font-fira text-9xl tracking-tighter text-slate-800/90 font-medium">
+          Contact Me.
+        </h2>
+        <div className="mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4">
           <div className="text-center">
             <p className="max-w-md mx-auto leading-6 ">
               I&apos;m currently looking for a new opportunities, my inbox is
@@ -125,6 +129,7 @@ function Contacts() {
           </form>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code, Sriracha } from "next/font/google";
+import { Source_Sans_3, Inter, Fira_Code, Sriracha } from "next/font/google";
 
 import Header from "@/components/Header";
 
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     "Hi, my name is Igor Lima Garcia i'm a software engineer specializing in building exceptional and practical digital experiences and this is my portfolio",
 };
 
-export const inter = Inter({
+export const source = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
-  variable: "--inter-font",
+  variable: "--source-font",
 });
 
 export const firaCode = Fira_Code({
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} ${firaCode.variable} ${sriracha.variable}`}
+      className={`${source.className} ${firaCode.variable} ${sriracha.variable}`}
     >
       <body>
         <Header />

@@ -2,18 +2,16 @@
 
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 
 type Props = {
   count: number;
-  mouse: React.MutableRefObject<number[]>;
+
 };
 
-function Particles({ count, mouse }: Props) {
+function Particles({ count}: Props) {
   const mesh = useRef<any>();
   const light = useRef<any>();
-  const { size, viewport } = useThree();
-  const aspect = size.width / viewport.width;
 
   const dummy = useMemo(() => new THREE.Object3D(), []);
   // Generate some random positions, speed factors and timings
@@ -33,12 +31,7 @@ function Particles({ count, mouse }: Props) {
   }, [count]);
   // The innards of this hook will run every frame
   useFrame(() => {
-    // Makes the light follow the mouse
-    // light.current.position.set(
-    //   mouse.current[0] / aspect,
-    //   -mouse.current[1] / aspect,
-    //   0
-    // );
+
     // Run through the randomized data to calculate some movement
     particles.forEach((particle, i) => {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;
@@ -47,8 +40,7 @@ function Particles({ count, mouse }: Props) {
       const a = Math.cos(t) + Math.sin(t * 1) / 10;
       const b = Math.sin(t) + Math.cos(t * 2) / 10;
       const s = Math.cos(t);
-      particle.mx += (mouse.current[0] - particle.mx) * 0.01;
-      particle.my += (mouse.current[1] * -1 - particle.my) * 0.01;
+
       // Update the dummy object
       dummy.position.set(
         (particle.mx / 10) * a +
