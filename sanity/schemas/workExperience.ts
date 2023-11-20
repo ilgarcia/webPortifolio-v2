@@ -4,6 +4,7 @@ export default defineType({
   name: "workExperience",
   title: "Work Experience",
   type: "document",
+
   fields: [
     defineField({
       name: "title",
@@ -18,18 +19,18 @@ export default defineType({
     defineField({
       name: "startedAt",
       title: "Started at",
-      type: 'date',
+      type: "date",
       options: {
-        dateFormat: 'MM-YYYY',
-      }
+        dateFormat: "MM-YYYY",
+      },
     }),
     defineField({
       name: "endedAt",
       title: "Ended at",
-      type: 'date',
+      type: "date",
       options: {
-        dateFormat: 'MM-YYYY',
-      }
+        dateFormat: "MM-YYYY",
+      },
     }),
     defineField({
       name: "body",
@@ -40,6 +41,7 @@ export default defineType({
       name: "display",
       title: "Display",
       type: "boolean",
+      initialValue: false,
     }),
   ],
 });

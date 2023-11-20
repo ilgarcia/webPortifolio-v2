@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply text-sm md:text-base scroll-smooth;
-  }
-
   body {
     @apply text-slate-50 bg-theme-dark;
   }
@@ -26,6 +22,10 @@
 
   ol li {
     @apply relative mb-1 pl-5 before:content-['▹'] before:absolute before:left-0 before:text-orange-300;
+  }
+
+  strong {
+    @apply font-extrabold text-indigo-500
   }
 
   ::-webkit-scrollbar {
@@ -50,7 +50,7 @@
     @apply overflow-hidden;
   }
 
-  .toggleBlur main > * {
+  .toggleBlur main {
     @apply blur pointer-events-none select-none;
   }
 

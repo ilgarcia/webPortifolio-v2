@@ -1,21 +1,23 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import blockContent from "./schemas/blockContent";
-import workContent from "./schemas/workContent";
+import blogContent from "./schemas/blockBlogContent";
+import workContent from "./schemas/blockWorkContent";
 import workExperience from "./schemas/workExperience";
-import category from "./schemas/category";
-import post from "./schemas/post";
-import author from "./schemas/author";
+import appType from "./schemas/appType";
 import skills from "./schemas/skills";
+import post from "./schemas/post";
 import portfolio from "./schemas/portfolio";
+import category from "./schemas/category";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     skills,
-    portfolio,
     category,
+    post,
+    portfolio,
+    appType,
     workExperience,
     workContent,
-    blockContent,
+    blogContent,
   ],
 };

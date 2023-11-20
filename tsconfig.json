@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/components/WaveEffects.tsx"  ],
+, "src/components/hero/WaveEffects.tsx", "sanity/schemas/workExperience.ts"  ],
   "exclude": [
     "node_modules"
   ]
