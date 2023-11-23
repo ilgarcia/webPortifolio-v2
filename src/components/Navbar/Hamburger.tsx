@@ -19,7 +19,7 @@ const Path = (
   />
 );
 
-export const NavigationToggle = ({ toggle }: Props) => (
+export const Hamburger = ({ toggle }: Props) => (
   <button className="lg:hidden z-50" onClick={toggle}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path

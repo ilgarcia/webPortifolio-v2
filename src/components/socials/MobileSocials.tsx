@@ -1,32 +1,11 @@
-import { motion as m, Variants } from "framer-motion";
-import * as Fi from "react-icons/fi";
+import { motion as m } from "framer-motion";
 import { RiCopyrightLine } from "react-icons/ri";
+
+import { DynamicIconFi } from "@/components/Miscellaneous/DynamicIcon";
 
 import { socials } from "@/constants";
 
-const variants: Variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
-
-function NavigationSocials() {
-  function dynamicIcon(icon: string): JSX.Element {
-    const IconComponent = Fi[icon as keyof typeof Fi];
-    return <IconComponent className="text-xl" />;
-  }
-
+function MobileSocials({ variants }: any) {
   return (
     <div className="lg:hidden absolute top-0 w-full h-[calc(100vh-72px)] -z-10">
       <m.div variants={variants} className="absolute bottom-0 w-full">
@@ -46,7 +25,7 @@ function NavigationSocials() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {dynamicIcon(social.icon)}
+                    {DynamicIconFi(social.icon)}
                   </a>
                 </li>
               ))}
@@ -69,4 +48,4 @@ function NavigationSocials() {
   );
 }
 
-export default NavigationSocials;
+export default MobileSocials;

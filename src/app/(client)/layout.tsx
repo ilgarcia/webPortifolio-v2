@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Inter, Fira_Code, Sriracha } from "next/font/google";
+import { Source_Sans_3, Fira_Code, Sriracha } from "next/font/google";
 
-import Header from "@/components/header/Header";
+import Navbar from "@/components/Navbar/Navbar";
 
 import "../globals.css";
 
@@ -44,7 +44,7 @@ export default function RootLayout({
     >
       <body className="relative">
         <div className="absolute top-0 -left-2 w-full h-full bg-[linear-gradient(to_right,_#34d39908_1px,_transparent_1px),linear-gradient(#34d39908_1px,_transparent_1px)] -z-50 bg-[length:100px_100px]" />
-        <Header />
+        <Navbar />
         {children}
       </body>
     </html>

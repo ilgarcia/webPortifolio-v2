@@ -3,13 +3,13 @@ import { groq } from "next-sanity";
 
 import { client } from "../../../sanity/lib/client";
 
-import AboutMe from "@/components/aboutMe/AboutMe";
-import Contacts from "@/components/contacts/Contacts";
-import Hero from "@/components/hero/Hero";
-import Portfolio from "@/components/portfolio/Portfolio";
-import Skills from "@/components/skills/Skills";
-import WorkExperience from "@/components/workExperience/WorkExperience";
-import Socials from "@/components/socials/Socials";
+import AboutMe from "@/components/AboutMe/AboutMe";
+import Contacts from "@/components/Contacts/Contacts";
+import Hero from "@/components/Hero/Hero";
+import Portfolio from "@/components/Portfolio/Portfolio";
+import Skills from "@/components/Skills/Skills";
+import WorkExperience from "@/components/WorkExperience/WorkExperience";
+import Socials from "@/components/Socials/Socials";
 
 const querySkills = groq`
   *[_type=='skills']{

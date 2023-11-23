@@ -1,26 +1,23 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
+import { BiCaretRight } from "react-icons/bi";
 import { Variants, motion as m } from "framer-motion";
 import { usePagination } from "@mantine/hooks";
-import CanvasBorder from "./CanvasBorder";
+import Image from "next/image";
+
 import { urlForImage } from "../../../sanity/lib/image";
-import { BiCaretRight } from "react-icons/bi";
-import Pagination from "@/components/pagination/Pagination";
-import { useState } from "react";
+import Pagination from "@/components/Miscellaneous/Pagination";
+
+import { postImage } from "@/components/Posts/Variants";
+import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
 
 type Props = {
   posts: Post[];
 };
 
-const imageVariant: Variants = {
-  rest: { scale: 1, transition: { duration: 1 } },
-  hover: { scale: 1.15, transition: { duration: 1 } },
-};
-
 const arrowVariant: Variants = {
-  rest: { x: 0 },
-  hover: {
+  hoverIn: {
     x: 5,
     transition: {
       repeat: Infinity,
@@ -28,9 +25,10 @@ const arrowVariant: Variants = {
       duration: 0.5,
     },
   },
+  hoverOut: { x: 0 },
 };
 
-function BlogPosts({ posts }: Props) {
+function Posts({ posts }: Props) {
   const itemsPerPage = 9;
 
   const [visiblePosts, setVisiblePosts] = useState(
@@ -50,22 +48,22 @@ function BlogPosts({ posts }: Props) {
 
   return (
     <section>
-      <section className="grid grid-cols-3 gap-7 items-center justify-between max-w-7xl mx-auto">
+      <section className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 xl:gap-7 max-w-6xl 2xl:max-w-7xl mx-auto px-1 lg:px-20 xl:px-4">
         {visiblePosts.map((post) => (
           <m.div
             key={post._id}
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
+            initial="hoverOut"
+            whileHover="hoverIn"
+            animate="hoverOut"
             className="h-56"
           >
             <a
               href={`/blog/post/${post.slug.current}`}
               className="relative flex items-center h-full"
             >
-              <div className="absolute inset-px left-3 right-0.5 bg-gradient-to-br from-slate-800 to-slate-800/[0.2] -z-50" />
-              <div className="max-w-[145px] w-full h-[85%] relative overflow-hidden">
-                <m.div variants={imageVariant} className="w-full h-full">
+              <div className="absolute inset-px xs:left-3 xs:right-0.5 bg-gradient-to-br from-slate-800 to-slate-800/[0.2] -z-50" />
+              <div className="max-w-[145px] w-full h-[85%] relative overflow-hidden hidden xs:block">
+                <m.div variants={postImage} className="w-full h-full">
                   <Image
                     src={urlForImage({ ...post.mainImage }).url()}
                     alt={post.mainImage.alt}
@@ -75,7 +73,7 @@ function BlogPosts({ posts }: Props) {
                   />
                 </m.div>
               </div>
-              <div className="w-full h-full p-4 relative">
+              <div className="w-full h-full p-6 xs:p-4 relative">
                 <div className="flex justify-between text-xs font-fira text-slate-400/70 mb-3 uppercase">
                   <div className="tracking-wider">{post.category?.title}</div>
                   <div>
@@ -94,14 +92,15 @@ function BlogPosts({ posts }: Props) {
                 <div className="text-slate-200/80 leading-5 font-light">
                   {post.description}
                 </div>
-                <div className="absolute flex items-center text-indigo-500 text-base font-medium w-fit bottom-5 right-4">
-                  <span className="mr-2">Read More</span>
-                  <m.span variants={arrowVariant}>
-                    <BiCaretRight className="text-xl" />
-                  </m.span>
+                <div className="absolute bottom-5 right-5 w-fit">
+                  <HoverRightIndigoLink
+                    link={`/blog/post/${post.slug.current}`}
+                    title={"Read More"}
+                    initial={false}
+                  />
                 </div>
               </div>
-              <div className="absolute inset-px left-3 right-0.5 border border-indigo-400/30" />
+              <div className="absolute inset-px xs:left-3 xs:right-0.5 border border-indigo-400/30" />
             </a>
           </m.div>
         ))}
@@ -111,4 +110,4 @@ function BlogPosts({ posts }: Props) {
   );
 }
 
-export default BlogPosts;
+export default Posts;

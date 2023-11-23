@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import * as Fi from "react-icons/fi";
-
-import Footer from "@/components/footer/Footer";
+import { DynamicIconFi } from "@/components/Miscellaneous/DynamicIcon";
+import Footer from "@/components/Footer/Footer";
 import { socials } from "@/constants";
+import { SolidIndigoButton } from "../Miscellaneous/UIControls";
 
 type Inputs = {
   name: string;
@@ -21,11 +21,6 @@ function Contacts() {
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:limagarcia.igor@gmail.com?subject=${formData.subject}&body=hi, my name is ${formData.name} ${formData.message} (${formData.email})`;
   };
-
-  function dynamicIcon(icon: string): JSX.Element {
-    const IconComponent = Fi[icon as keyof typeof Fi];
-    return <IconComponent className="text-2xl" />;
-  }
 
   return (
     <section
@@ -68,7 +63,7 @@ function Contacts() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {dynamicIcon(social.icon)}
+                      {DynamicIconFi(social.icon)}
                     </a>
                   </li>
                 ))}
@@ -110,12 +105,7 @@ function Contacts() {
               placeholder="Message"
               className="contactInput h-24 md:h-32"
             />
-            <button
-              type="submit"
-              className="w-full border border-solid bg-slate-900 border-indigo-500 shadow-[4px_4px] shadow-indigo-500 text-indigo-500 font-semibold rounded py-2 px-5 ease-in-out duration-200 hover:shadow-[2px_2px] hover:translate-x-[2px] hover:translate-y-[2px]"
-            >
-              Submit
-            </button>
+            <SolidIndigoButton title={"Submit"} />
           </form>
         </div>
       </div>

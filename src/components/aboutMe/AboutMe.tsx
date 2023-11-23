@@ -1,7 +1,5 @@
-import Image from "next/image";
-
-import Meteor from "@/components/aboutMe/Meteor";
-import { RubberTitleH3 } from "@/components/miscellaneous/RubberTitle";
+import Meteor from "@/components/AboutMe/Meteor";
+import { RubberTitleH3 } from "@/components/Miscellaneous/RubberTitles";
 
 function AboutMe() {
   return (
@@ -18,13 +16,6 @@ function AboutMe() {
           <p className="text-slate-400 font-light text-lg md:text-2xl mt-2 lg:mt-3">
             Fullstack Developer | DevOps
           </p>
-          {/* <Image
-            src={"/profile.png"}
-            alt={"Profile picture"}
-            width={360}
-            height={300}
-            className="absolute -z-10 -top-10 -left-8 brightness-[0.25]"
-          /> */}
         </div>
         <div className="relative">
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />

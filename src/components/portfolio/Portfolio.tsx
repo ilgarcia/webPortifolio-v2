@@ -3,32 +3,17 @@
 import { useState } from "react";
 import { BiCaretRight } from "react-icons/bi";
 import Image from "next/image";
-import { Variants, motion as m } from "framer-motion";
+import { motion as m, Variants } from "framer-motion";
 
-import { RubberTitleH3 } from "@/components/miscellaneous/RubberTitle";
+import { RubberTitleH3 } from "@/components/Miscellaneous/RubberTitles";
+import { carousel } from "@/components/Portfolio/Variants";
 import { urlForImage } from "../../../sanity/lib/image";
+import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
 
 type Props = {
   portfolio: Portfolio[];
 };
 
-const tabVariant: Variants = {
-  tab1: { x: "0%" },
-  tab2: { x: "-100vw" },
-  tab3: { x: "-200vw" },
-};
-
-const arrowVariant: Variants = {
-  hoverIn: {
-    x: 5,
-    transition: {
-      repeat: Infinity,
-      repeatType: "reverse",
-      duration: 0.5,
-    },
-  },
-  hoverOut: { x: 0 },
-};
 
 function Portfolio({ portfolio }: Props) {
   const [tab, setTab] = useState<string>("tab1");
@@ -44,7 +29,7 @@ function Portfolio({ portfolio }: Props) {
       <div className="w-screen overflow-hidden py-4">
         <m.div
           initial="tab1"
-          variants={tabVariant}
+          variants={carousel}
           animate={tab}
           className="w-[300vw] flex"
         >
@@ -60,17 +45,10 @@ function Portfolio({ portfolio }: Props) {
                 of my work than the ones showcased in this site, please contact
                 me!
               </p>
-              <m.a
-                href="/blog#moreProjects"
-                className="flex items-center text-indigo-500 text-lg font-medium w-fit"
-                initial="hoverOut"
-                whileHover="hoverIn"
-              >
-                <span className="mr-3">More Projects</span>
-                <m.span variants={arrowVariant}>
-                  <BiCaretRight className="text-xl" />
-                </m.span>
-              </m.a>
+              <HoverRightIndigoLink
+                link={"/blog#moreProjects"}
+                title={"More Projects"}
+              />
             </div>
           </div>
 
@@ -102,30 +80,16 @@ function Portfolio({ portfolio }: Props) {
                   </div>
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     {project.githubLink && (
-                      <m.a
-                        href={project.githubLink}
-                        initial="hoverOut"
-                        whileHover="hoverIn"
-                        className="flex items-center text-indigo-500 text-lg font-medium w-fit"
-                      >
-                        <span className="mr-3">Github</span>
-                        <m.span variants={arrowVariant}>
-                          <BiCaretRight className="text-xl" />
-                        </m.span>
-                      </m.a>
+                      <HoverRightIndigoLink
+                        link={project.githubLink}
+                        title={"Github"}
+                      />
                     )}
                     {project.externalLink && (
-                      <m.a
-                        href={project.externalLink}
-                        initial="hoverOut"
-                        whileHover="hoverIn"
-                        className="flex items-center text-indigo-500 text-lg font-medium w-fit"
-                      >
-                        <span className="mr-3">Application</span>
-                        <m.span variants={arrowVariant}>
-                          <BiCaretRight className="text-xl" />
-                        </m.span>
-                      </m.a>
+                      <HoverRightIndigoLink
+                        link={project.externalLink}
+                        title={"Application"}
+                      />
                     )}
                     {project.post?.slug && <m.a href={""}>Post</m.a>}
                   </div>

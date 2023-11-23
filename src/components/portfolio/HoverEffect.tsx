@@ -8,6 +8,7 @@ type Props = {
 
 function HoverEffect({ children, id }: Props) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <div
       className="relative group block p-3 h-72 w-full "

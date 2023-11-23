@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 import { HiPlus, HiMinus } from "react-icons/hi";
 import { motion as m, AnimatePresence } from "framer-motion";
 
-import { RichTextWorkExperience } from "@/components/workExperience/RichTextWorkExperience";
+import { RichTextWorkExperience } from "@/components/WorkExperience/RichTextWorkExperience";
 
 type Props = {
   experience: WorkExperience[];

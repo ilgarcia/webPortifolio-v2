@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import { motion as m, useInView } from "framer-motion";
-import { FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
-import * as Fi from "react-icons/fi";
+
+import { DynamicIconFi } from "@/components/Miscellaneous/DynamicIcon";
 
 import { socials } from "@/constants";
 
@@ -11,15 +11,9 @@ function Socials() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  function dynamicIcon(icon: string): JSX.Element {
-    const IconComponent = Fi[icon as keyof typeof Fi];
-    return <IconComponent className="text-xl" />;
-  }
-
   return (
     <section ref={ref}>
       <m.div
-        className="hidden lg:block fixed bottom-0 right-14 left-auto text-orange-300 w-10"
         initial="hidden"
         animate="visible"
         variants={{
@@ -30,6 +24,7 @@ function Socials() {
             transition: { duration: 1, delay: 0.2 },
           },
         }}
+        className="hidden lg:block fixed bottom-0 right-14 left-auto text-orange-300 w-10"
       >
         <ul className="flex flex-col items-center m-0 p-0 after:contents-[''] after:block after:w-px after:h-20 after:mt-3 after:bg-orange-300/50">
           {socials
@@ -46,7 +41,7 @@ function Socials() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {dynamicIcon(social.icon)}
+                  {DynamicIconFi(social.icon)}
                 </a>
               </li>
             ))}

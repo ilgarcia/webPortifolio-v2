@@ -13,6 +13,7 @@ const config: Config = {
     },
     extend: {
       screens: {
+        "xs": "425px",
         "sk": "1260px",
         "2xl": "1440px",
       },

@@ -1,16 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import { BiCaretRight } from "react-icons/bi";
-import { motion as m, Variants } from "framer-motion";
 
-import CanvasAnimation from "@/components/hero/CanvasAnimation";
-import { RubberTitleH1 } from "@/components/miscellaneous/RubberTitle";
-
-const arrowVariant: Variants = {
-  open: { rotate: 90 },
-  closed: { rotate: 0 },
-};
+import { RubberTitleH1 } from "@/components/Miscellaneous/RubberTitles";
+import { HoverDownOrangeLink } from "@/components/Miscellaneous/UIControls";
+import WaveAnimation from "@/components/Hero/WaveAnimation";
 
 function Hero() {
   return (
@@ -26,19 +18,8 @@ function Hero() {
           curious, and perpetually working on improving my chops one design
           problem at a time.
         </p>
-        <m.a
-          href="/#about"
-          className="flex items-center text-indigo-500 font-medium w-fit"
-          initial="closed"
-          whileHover="open"
-        >
-          <span className="mr-3">About me</span>
-          <m.span variants={arrowVariant}>
-            <BiCaretRight className="text-xl" />
-          </m.span>
-        </m.a>
+        <HoverDownOrangeLink link={"/#about"} title={"About me"} />
       </div>
-
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(80%_50%_at_50%_0%,_#268CF530_10%,_#268CF500_100%)] -z-40" />
       <Image
         src={"./bg-hero.svg"}
@@ -48,7 +29,7 @@ function Hero() {
         sizes="100%"
       />
       {/* <div className="absolute top-0 left-0 w-full h-full -z-30">
-        <CanvasAnimation />
+        <WaveAnimation />
       </div> */}
     </section>
   );

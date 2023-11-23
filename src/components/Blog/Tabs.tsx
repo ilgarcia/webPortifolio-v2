@@ -3,8 +3,8 @@
 import { useCallback, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
-import BlogPosts from "@/components/blogPosts/BlogPosts";
+import PortfolioGrid from "@/components/Portfolio/PortfolioGrid";
+import Posts from "@/components/Posts/Posts";
 
 type Props = {
   portfolio: Portfolio[];
@@ -32,7 +32,7 @@ function Tabs({ portfolio, posts }: Props) {
   );
 
   return (
-    <div className="max-w-7xl mx-auto min-h-[80vh] pt-14">
+    <div className="max-w-7xl mx-auto min-h-[80vh] pt-14 px-1 lg:px-4">
       <div className="border-b border-slate-700 mb-10">
         <ul className="flex flex-wrap -mb-px text-lg">
           <li>
@@ -63,7 +63,7 @@ function Tabs({ portfolio, posts }: Props) {
       </div>
       <div>
         {tabName === "posts" ? (
-          <BlogPosts posts={posts} />
+          <Posts posts={posts} />
         ) : (
           <PortfolioGrid portfolio={portfolio} />
         )}

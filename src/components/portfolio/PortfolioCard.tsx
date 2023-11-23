@@ -1,7 +1,7 @@
 import { FiGithub, FiExternalLink, FiLink } from "react-icons/fi";
 import { CiFolderOn } from "react-icons/ci";
 
-import HoverEffect from "./HoverEffect";
+import HoverEffect from "@/components/Portfolio/HoverEffect";
 
 type Props = {
   project: Portfolio;
@@ -31,7 +31,6 @@ function PortfolioCard({ project, id }: Props) {
               <FiLink />
             </a>
           )}
-
         </div>
       </div>
       <h4 className="text-orange-400 text-xl font-bold tracking-wide ">

@@ -3,10 +3,10 @@ import { groq } from "next-sanity";
 import { client } from "../../../../sanity/lib/client";
 
 
-import Socials from "@/components/socials/Socials";
-import Contacts from "@/components/contacts/Contacts";
-import BlogBanner from "@/components/blogBanner/BlogBanner";
-import Tabs from "@/components/blogPosts/Tabs";
+import Socials from "@/components/Socials/Socials";
+import Contacts from "@/components/Contacts/Contacts";
+import Banner from "@/components/Blog/Banner";
+import Tabs from "@/components/Blog/Tabs";
 
 const queryPortfolio = groq`
   *[_type=='portfolio']{
@@ -34,7 +34,7 @@ async function page() {
 
   return (
     <main>
-      <BlogBanner />
+      <Banner />
       <Tabs portfolio={portfolio} posts={posts}/>
       <Contacts />
       <Socials />

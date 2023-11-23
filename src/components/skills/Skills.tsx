@@ -1,8 +1,6 @@
 import { SiReact } from "react-icons/si";
 
-import Badges from "@/components/skills/Badges";
-
-// import * as Si from "react-icons/si";
+import Badges from "@/components/Skills/Badges";
 
 type Props = {
   skills: Skill[];
@@ -19,7 +17,6 @@ function Skills({ skills }: Props) {
       </h2>
       <div className="hidden sk:col-span-2 sk:flex flex-col -space-y-7 mt-8 relative">
         <div className="p-8 max-w-xs relative shadow-xl bg-gray-900 border border-gray-800 rounded-md">
-          {/* <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl -z-40" /> */}
           <div className="flex items-center mb-4">
             <SiReact className="text-5xl mr-4 " />
             <h3>
@@ -35,7 +32,6 @@ function Skills({ skills }: Props) {
           </p>
         </div>
         <div className="p-8 max-w-xs relative left-24 shadow-xl bg-gray-900 border border-gray-800 rounded-md">
-          {/* <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl -z-40" /> */}
           <div className="flex items-center mb-4">
             <SiReact className="text-5xl mr-4 " />
             <h3>
