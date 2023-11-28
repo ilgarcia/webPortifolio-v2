@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { RubberTitleH1 } from "@/components/Miscellaneous/RubberTitles";
-import { HoverDownOrangeLink } from "@/components/Miscellaneous/UIControls";
-import WaveAnimation from "@/components/Hero/WaveAnimation";
+import { RubberTitleH1 } from "../Miscellaneous/RubberTitles";
+import { HoverDownOrangeLink } from "../Miscellaneous/UIControls";
+import WaveAnimation from "./WaveAnimation";
 
 function Hero() {
   return (
@@ -28,9 +28,9 @@ function Hero() {
         fill
         sizes="100%"
       />
-      {/* <div className="absolute top-0 left-0 w-full h-full -z-30">
+      <div className="absolute top-0 left-0 w-full h-full -z-30">
         <WaveAnimation />
-      </div> */}
+      </div>
     </section>
   );
 }

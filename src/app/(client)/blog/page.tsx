@@ -3,10 +3,10 @@ import { groq } from "next-sanity";
 import { client } from "../../../../sanity/lib/client";
 
 
-import Socials from "@/components/Socials/Socials";
-import Contacts from "@/components/Contacts/Contacts";
-import Banner from "@/components/Blog/Banner";
-import Tabs from "@/components/Blog/Tabs";
+import Socials from "../../../components/Socials/Socials";
+import Contacts from "../../../components/Contacts/Contacts";
+import Banner from "../../../components/Blog/Banner";
+import Tabs from "../../../components/Blog/Tabs";
 
 const queryPortfolio = groq`
   *[_type=='portfolio']{

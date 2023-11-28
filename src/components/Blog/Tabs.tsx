@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import PortfolioGrid from "@/components/Portfolio/PortfolioGrid";
-import Posts from "@/components/Posts/Posts";
+import PortfolioGrid from "../Portfolio/PortfolioGrid";
+import Posts from "../Posts/Posts";
 
 type Props = {
   portfolio: Portfolio[];

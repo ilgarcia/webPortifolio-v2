@@ -1,8 +1,8 @@
 "use client";
 
 import { useCycle } from "framer-motion";
-import PortfolioCard from "@/components/Portfolio/PortfolioCard";
-import HoverEffect from "@/components/Portfolio/HoverEffect";
+import PortfolioCard from "./PortfolioCard";
+import HoverEffect from "./HoverEffect";
 
 type Props = {
   portfolio: Portfolio[];

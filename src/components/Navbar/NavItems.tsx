@@ -1,15 +1,15 @@
 import { motion as m } from "framer-motion";
 
-import NavItem from "@/components/Navbar/NavItem";
-import MobileSocials from "@/components/Socials/MobileSocials";
-import { SolidOrangeLink } from "@/components/Miscellaneous/UIControls";
+import NavItem from "./NavItem";
+import MobileSocials from "../Socials/MobileSocials";
+import { SolidOrangeLink } from "../Miscellaneous/UIControls";
 import {
   navItems,
   mobileSocials,
   blogLink,
-} from "@/components/Navbar/Variants";
+} from "./Variants";
 
-import { navLinks } from "@/constants";
+import { navLinks } from "../../constants";
 
 type Props = {
   toggle: () => void;

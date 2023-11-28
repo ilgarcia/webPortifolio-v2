@@ -1,4 +1,4 @@
-import { DynamicIconSi } from "@/components/Miscellaneous/DynamicIcon";
+import { DynamicIconSi } from "../Miscellaneous/DynamicIcon";
 
 type Props = {
   skill: Skill;

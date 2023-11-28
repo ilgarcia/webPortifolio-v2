@@ -8,12 +8,12 @@ import {
   useWindowScroll,
 } from "@mantine/hooks";
 
-import { Hamburger } from "@/components/Navbar/Hamburger";
-import NavItems from "@/components/Navbar/NavItems";
-import LogoNeon from "@/components/Logo/LogoNeon";
-import NeonBorder from "@/components/Navbar/NeonBorder";
+import { Hamburger } from "./Hamburger";
+import NavItems from "./NavItems";
+import LogoNeon from "../Logo/LogoNeon";
+import NeonBorder from "./NeonBorder";
 
-import { sidebar, bgNavbar } from "@/components/Navbar/Variants";
+import { sidebar, bgNavbar } from "./Variants";
 
 function Navbar() {
   const [isOpen, toggleOpen] = useCycle(false, true);

@@ -1,4 +1,4 @@
-import BoxesContainer from "@/components/Blog/BoxesContainer";
+import BoxesContainer from "./BoxesContainer";
 
 function Banner() {
   return (

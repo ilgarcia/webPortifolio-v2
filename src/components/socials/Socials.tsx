@@ -3,9 +3,9 @@
 import { useRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 
-import { DynamicIconFi } from "@/components/Miscellaneous/DynamicIcon";
+import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
 
-import { socials } from "@/constants";
+import { socials } from "../../constants";
 
 function Socials() {
   const ref = useRef(null);

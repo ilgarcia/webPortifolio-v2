@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { DynamicIconFi } from "@/components/Miscellaneous/DynamicIcon";
-import Footer from "@/components/Footer/Footer";
-import { socials } from "@/constants";
+import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
+import Footer from "../Footer/Footer";
+import { socials } from "../../constants";
 import { SolidIndigoButton } from "../Miscellaneous/UIControls";
 
 type Inputs = {

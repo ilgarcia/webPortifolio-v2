@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { BiCaretRight } from "react-icons/bi";
 import { Variants, motion as m } from "framer-motion";
 import { usePagination } from "@mantine/hooks";
 import Image from "next/image";
 
 import { urlForImage } from "../../../sanity/lib/image";
-import Pagination from "@/components/Miscellaneous/Pagination";
 
-import { postImage } from "@/components/Posts/Variants";
+import { postImage } from "./Variants";
 import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
+import Pagination from "../Miscellaneous/Pagination";
 
 type Props = {
   posts: Post[];

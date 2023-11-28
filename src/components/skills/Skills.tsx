@@ -1,6 +1,6 @@
 import { SiReact } from "react-icons/si";
 
-import Badges from "@/components/Skills/Badges";
+import Badges from "./Badges";
 
 type Props = {
   skills: Skill[];

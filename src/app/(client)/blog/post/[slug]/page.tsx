@@ -4,9 +4,9 @@ import { PortableText } from "@portabletext/react";
 import { HiArrowCircleLeft } from "react-icons/hi";
 
 import { client } from "../../../../../../sanity/lib/client";
-import { RichTextBlog } from "@/components/Posts/RichTextBlog";
-import Socials from "@/components/Socials/Socials";
-import Contacts from "@/components/Contacts/Contacts";
+import { RichTextBlog } from "../../../../../components/Posts/RichTextBlog";
+import Socials from "../../../../../components/Socials/Socials";
+import Contacts from "../../../../../components/Contacts/Contacts";
 
 import Link from "next/link";
 import { urlForImage } from "../../../../../../sanity/lib/image";
