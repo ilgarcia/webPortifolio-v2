@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
-import Footer from "../Footer/Footer";
+import { DynamicIconFi } from "../miscellaneous/DynamicIcon";
+import Footer from "../footer/Footer";
 import { socials } from "../../constants";
-import { SolidIndigoButton } from "../Miscellaneous/UIControls";
+import { SolidIndigoButton } from "../miscellaneous/UIControls";
 
 type Inputs = {
   name: string;

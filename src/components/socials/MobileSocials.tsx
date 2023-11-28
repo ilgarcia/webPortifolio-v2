@@ -1,7 +1,7 @@
 import { motion as m } from "framer-motion";
 import { RiCopyrightLine } from "react-icons/ri";
 
-import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
+import { DynamicIconFi } from "../miscellaneous/DynamicIcon";
 
 import { socials } from "../../constants";
 

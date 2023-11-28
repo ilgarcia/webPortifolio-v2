@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { RubberTitleH1 } from "../Miscellaneous/RubberTitles";
-import { HoverDownOrangeLink } from "../Miscellaneous/UIControls";
+import { RubberTitleH1 } from "../miscellaneous/RubberTitles";
+import { HoverDownOrangeLink } from "../miscellaneous/UIControls";
 import WaveAnimation from "./WaveAnimation";
 
 function Hero() {
