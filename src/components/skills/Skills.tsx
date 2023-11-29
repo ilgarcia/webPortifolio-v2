@@ -12,7 +12,7 @@ function Skills({ skills }: Props) {
       id="skills"
       className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto px-4 h-screen lg:snap-start "
     >
-      <h2 className="absolute lg:left-1/2 top-4 lg:bottom-0 font-fira font-medium text-7xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90">
+      <h2 className="absolute lg:left-1/2 top-4 lg:bottom-0 font-fira font-medium text-7xl md:text-8xl tracking-tighter text-slate-800/90">
         Skills.
       </h2>
       <div className="relative hidden sk:flex flex-col sk:col-span-2 -space-y-7 mt-8">
