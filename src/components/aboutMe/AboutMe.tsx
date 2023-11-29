@@ -7,13 +7,13 @@ function AboutMe() {
       id="about"
       className="relative flex items-center justify-center h-screen lg:snap-start "
     >
-      <h2 className="absolute -left-2 lg:-left-6 bottom-6 lg:top-6 font-fira text-7xl md:text-8xl lg:text-9xl font-medium tracking-tighter text-slate-800/90">
+      <h2 className="absolute -left-2 lg:-left-6 top-4 lg:bottom-6 font-fira text-7xl md:text-8xl lg:text-9xl font-medium tracking-tighter text-slate-800/90">
         About Me.
       </h2>
-      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-4 lg:px-8 ">
-        <div className=" max-w-lg lg:max-w-none py-3 lg:py-8 lg:pl-8 relative">
+      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="relative max-w-lg lg:max-w-none py-3 lg:py-8 lg:pl-8">
           <RubberTitleH3 title={"Hi There! I'm Igor Lima Garcia"} />
-          <p className="text-slate-400 font-light text-lg md:text-2xl mt-2 lg:mt-3">
+          <p className="mt-2 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>
         </div>
@@ -29,7 +29,9 @@ function AboutMe() {
                 creative side to design and my logical side to code.
               </p>
               <p>
-                Well-organized person, problem solver with high attention to detail. I want to keep learning, continue challenging myself, and do interesting things that matter.
+                Well-organized person, problem solver with high attention to
+                detail. I want to keep learning, continue challenging myself,
+                and do interesting things that matter.
               </p>
               <p>
                 Here are a few technologies I&apos;ve been working with
