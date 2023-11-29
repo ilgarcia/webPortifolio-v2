@@ -12,7 +12,7 @@ function Hero() {
     >
       <div className="flex flex-col space-y-8 max-w-7xl w-full mx-auto px-4 md:px-8 text-base md:text-lg">
         <RubberTitleH1 title={"Fullstack developer"} />
-        <p className="max-w-2xl ">
+        <p className="max-w-2xl">
           I&apos;m a software engineer specializing in building exceptional and
           practical digital experiences. I&apos;m quietly confident, naturally
           curious, and perpetually working on improving my chops one design
@@ -28,7 +28,7 @@ function Hero() {
         fill
         sizes="100%"
       />
-      <div className="absolute top-0 left-0 w-full h-full -z-30">
+      <div className="absolute top-0 left-0 hidden lg:block w-full h-full -z-30">
         <WaveAnimation />
       </div>
     </section>

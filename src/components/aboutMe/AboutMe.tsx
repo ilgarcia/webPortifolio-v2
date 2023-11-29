@@ -7,10 +7,10 @@ function AboutMe() {
       id="about"
       className="relative flex items-center justify-center h-screen lg:snap-start "
     >
-      <h2 className="absolute -left-2 md:-left-6 bottom-6 font-fira text-7xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 font-medium">
+      <h2 className="absolute -left-2 lg:-left-6 bottom-6 lg:top-6 font-fira text-7xl md:text-8xl lg:text-9xl font-medium tracking-tighter text-slate-800/90">
         About Me.
       </h2>
-      <div className="absolute top-14 sm:static max-w-7xl mx-auto px-3 md:px-8 lg:grid lg:grid-cols-2">
+      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-4 lg:px-8 ">
         <div className=" max-w-lg lg:max-w-none py-3 lg:py-8 lg:pl-8 relative">
           <RubberTitleH3 title={"Hi There! I'm Igor Lima Garcia"} />
           <p className="text-slate-400 font-light text-lg md:text-2xl mt-2 lg:mt-3">
@@ -31,12 +31,12 @@ function AboutMe() {
               <p>
                 Well-organized person, problem solver with high attention to detail. I want to keep learning, continue challenging myself, and do interesting things that matter.
               </p>
-              <p className="hidden md:block">
+              <p>
                 Here are a few technologies I&apos;ve been working with
                 recently:
               </p>
             </div>
-            <ol className="hidden md:grid md:grid-cols-2 mt-5 gap-x-8 pl-4">
+            <ol className="grid grid-cols-2 gap-x-4 lg:gap-x-8 mt-5 pl-4">
               <li>React</li>
               <li>Next.js</li>
               <li>Node.js</li>
