@@ -41,7 +41,7 @@ function Contacts() {
           Contact Me.
         </h2>
         <div className="mt-4 lg:mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4">
-          <div className="hidden lg:block text-center">
+          <div className="text-center">
             <p className="max-w-md mx-auto leading-6 ">
               I&apos;m currently looking for a new opportunities, my inbox is
               always open. Whether you have a question or just want to say hi,

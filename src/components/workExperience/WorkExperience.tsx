@@ -19,10 +19,10 @@ function WorkExperience({ experience }: Props) {
       id="experience"
       className="relative flex justify-center h-screen overflow-hidden lg:snap-start"
     >
-      <h2 className="absolute -left-6 bottom-6 font-fira text-6xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 font-medium">
+      <h2 className="absolute -left-6 top-4 lg:bottom-6 font-fira font-medium text-6xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 ">
         Work Experience.
       </h2>
-      <div className="absolute max-w-4xl px-2 top-16 sm:top-1/4 flex flex-col w-full">
+      <div className="absolute top-1/4 flex flex-col max-w-4xl px-2 w-full">
         {experience.map((job, id) => (
           <div key={id} className="w-full">
             <m.button
