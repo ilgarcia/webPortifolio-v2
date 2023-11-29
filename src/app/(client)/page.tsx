@@ -38,7 +38,7 @@ export default async function Home() {
   const portfolio = await client.fetch(queryPortfolio);
 
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth text-sm md:text-base">
+    <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll scroll-smooth text-sm md:text-base">
       <Hero />
       <AboutMe />
       <Portfolio portfolio={portfolio} />
@@ -50,4 +50,4 @@ export default async function Home() {
   );
 }
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 60 * 60 * 24; // revalidate this page every 60 seconds

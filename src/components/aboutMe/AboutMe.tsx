@@ -5,7 +5,7 @@ function AboutMe() {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center h-screen snap-start "
+      className="relative flex items-center justify-center h-screen lg:snap-start "
     >
       <h2 className="absolute -left-2 md:-left-6 bottom-6 font-fira text-7xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 font-medium">
         About Me.
@@ -29,9 +29,7 @@ function AboutMe() {
                 creative side to design and my logical side to code.
               </p>
               <p>
-                Well-organized person, problem solver, independent employee with
-                high attention to detail. I want to keep learning, continue
-                challenging myself, and do interesting things that matter.
+                Well-organized person, problem solver with high attention to detail. I want to keep learning, continue challenging myself, and do interesting things that matter.
               </p>
               <p className="hidden md:block">
                 Here are a few technologies I&apos;ve been working with
@@ -39,11 +37,11 @@ function AboutMe() {
               </p>
             </div>
             <ol className="hidden md:grid md:grid-cols-2 mt-5 gap-x-8 pl-4">
-              <li>JavaScript (ES6+)</li>
               <li>React</li>
               <li>Next.js</li>
               <li>Node.js</li>
               <li>TypeScript</li>
+              <li>Java</li>
               <li>WordPress</li>
             </ol>
             <Meteor />

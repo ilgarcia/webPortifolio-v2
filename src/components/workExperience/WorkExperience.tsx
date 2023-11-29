@@ -17,7 +17,7 @@ function WorkExperience({ experience }: Props) {
   return (
     <section
       id="experience"
-      className="flex justify-center h-screen snap-start relative overflow-hidden"
+      className="relative flex justify-center h-screen overflow-hidden lg:snap-start"
     >
       <h2 className="absolute -left-6 bottom-6 font-fira text-6xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 font-medium">
         Work Experience.

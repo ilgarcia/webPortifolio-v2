@@ -10,7 +10,7 @@ function Skills({ skills }: Props) {
   return (
     <section
       id="skills"
-      className="grid sk:grid-cols-6 items-center max-w-7xl min-h-screen mx-auto px-4 h-screen snap-start relative"
+      className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto px-4 h-screen lg:snap-start "
     >
       <h2 className="absolute lg:left-1/2 bottom-0 font-fira text-7xl md:text-8xl lg:text-9xl tracking-tighter text-slate-800/90 font-medium">
         Skills.

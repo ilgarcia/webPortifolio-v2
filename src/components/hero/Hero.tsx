@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center h-screen border-b-8 border-slate-900 snap-start"
+      className="relative flex items-center h-screen border-b-8 border-slate-900 lg:snap-start"
     >
       <div className="flex flex-col space-y-8 max-w-7xl w-full mx-auto px-4 md:px-8 text-base md:text-lg">
         <RubberTitleH1 title={"Fullstack developer"} />
