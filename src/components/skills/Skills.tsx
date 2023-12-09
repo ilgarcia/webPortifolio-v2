@@ -36,14 +36,13 @@ function Skills({ skills }: Props) {
             <SiReact className="text-5xl mr-4 " />
             <h3>
               <span className="markup mk-orange text-2xl font-bold z-10">
-                Frontend Dev
+                Backend Dev
               </span>
-              <span className="text-xl font-semibold">React, NextJS</span>
+              <span className="text-xl font-semibold">Node, Java</span>
             </h3>
           </div>
           <p className="pl-10 leading-5 before:content-['<h3>']  before:-ml-8 before:opacity-30 before:block after:content-['</h3>']  after:-ml-8 after:opacity-30 after:block">
-            Passionate about UI/UX. working with a few projects and development
-            experience in HTML, CSS, JS, React and NextJS frameworks.
+            +
           </p>
         </div>
       </div>
