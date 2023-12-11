@@ -5,15 +5,15 @@ function AboutMe() {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center h-screen lg:snap-start"
+      className="relative flex items-center justify-center my-14 lg:my-0 pt-20 lg:pt-0 lg:h-screen lg:snap-start"
     >
       <h2 className="absolute -left-2 lg:-left-6 top-4 lg:top-auto lg:bottom-6 font-fira text-7xl md:text-8xl font-medium tracking-tighter text-slate-800/90">
         About Me.
       </h2>
-      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="relative max-w-lg lg:max-w-none py-3 lg:py-8 lg:pl-8">
+      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-2 md:px-6">
+        <div className="relative max-w-lg lg:max-w-none pb-6 lg:py-8 lg:pl-8">
           <RubberTitleH3 title={"Meet the Developer"} />
-          <p className="mt-2 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
+          <p className="mt-1 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>
         </div>

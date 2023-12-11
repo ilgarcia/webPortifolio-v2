@@ -13,7 +13,7 @@ function Hero() {
       id="hero"
       className="relative flex items-center h-screen border-b-8 border-slate-900 lg:snap-start overflow-hidden"
     >
-      <div className="relative max-w-7xl w-full mx-auto px-2 text-base md:text-lg">
+      <div className="relative max-w-7xl w-full mx-auto px-2 md:px-6 text-base md:text-lg">
         <p className="relative flex items-center gap-0.5 text-xl lg:text-2xl text-orange-400 font-semibold after:contents-[''] after:absolute after:left-8 after:top-8 after:w-px after:h-[70vh] after:mt-3 after:bg-gradient-to-b after:from-slate-600 after:to-slate-600/5">
           <span className="text-3xl lg:text-4xl text-slate-600 font-extralight">&lt;</span>
           Hi There!

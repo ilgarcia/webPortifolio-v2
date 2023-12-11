@@ -8,9 +8,7 @@ import { socials } from "../../constants";
 function MobileSocials({ variants }: any) {
   return (
     <div className="lg:hidden -z-10">
-      {/* <div className="lg:hidden absolute top-0 w-full h-[70vh] -z-10"> */}
-      {/* <div className="lg:hidden absolute top-0 w-full h-[calc(100vh-72px)] -z-10"> */}
-      <m.div variants={variants} className="mt-4 w-full">
+      <m.div variants={variants} className="mt-10 w-full">
         <ul className="flex justify-center text-orange-400">
           {socials
             .filter((social) => social.showIcon)
