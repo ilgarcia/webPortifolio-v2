@@ -17,12 +17,12 @@ function WorkExperience({ experience }: Props) {
   return (
     <section
       id="experience"
-      className="relative flex justify-center lg:h-screen lg:overflow-hidden lg:snap-start"
+      className="relative flex justify-center lg:h-screen overflow-hidden lg:snap-start"
     >
-      <h2 className="absolute -left-6 top-4 lg:top-auto lg:bottom-6 font-fira font-medium text-6xl md:text-8xl tracking-tighter text-slate-800/90 -z-10">
+      <h2 className="absolute -left-6 top-0 lg:top-auto lg:bottom-6 font-fira font-medium text-6xl md:text-8xl tracking-tighter text-slate-800/90 -z-10">
         Work Experience.
       </h2>
-      <div className="lg:absolute top-1/4 flex flex-col max-w-4xl my-20 lg:my-0 px-2 w-full">
+      <div className="lg:absolute top-1/4 flex flex-col max-w-4xl mt-24 mb-16 lg:my-0 px-2 w-full">
         {experience.map((job, id) => (
           <div key={id} className="w-full">
             <m.button
