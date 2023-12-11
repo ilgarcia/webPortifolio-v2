@@ -25,7 +25,7 @@ function Contacts() {
   return (
     <section
       id="contact"
-      className="relative mb-12 lg:mb-0 h-screen lg:snap-start"
+      className="relative lg:h-screen lg:snap-start"
     >
       <Image
         src={"/bg-contacts.svg"}
@@ -36,7 +36,7 @@ function Contacts() {
       />
       <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(80%_50%_at_50%_100%,_#268CF530_0%,_#268CF500_40%)] -z-40" />
 
-      <div className="absolute top-16 sm:top-auto flex flex-col items-center justify-center sm:relative h-screen max-w-6xl w-full mx-auto px-4 pb-10">
+      <div className="flex flex-col items-center justify-center relative lg:h-screen max-w-6xl w-full mx-auto mt-16 lg:mt-0 px-4 pb-10">
         <h2 className="font-fira text-6xl md:text-8xl tracking-tighter text-slate-800/90 font-medium">
           Contact Me.
         </h2>
