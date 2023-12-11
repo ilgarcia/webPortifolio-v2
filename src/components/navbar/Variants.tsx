@@ -3,7 +3,7 @@ import { Variants } from "framer-motion";
 // Navbar.tsx
 export const sidebar: Variants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at calc(100% - 37px) 26px)`,
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 37px) 24px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -11,7 +11,7 @@ export const sidebar: Variants = {
     },
   }),
   closed: {
-    clipPath: `circle(18px at calc(100% - 29px) 26px)`,
+    clipPath: `circle(18px at calc(100% - 29px) 24px)`,
     transition: {
       delay: 0.2,
       type: "spring",
