@@ -12,7 +12,7 @@ function AboutMe() {
       </h2>
       <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-4 lg:px-8">
         <div className="relative max-w-lg lg:max-w-none py-3 lg:py-8 lg:pl-8">
-          <RubberTitleH3 title={"Hi There! I'm Igor Lima Garcia"} />
+          <RubberTitleH3 title={"Meet the Developer"} />
           <p className="mt-2 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>
@@ -22,16 +22,17 @@ function AboutMe() {
           <div className="relative shadow-xl bg-gray-900 border border-gray-800 px-3 sm:px-4 py-3 sm:py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
             <div className="space-y-2 sm:space-y-4">
               <p>
-                Hello! My name is Igor, my interest in web development started
-                back in 2018 when I decided to start my own company. I&apos;ve
-                always been someone who has both a creative and a logical side
-                and i realized it would be the perfect fit if i could use my
-                creative side to design and my logical side to code.
+                My journey into web development ignited in 2018 when I embarked
+                on the adventure of establishing my own company. Striving to
+                balance both my creative and logical faculties, I recognized the
+                perfect synergy in utilizing my creativity for design and my
+                logical prowess for coding.
               </p>
               <p>
-                Well-organized person, problem solver with high attention to
-                detail. I want to keep learning, continue challenging myself,
-                and do interesting things that matter.
+                A meticulous and well-organized individual, I thrive as a
+                problem solver with an unwavering attention to detail. I&apos;am
+                always committed to learning and growing professionally, an
+                eagerness to embrace new challenges.
               </p>
               <p>
                 Here are a few technologies I&apos;ve been working with

@@ -13,13 +13,12 @@ type Props = {
   portfolio: Portfolio[];
 };
 
-
 function Portfolio({ portfolio }: Props) {
   const [tab, setTab] = useState<string>("tab1");
 
   return (
     <section
-      id="projects"
+      id="portfolio"
       className="relative flex items-center h-screen lg:snap-start"
     >
       <h2 className="absolute -rotate-90 bottom-1/2 translate-y-1/2 -translate-x-1/2 left-8 md:left-14  font-fira text-7xl md:text-8xl tracking-tighter text-slate-800/90 font-medium">
@@ -39,10 +38,10 @@ function Portfolio({ portfolio }: Props) {
                 classProps={"justify-center"}
               />
               <p className="max-w-lg text-center">
-                I have built various different projects to fit different aspects
-                of the client&apos;s business. If you want to see more examples
-                of my work than the ones showcased in this site, please contact
-                me!
+                Welcome to my portfolio. As a web developer, I embark on a
+                journey to bring visions to life, every detail is carefully
+                considered to create the best user experience. Explore my work,
+                and if you like what you see, feel free to contact me!
               </p>
               <HoverRightIndigoLink
                 link={"/blog#moreProjects"}

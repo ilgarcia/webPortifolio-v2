@@ -42,7 +42,8 @@ function Skills({ skills }: Props) {
             </h3>
           </div>
           <p className="pl-10 leading-5 before:content-['<h3>']  before:-ml-8 before:opacity-30 before:block after:content-['</h3>']  after:-ml-8 after:opacity-30 after:block">
-            +
+            Excited about delving into backend development, with hands-on
+            experience in Java, Node.js, and related frameworks.
           </p>
         </div>
       </div>

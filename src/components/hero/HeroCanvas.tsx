@@ -13,7 +13,7 @@ export function HeroCanvas() {
     >
       <fog attach="fog" args={["#1e1b4b", 0, 60]} />
       <ambientLight intensity={0.8} />
-      <Particles count={700} />
+      <Particles count={1000} />
     </Canvas>
   );
 }

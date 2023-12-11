@@ -31,7 +31,7 @@ export const socials = [
 
 export const navLinks = [
   { id: "about", title: "About" },
-  { id: "projects", title: "Projects" },
+  { id: "portfolio", title: "Portfolio" },
   { id: "skills", title: "Skills" },
   { id: "experience", title: "Experience" },
   { id: "contact", title: "Contact" },

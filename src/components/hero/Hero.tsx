@@ -14,8 +14,7 @@ function Hero() {
       className="relative flex items-center h-screen border-b-8 border-slate-900 lg:snap-start overflow-hidden"
     >
       <div className="relative max-w-7xl w-full mx-auto px-4 md:px-8 text-base md:text-lg">
-        {/* <RubberTitleH1 title={"Fullstack developer"} /> */}
-        <p className="relative flex gap-0.5 items-center text-2xl text-orange-400 font-semibold after:contents-[''] after:absolute after:left-6 after:top-8 after:w-px after:h-[70vh] after:mt-3 after:bg-gradient-to-b after:from-slate-600 after:to-slate-600/10">
+        <p className="relative flex gap-0.5 items-center text-2xl text-orange-400 font-semibold after:contents-[''] after:absolute after:left-8 after:top-8 after:w-px after:h-[70vh] after:mt-3 after:bg-gradient-to-b after:from-slate-600 after:to-slate-600/10">
           <span className="text-4xl text-slate-600 font-extralight">&lt;</span>
           Hi There!
           <span className="text-4xl text-slate-600 font-extralight">&gt;</span>
@@ -33,7 +32,7 @@ function Hero() {
         </div>
         <Link
           href={"/#about"}
-          className="absolute -bottom-24 flex flex-col items-center transition  duration-300 hover:animate-bounce"
+          className="absolute -bottom-24 left-10 flex flex-col items-center animate-bounce"
         >
           <div className="text-xl text-slate-400 bg-theme-dark">
             <LuMouse />
@@ -51,7 +50,7 @@ function Hero() {
         fill
         sizes="100%"
       />
-      <div className="absolute top-0 left-0 hidden lg:block w-full h-full -z-30">
+      <div className="absolute top-0 left-0  w-full h-full -z-30">
         <HeroCanvas />
       </div>
     </section>
