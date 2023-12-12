@@ -12,7 +12,7 @@ const queryPortfolio = groq`
   *[_type=='portfolio']{
     ...,
     appType->,
-    skills[]->,
+    skill[]->,
     post[]->
   } | order(_createdAt desc)
 `;
@@ -21,7 +21,7 @@ const queryPosts = groq`
   *[_type=='post']{
     ...,
     category->,
-    skills[]->,
+    skill[]->,
     post[]->,
     portfolio[]->,
   } | order(_createdAt desc)

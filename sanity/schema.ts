@@ -4,14 +4,14 @@ import blogContent from "./schemas/blockBlogContent";
 import workContent from "./schemas/blockWorkContent";
 import workExperience from "./schemas/workExperience";
 import appType from "./schemas/appType";
-import skills from "./schemas/skills";
+import skill from "./schemas/skill";
 import post from "./schemas/post";
 import portfolio from "./schemas/portfolio";
 import category from "./schemas/category";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    skills,
+    skill,
     category,
     post,
     portfolio,

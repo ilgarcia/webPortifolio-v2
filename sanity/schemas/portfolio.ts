@@ -39,10 +39,10 @@ export default defineType({
       validation: (Rule) => Rule.required().max(110),
     }),
     defineField({
-      name: "skills",
-      title: "Skills",
+      name: "skill",
+      title: "Skill Reference",
       type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "skills" } })],
+      of: [defineArrayMember({ type: "reference", to: { type: "skill" } })],
     }),
 
     defineField({
@@ -89,7 +89,7 @@ export default defineType({
           if (data.length < 2 || !value) {
             return true;
           } else {
-            return "Deu errado";
+            return "Selecionar somente dois posts.";
           }
         }),
     }),

@@ -58,10 +58,10 @@ export default defineType({
       to: [{ type: "category" }],
     }),
     defineField({
-      name: "skills",
-      title: "Skills",
+      name: "skill",
+      title: "Skill Reference",
       type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "skills" } })],
+      of: [defineArrayMember({ type: "reference", to: { type: "skill" } })],
     }),
     defineField({
       name: "post",
@@ -76,16 +76,4 @@ export default defineType({
       of: [defineArrayMember({ type: "reference", to: { type: "portfolio" } })],
     }),
   ],
-
-  // preview: {
-  //   select: {
-  //     title: "title",
-  //     author: "author.name",
-  //     media: "mainImage",
-  //   },
-  //   prepare(selection) {
-  //     const { author } = selection;
-  //     return { ...selection, subtitle: author && `by ${author}` };
-  //   },
-  // },
 });

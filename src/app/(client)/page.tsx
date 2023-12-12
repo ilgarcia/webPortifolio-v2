@@ -12,7 +12,7 @@ import WorkExperience from "../../components/WorkExperience/WorkExperience";
 import Socials from "../../components/Socials/Socials";
 
 const querySkills = groq`
-  *[_type=='skills']{
+  *[_type=='skill']{
     ...,
   } | order(_createdAt)
 `;
@@ -27,7 +27,7 @@ const queryPortfolio = groq`
   *[_type=='portfolio' && display]{
     ...,
     appType->,
-    skills[]->,
+    skill[]->,
     post[]->
   } | order(_createdAt desc)
 `;
