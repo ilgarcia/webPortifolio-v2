@@ -23,7 +23,7 @@ export default async function page({ params: { slug } }: Props) {
   {
     ...,
     category->,
-    skills[]->,
+    skill[]->,
     post[]->{
       ...,
       category->
