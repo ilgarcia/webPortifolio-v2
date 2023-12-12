@@ -110,10 +110,10 @@ function Portfolio({ portfolio }: Props) {
         </m.div>
       </div>
       {portfolio.length > 1 && (
-        <div className="absolute z-30 flex items-center space-x-5 -translate-x-1/2 bottom-[10%] left-1/2">
+        <div className="absolute z-30 flex items-center space-x-6 -translate-x-1/2 bottom-[12%] left-1/2">
           <button
             onClick={() => setTab("tab1")}
-            className={`w-2 h-2 rounded-full bg-slate-700 ${
+            className={`w-2.5 h-2.5 rounded-full bg-slate-700 ${
               tab === "tab1"
                 ? "scale-[2.10] duration-200 ease-in hover:scale-[1.75]"
                 : "duration-200 ease-in hover:scale-150"
@@ -123,7 +123,7 @@ function Portfolio({ portfolio }: Props) {
             <button
               key={id}
               onClick={() => setTab("tab" + (id + 2))}
-              className={`w-2 h-2 rounded-full bg-slate-700 ${
+              className={`w-2.5 max-h-2.5 rounded-full bg-slate-700 ${
                 tab === "tab" + (id + 2)
                   ? "scale-[2.10] duration-200 ease-in hover:scale-[1.75]"
                   : "duration-200 ease-in hover:scale-150"
