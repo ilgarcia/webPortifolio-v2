@@ -3,10 +3,10 @@ import { groq } from "next-sanity";
 import { client } from "../../../../sanity/lib/client";
 
 
-import Socials from "../../../components/socials/Socials";
-import Contacts from "../../../components/contacts/Contacts";
-import Banner from "../../../components/blog/Banner";
-import Tabs from "../../../components/blog/Tabs";
+import Socials from "../../../components/Socials/Socials2";
+import Contacts from "../../../components/Contacts/Contacts2";
+import Banner from "../../../components/Blog/Banner2";
+import Tabs from "../../../components/Blog/Tabs2";
 
 const queryPortfolio = groq`
   *[_type=='portfolio']{
@@ -44,4 +44,4 @@ async function page() {
 
 export default page;
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day

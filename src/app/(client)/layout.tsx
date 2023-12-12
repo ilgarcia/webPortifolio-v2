@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Fira_Code, Sriracha } from "next/font/google";
 
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar2";
 
 import "../globals.css";
 
