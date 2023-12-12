@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 
-import { DynamicIconFi } from "../Miscellaneous/DynamicIcon2";
+import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
 
 import { socials } from "../../constants";
 

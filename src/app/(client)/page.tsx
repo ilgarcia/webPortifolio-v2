@@ -3,13 +3,13 @@ import { groq } from "next-sanity";
 
 import { client } from "../../../sanity/lib/client";
 
-import AboutMe from "../../components/AboutMe/AboutMe2";
-import Contacts from "../../components/Contacts/Contacts2";
-import Hero from "../../components/Hero/Hero2";
-import Portfolio from "../../components/Portfolio/Portfolio2";
-import Skills from "../../components/Skills/Skills2";
-import WorkExperience from "../../components/WorkExperience/WorkExperience2";
-import Socials from "../../components/Socials/Socials2";
+import AboutMe from "../../components/AboutMe/AboutMe";
+import Contacts from "../../components/Contacts/Contacts";
+import Hero from "../../components/Hero/Hero";
+import Portfolio from "../../components/Portfolio/Portfolio";
+import Skills from "../../components/Skills/Skills";
+import WorkExperience from "../../components/WorkExperience/WorkExperience";
+import Socials from "../../components/Socials/Socials";
 
 const querySkills = groq`
   *[_type=='skills']{
@@ -50,4 +50,5 @@ export default async function Home() {
   );
 }
 
-export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
+// export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
+export const revalidate = 60 ; // revalidate this page every 60 seconds

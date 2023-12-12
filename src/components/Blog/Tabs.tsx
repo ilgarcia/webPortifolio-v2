@@ -3,8 +3,8 @@
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import PortfolioGrid from "../Portfolio/PortfolioGrid2";
-import Posts from "../Posts/Posts2";
+import PortfolioGrid from "../Portfolio/PortfolioGrid";
+import Posts from "../Posts/Posts";
 
 type Props = {
   portfolio: Portfolio[];

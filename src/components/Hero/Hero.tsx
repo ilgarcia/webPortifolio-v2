@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuMouse } from "react-icons/lu";
 
-import { RubberTitleH1 } from "../Miscellaneous/RubberTitles2";
-import { HoverDownOrangeLink } from "../Miscellaneous/UIControls2";
-import WaveAnimation from "./WaveAnimation2";
-import { HeroCanvas } from "./HeroCanvas2";
+import { RubberTitleH1 } from "../Miscellaneous/RubberTitles";
+import { HoverDownOrangeLink } from "../Miscellaneous/UIControls";
+import WaveAnimation from "./WaveAnimation";
+import { HeroCanvas } from "./HeroCanvas";
 
 function Hero() {
   return (

@@ -7,9 +7,9 @@ import Image from "next/image";
 
 import { urlForImage } from "../../../sanity/lib/image";
 
-import { postImage } from "./Variants2";
-import { HoverRightIndigoLink } from "../Miscellaneous/UIControls2";
-import Pagination from "../Miscellaneous/Pagination2";
+import { postImage } from "./Variants";
+import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
+import Pagination from "../Miscellaneous/Pagination";
 
 type Props = {
   posts: Post[];

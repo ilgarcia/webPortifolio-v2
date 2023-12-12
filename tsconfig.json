@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/components/Hero/WaveEffects.tsx", "sanity/schemas/workExperience.ts", "src/components/Hero/WaveAnimation2.tsx"  ],
+, "src/components/Hero/WaveEffects.tsx", "sanity/schemas/workExperience.ts", "src/components/Hero/WaveAnimation.tsx"  ],
   "exclude": [
     "node_modules"
   ]

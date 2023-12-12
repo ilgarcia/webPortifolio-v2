@@ -1,7 +1,7 @@
 import { FiGithub, FiExternalLink, FiLink } from "react-icons/fi";
 import { CiFolderOn } from "react-icons/ci";
 
-import HoverEffect from "./HoverEffect2";
+import HoverEffect from "./HoverEffect";
 
 type Props = {
   project: Portfolio;

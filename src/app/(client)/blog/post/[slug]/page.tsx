@@ -4,9 +4,9 @@ import { PortableText } from "@portabletext/react";
 import { HiArrowCircleLeft } from "react-icons/hi";
 
 import { client } from "../../../../../../sanity/lib/client";
-import { RichTextBlog } from "../../../../../components/Posts/RichTextBlog2";
-import Socials from "../../../../../components/Socials/Socials2";
-import Contacts from "../../../../../components/Contacts/Contacts2";
+import { RichTextBlog } from "../../../../../components/Posts/RichTextBlog";
+import Socials from "../../../../../components/Socials/Socials";
+import Contacts from "../../../../../components/Contacts/Contacts";
 
 import Link from "next/link";
 import { urlForImage } from "../../../../../../sanity/lib/image";
@@ -131,5 +131,5 @@ export async function generateStaticParams() {
   }));
 }
 
-// export const revalidate = 60 * 60 * 12; // revalidate this page every 12h
-export const revalidate = 60;
+// export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
+export const revalidate = 60; // revalidate this page every 60 seconds

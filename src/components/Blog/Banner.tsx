@@ -1,5 +1,5 @@
-import { RubberTitleH1 } from "../Miscellaneous/RubberTitles2";
-import BoxesContainer from "./BoxesContainer2";
+import { RubberTitleH1 } from "../Miscellaneous/RubberTitles";
+import BoxesContainer from "./BoxesContainer";
 
 function Banner() {
   return (

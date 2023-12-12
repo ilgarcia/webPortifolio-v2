@@ -2,7 +2,7 @@
 
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import Particles from "./Particles2";
+import Particles from "./Particles";
 
 export function HeroCanvas() {
   return (

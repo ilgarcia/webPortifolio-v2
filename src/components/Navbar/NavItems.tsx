@@ -1,13 +1,13 @@
 import { motion as m } from "framer-motion";
 
-import NavItem from "./NavItem2";
-import MobileSocials from "../Socials/MobileSocials2";
-import { SolidOrangeLink } from "../Miscellaneous/UIControls2";
+import NavItem from "./NavItem";
+import MobileSocials from "../Socials/MobileSocials";
+import { SolidOrangeLink } from "../Miscellaneous/UIControls";
 import {
   navItems,
   mobileSocials,
   blogLink,
-} from "./Variants2";
+} from "./Variants";
 
 import { navLinks } from "../../constants";
 

@@ -1,5 +1,5 @@
-import Meteor from "./Meteor2";
-import { RubberTitleH3 } from "../Miscellaneous/RubberTitles2";
+import Meteor from "./Meteor";
+import { RubberTitleH3 } from "../Miscellaneous/RubberTitles";
 
 function AboutMe() {
   return (

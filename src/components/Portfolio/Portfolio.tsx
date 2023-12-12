@@ -4,10 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 
-import { RubberTitleH3 } from "../Miscellaneous/RubberTitles2";
-import { carousel } from "./Variants2";
+import { RubberTitleH3 } from "../Miscellaneous/RubberTitles";
+import { carousel } from "./Variants";
 import { urlForImage } from "../../../sanity/lib/image";
-import { HoverRightIndigoLink } from "../Miscellaneous/UIControls2";
+import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
 
 type Props = {
   portfolio: Portfolio[];

@@ -1,6 +1,6 @@
 import { motion as m } from "framer-motion";
 
-import { neon, dot, brokenNeon } from "./Variants2";
+import { neon, dot, brokenNeon } from "./Variants";
 
 function LogoNeon() {
   return (
