@@ -13,8 +13,8 @@ const config: Config = {
     },
     extend: {
       screens: {
-        "xs": "425px",
-        "sk": "1260px",
+        xs: "425px",
+        sk: "1260px",
         "2xl": "1440px",
       },
       maxWidth: {
@@ -35,16 +35,16 @@ const config: Config = {
       },
       animation: {
         rubberBand: "rubberBand 1s",
-        meteorEffect: "meteor 5s linear infinite"
-        
+        meteorEffect: "meteor 5s linear infinite",
+        wiggle: 'wiggle 0.5s ease-in-out infinite',
       },
       keyframes: {
         rubberBand: {
-          "0%" : {transform: "scaleX(1)"},
-          "30%" : {transform: "scale3d(1.25,.75,1)"},
-          "40%" : {transform: "scale3d(.75,1.25,1)"},
-          "50%" : {transform: "scale3d(1.15,.85,1)"},
-          "65%" : {transform: "scale3d(.95,1.05,1)"},
+          "0%": { transform: "scaleX(1)" },
+          "30%": { transform: "scale3d(1.25,.75,1)" },
+          "40%": { transform: "scale3d(.75,1.25,1)" },
+          "50%": { transform: "scale3d(1.15,.85,1)" },
+          "65%": { transform: "scale3d(.95,1.05,1)" },
         },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
@@ -53,6 +53,10 @@ const config: Config = {
             transform: "rotate(215deg) translateX(-500px)",
             opacity: "0",
           },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-1deg)" },
+          "50%": { transform: "rotate(1deg)" },
         },
       },
     },

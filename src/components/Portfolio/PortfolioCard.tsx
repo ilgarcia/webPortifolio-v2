@@ -38,8 +38,8 @@ function PortfolioCard({ project, id }: Props) {
       </h4>
       <p className="mt-2 tracking-wide text-sm">{project.description}</p>
       <div className="absolute bottom-6 left-6 flex flex-wrap space-x-4 font-fira tracking-wide leading-relaxed text-xs">
-        {project.skills.map((skill) => (
-          <div key={skill._id}>{skill.title}</div>
+        {project.skill?.map((data) => (
+          <div key={data._id}>{data.title}</div>
         ))}
       </div>
     </HoverEffect>

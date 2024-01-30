@@ -19,7 +19,7 @@ interface Portfolio extends Base {
   appType: AppType;
   title: string;
   description: string;
-  skills: Skill[];
+  skill: Skill[];
   post?: Post;
   githubLink?: string;
   externalLink?: string;

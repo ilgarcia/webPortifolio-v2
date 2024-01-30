@@ -2,7 +2,6 @@ import { groq } from "next-sanity";
 
 import { client } from "../../../../sanity/lib/client";
 
-
 import Socials from "../../../components/Socials/Socials";
 import Contacts from "../../../components/Contacts/Contacts";
 import Banner from "../../../components/Blog/Banner";
@@ -13,7 +12,7 @@ const queryPortfolio = groq`
     ...,
     appType->,
     skill[]->,
-    post[]->
+    post[]->,
   } | order(_createdAt desc)
 `;
 
@@ -27,15 +26,22 @@ const queryPosts = groq`
   } | order(_createdAt desc)
 `;
 
+export const metadata = {
+  title: "Blog",
+  openGraph: {
+    title: "Blog",
+    description: "Acme is a...",
+  },
+};
+
 async function page() {
-  
   const portfolio = await client.fetch(queryPortfolio);
   const posts = await client.fetch(queryPosts);
 
   return (
     <main>
       <Banner />
-      <Tabs portfolio={portfolio} posts={posts}/>
+      <Tabs portfolio={portfolio} posts={posts} />
       <Contacts />
       <Socials />
     </main>

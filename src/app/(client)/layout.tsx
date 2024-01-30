@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "ilgarcia",
   description:
     "Hi, my name is Igor Lima Garcia i'm a software engineer specializing in building exceptional and practical digital experiences and this is my portfolio",
+  keywords:
+    "ilgarcia, portfolio, web developer, front-end, back-end, fullstack, devops, JavaScript, HTML, CSS",
+  creator: "Igor Lima Garcia",
+  authors: {
+    name: "Igor Lima Garcia",
+    url: "https://www.linkedin.com/in/ilgarcia/",
+  },
+  robots: "index, follow",
 };
 
 export const source = Source_Sans_3({

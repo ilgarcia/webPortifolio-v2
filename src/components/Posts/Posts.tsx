@@ -10,22 +10,23 @@ import { urlForImage } from "../../../sanity/lib/image";
 import { postImage } from "./Variants";
 import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
 import Pagination from "../Miscellaneous/Pagination";
+import PostCard from "./PostCard";
 
 type Props = {
   posts: Post[];
 };
 
-const arrowVariant: Variants = {
-  hoverIn: {
-    x: 5,
-    transition: {
-      repeat: Infinity,
-      repeatType: "reverse",
-      duration: 0.5,
-    },
-  },
-  hoverOut: { x: 0 },
-};
+// const arrowVariant: Variants = {
+//   hoverIn: {
+//     x: 5,
+//     transition: {
+//       repeat: Infinity,
+//       repeatType: "reverse",
+//       duration: 0.5,
+//     },
+//   },
+//   hoverOut: { x: 0 },
+// };
 
 function Posts({ posts }: Props) {
   const itemsPerPage = 9;
@@ -46,8 +47,13 @@ function Posts({ posts }: Props) {
   });
 
   return (
-    <section>
-      <section className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 xl:gap-7 max-w-6xl 2xl:max-w-7xl mx-auto px-1 lg:px-20 xl:px-4">
+    <section className="mt-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-5 ">
+        {visiblePosts.map((post) => (
+          <PostCard key={post._id} post={post}/>
+        ))}
+      </section>
+      {/* <section className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 xl:gap-7 max-w-6xl 2xl:max-w-7xl mx-auto px-1 lg:px-20 xl:px-4">
         {visiblePosts.map((post) => (
           <m.div
             key={post._id}
@@ -103,7 +109,7 @@ function Posts({ posts }: Props) {
             </a>
           </m.div>
         ))}
-      </section>
+      </section> */}
       {pagination.range.length > 1 && <Pagination pagination={pagination} />}
     </section>
   );
