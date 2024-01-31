@@ -3,9 +3,7 @@
 import { useState } from "react";
 import { Variants, motion as m } from "framer-motion";
 import { usePagination } from "@mantine/hooks";
-import Image from "next/image";
 
-import { urlForImage } from "../../../sanity/lib/image";
 
 import { postImage } from "./Variants";
 import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";

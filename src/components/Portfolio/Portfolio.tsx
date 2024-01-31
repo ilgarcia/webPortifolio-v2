@@ -69,9 +69,9 @@ function Portfolio({ portfolio }: Props) {
                     <p>{project.description}</p>
                     <p>
                       <span className="font-extrabold mr-1.5">Built with:</span>
-                      {project.skills?.map((skill) => (
-                        <span key={skill._id} className="font-light mr-1.5">
-                          {skill.title}
+                      {project.skill?.map((data) => (
+                        <span key={data._id} className="font-light mr-1.5">
+                          {data.title}
                         </span>
                       ))}
                     </p>

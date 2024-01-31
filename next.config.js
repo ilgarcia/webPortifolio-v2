@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["three"],
-  images: { domains: ['cdn.sanity.io'] }
-  // , formats: ['image/avif', 'image/webp'],
+  images: {remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "cdn.sanity.io", 
+    },
+    {
+      protocol: "https",
+      hostname: "www.ilgarcia.com", 
+    },
+    
+  ]}
 };
 
 module.exports = nextConfig;
