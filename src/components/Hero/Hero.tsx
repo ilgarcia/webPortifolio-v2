@@ -5,7 +5,7 @@ import Link from "next/link";
 import { LuMouse } from "react-icons/lu";
 import { motion as m } from "framer-motion";
 
-import { RubberTitleH1 } from "../Ui/RubberTitles";
+import { RubberTitle } from "../Ui/RubberTitles";
 import { HeroCanvas } from "./HeroCanvas";
 
 import { intro, introText } from "./MotionVariants";
@@ -39,7 +39,7 @@ function Hero() {
           variants={introText}
           className="flex flex-col space-y-2 ml-12 mt-2 lg:mt-4 mb-20"
         >
-          <RubberTitleH1 title={"I'm Igor Lima Garcia"} />
+          <RubberTitle title={"I'm Igor Lima Garcia"} />
           <p className="max-w-2xl text-slate-200">
             I&apos;am a dedicated software engineer specializing in crafting
             outstanding and practical digital experiences. With a lot of

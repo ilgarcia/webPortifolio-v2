@@ -1,13 +1,17 @@
 "use client";
 
+import dynamic from 'next/dynamic'
 import { motion as m } from "framer-motion";
 
-import Meteor from "./Meteor";
-import { RubberTitleH3 } from "../Ui/RubberTitles";
+const Meteor = dynamic(() => import('./Meteor'), { ssr: false })
+
+// import Meteor from "./Meteor";
+import { RubberTitle } from "../Ui/RubberTitles";
 
 import { title, text } from "./MotionVariants";
 
 function AboutMe() {
+  
   return (
     <section
       id="about"
@@ -26,7 +30,8 @@ function AboutMe() {
           variants={title}
           className="relative max-w-lg lg:max-w-none pb-6 lg:py-8 lg:pl-8"
         >
-          <RubberTitleH3 title={"Meet the Developer"} />
+          <RubberTitle title={"Meet the Developer"} elementType={"h3"}/>
+          
           <p className="mt-1 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>

@@ -5,7 +5,7 @@ import { motion as m, useInView } from "framer-motion";
 
 import { DynamicIconFi } from "../Ui/DynamicIcon";
 
-import { socials } from "../../utils/constants";
+import { socials } from "../../data/constants";
 
 function Socials() {
   const ref = useRef(null);

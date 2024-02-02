@@ -9,7 +9,7 @@ import {
   blogLink,
 } from "./MotionVariants";
 
-import { navLinks } from "../../utils/constants";
+import { navLinks } from "../../data/constants";
 
 type Props = {
   toggle: () => void;

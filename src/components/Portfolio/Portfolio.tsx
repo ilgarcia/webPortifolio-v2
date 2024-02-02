@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 
-import { RubberTitleH3 } from "../Ui/RubberTitles";
+import { RubberTitle } from "../Ui/RubberTitles";
 import { carousel } from "./Variants";
 import { urlForImage } from "../../../sanity/lib/image";
 import { HoverRightIndigoLink } from "../Ui/UIControls";
@@ -15,8 +15,6 @@ type Props = {
 
 function Portfolio({ portfolio }: Props) {
   const [tab, setTab] = useState<string>("tab1");
-
-  console.log(portfolio)
 
   return (
     <section
@@ -35,10 +33,12 @@ function Portfolio({ portfolio }: Props) {
         >
           <div className="w-[calc(100vw-12px)] mr-3 flex items-center px-2 md:px-8">
             <div className="max-w-6xl mx-auto flex flex-col items-center space-y-6 md:space-y-8 ">
-              <RubberTitleH3
+              <RubberTitle
                 title={"Portfolio & Previous Projects"}
+                elementType={"h3"}
                 classProps={"justify-center"}
               />
+
               <p className="max-w-lg text-center">
                 Welcome to my portfolio. As a web developer, I embark on a
                 journey to bring visions to life, every detail is carefully
@@ -63,9 +63,10 @@ function Portfolio({ portfolio }: Props) {
                   <p className="text-center lg:text-start lg:mb-6 text-lg lg:text-xl text-slate-400 font-light  mt-3">
                     {project.appType.title.toUpperCase()}
                   </p>
-                  <RubberTitleH3
+                  <RubberTitle
                     title={project.title}
                     classProps={"justify-center lg:justify-start"}
+                    elementType={"h3"}
                   />
                   <div className="flex flex-col space-y-3 lg:space-y-5 py-2 lg:py-6 text-center lg:text-start ">
                     <p>{project.description}</p>

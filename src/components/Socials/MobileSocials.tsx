@@ -3,7 +3,7 @@ import { RiCopyrightLine } from "react-icons/ri";
 
 import { DynamicIconFi } from "../Ui/DynamicIcon";
 
-import { socials } from "../../utils/constants";
+import { socials } from "../../data/constants";
 
 function MobileSocials({ variants }: any) {
   return (

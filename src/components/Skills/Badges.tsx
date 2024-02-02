@@ -1,6 +1,5 @@
 import { DynamicIconSi, DynamicIconFa } from "../Ui/DynamicIcon";
 
-
 type Props = {
   skill: Skill;
 };

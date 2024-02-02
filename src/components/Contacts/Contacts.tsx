@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { DynamicIconFi } from "../Ui/DynamicIcon";
 import Footer from "../Footer/Footer";
-import { socials } from "../../utils/constants";
+import { socials } from "../../data/constants";
 import { SolidIndigoButton } from "../Ui/UIControls";
 
 type Inputs = {
