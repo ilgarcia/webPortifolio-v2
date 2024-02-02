@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   title: string;
   classProps?: string;
@@ -11,10 +13,7 @@ export function RubberTitleH1({ title, classProps }: Props) {
       }`}
     >
       {title.split(" ").map((word, idW) => (
-        <div
-          key={idW}
-          className="cursor-pointer flex lg:mb-4"
-        >
+        <div key={idW} className="cursor-pointer flex lg:mb-4">
           {word.split("").map((character, idC) => (
             <span
               key={idC}
@@ -37,10 +36,7 @@ export function RubberTitleH2({ title, classProps }: Props) {
       }`}
     >
       {title.split(" ").map((word, idW) => (
-        <div
-          key={idW}
-          className="cursor-pointer flex mr-2 lg:mr-5 lg:mb-4"
-        >
+        <div key={idW} className="cursor-pointer flex mr-2 lg:mr-5 lg:mb-4">
           {word.split("").map((character, idC) => (
             <span
               key={idC}
@@ -63,10 +59,7 @@ export function RubberTitleH3({ title, classProps }: Props) {
       }`}
     >
       {title.split(" ").map((word, idW) => (
-        <div
-          key={idW}
-          className="cursor-pointer flex mr-2 lg:mr-5 lg:mb-4"
-        >
+        <div key={idW} className="cursor-pointer flex mr-2 lg:mr-5 lg:mb-4">
           {word.split("").map((character, idC) => (
             <span
               key={idC}

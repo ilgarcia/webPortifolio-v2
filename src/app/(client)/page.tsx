@@ -36,6 +36,8 @@ export default async function Home() {
   const experience = await client.fetch(queryExperience);
   const portfolio = await client.fetch(queryPortfolio);
 
+  // console.log(portfolio)
+
   return (
     <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll scroll-smooth">
       <Hero />

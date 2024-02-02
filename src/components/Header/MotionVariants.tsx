@@ -21,7 +21,7 @@ export const sidebar: Variants = {
   },
 };
 
-export const bgNavbar: Variants = {
+export const bgHeader: Variants = {
   hidden: { backgroundColor: "#00000000", transition: { duration: 0.8 } },
   visible: {
     backgroundColor: "#04061580",

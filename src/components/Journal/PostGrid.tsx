@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useState } from "react";
 import { Variants, motion as m } from "framer-motion";
@@ -6,8 +6,8 @@ import { usePagination } from "@mantine/hooks";
 
 
 import { postImage } from "./Variants";
-import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
-import Pagination from "../Miscellaneous/Pagination";
+import { HoverRightIndigoLink } from "../Ui/UIControls";
+import Pagination from "../Ui/Pagination";
 import PostCard from "./PostCard";
 
 type Props = {
@@ -27,27 +27,27 @@ type Props = {
 // };
 
 function Posts({ posts }: Props) {
-  const itemsPerPage = 9;
+  // const itemsPerPage = 9;
 
-  const [visiblePosts, setVisiblePosts] = useState(
-    posts.slice(0, itemsPerPage)
-  );
+  // const [visiblePosts, setVisiblePosts] = useState(
+  //   posts.slice(0, itemsPerPage)
+  // );
 
-  const total = Math.ceil(posts.length / itemsPerPage);
-  const pagination = usePagination({
-    total,
-    initialPage: 1,
-    onChange(page) {
-      const start = (page - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      setVisiblePosts(posts.slice(start, end));
-    },
-  });
+  // const total = Math.ceil(posts.length / itemsPerPage);
+  // const pagination = usePagination({
+  //   total,
+  //   initialPage: 1,
+  //   onChange(page) {
+  //     const start = (page - 1) * itemsPerPage;
+  //     const end = start + itemsPerPage;
+  //     setVisiblePosts(posts.slice(start, end));
+  //   },
+  // });
 
   return (
     <section className="mt-6">
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-5 ">
-        {visiblePosts.map((post) => (
+        {posts.map((post) => (
           <PostCard key={post._id} post={post}/>
         ))}
       </section>
@@ -108,7 +108,7 @@ function Posts({ posts }: Props) {
           </m.div>
         ))}
       </section> */}
-      {pagination.range.length > 1 && <Pagination pagination={pagination} />}
+      {/* {pagination.range.length > 1 && <Pagination pagination={pagination} />} */}
     </section>
   );
 }

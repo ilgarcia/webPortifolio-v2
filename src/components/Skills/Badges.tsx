@@ -1,4 +1,4 @@
-import { DynamicIconSi, DynamicIconFa } from "../Miscellaneous/DynamicIcon";
+import { DynamicIconSi, DynamicIconFa } from "../Ui/DynamicIcon";
 
 
 type Props = {

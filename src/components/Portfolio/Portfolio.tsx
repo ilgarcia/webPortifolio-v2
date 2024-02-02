@@ -4,10 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 
-import { RubberTitleH3 } from "../Miscellaneous/RubberTitles";
+import { RubberTitleH3 } from "../Ui/RubberTitles";
 import { carousel } from "./Variants";
 import { urlForImage } from "../../../sanity/lib/image";
-import { HoverRightIndigoLink } from "../Miscellaneous/UIControls";
+import { HoverRightIndigoLink } from "../Ui/UIControls";
 
 type Props = {
   portfolio: Portfolio[];
@@ -15,6 +15,8 @@ type Props = {
 
 function Portfolio({ portfolio }: Props) {
   const [tab, setTab] = useState<string>("tab1");
+
+  console.log(portfolio)
 
   return (
     <section
@@ -109,7 +111,7 @@ function Portfolio({ portfolio }: Props) {
           ))}
         </m.div>
       </div>
-      {portfolio.length > 1 && (
+      {portfolio.length > 0 && (
         <div className="absolute z-30 flex items-center space-x-8 -translate-x-1/2 bottom-[15%] left-1/2">
           <button
             onClick={() => setTab("tab1")}

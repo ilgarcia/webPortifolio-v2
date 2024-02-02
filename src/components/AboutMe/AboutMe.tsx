@@ -1,5 +1,11 @@
+"use client";
+
+import { motion as m } from "framer-motion";
+
 import Meteor from "./Meteor";
-import { RubberTitleH3 } from "../Miscellaneous/RubberTitles";
+import { RubberTitleH3 } from "../Ui/RubberTitles";
+
+import { title, text } from "./MotionVariants";
 
 function AboutMe() {
   return (
@@ -10,14 +16,22 @@ function AboutMe() {
       <h2 className="absolute -left-2 lg:-left-6 top-6 lg:top-auto lg:bottom-6 font-fira text-7xl md:text-8xl font-medium tracking-tighter text-slate-800/90">
         About Me.
       </h2>
-      <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-2 md:px-6">
-        <div className="relative max-w-lg lg:max-w-none pb-6 lg:py-8 lg:pl-8">
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.6 }}
+        className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-2 md:px-6"
+      >
+        <m.div
+          variants={title}
+          className="relative max-w-lg lg:max-w-none pb-6 lg:py-8 lg:pl-8"
+        >
           <RubberTitleH3 title={"Meet the Developer"} />
           <p className="mt-1 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>
-        </div>
-        <div className="relative">
+        </m.div>
+        <m.div variants={text} className="relative">
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
           <div className="relative shadow-xl bg-gray-900 border border-gray-800 px-3 sm:px-4 py-3 sm:py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
             <div className="space-y-2 sm:space-y-4">
@@ -49,8 +63,8 @@ function AboutMe() {
             </ol>
             <Meteor />
           </div>
-        </div>
-      </div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

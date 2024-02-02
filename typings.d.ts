@@ -57,7 +57,7 @@ interface Post extends Base {
   description: string;
   category: Category;
   body: Block[];
-  skills?: Skill[];
+  skill?: Skill[];
   post?: Post[];
   portfolio?: Portfolio[];
 

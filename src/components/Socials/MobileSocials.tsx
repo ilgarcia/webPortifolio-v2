@@ -1,9 +1,9 @@
 import { motion as m } from "framer-motion";
 import { RiCopyrightLine } from "react-icons/ri";
 
-import { DynamicIconFi } from "../Miscellaneous/DynamicIcon";
+import { DynamicIconFi } from "../Ui/DynamicIcon";
 
-import { socials } from "../../constants";
+import { socials } from "../../utils/constants";
 
 function MobileSocials({ variants }: any) {
   return (

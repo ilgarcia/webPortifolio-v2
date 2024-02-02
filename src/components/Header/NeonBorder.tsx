@@ -1,5 +1,5 @@
 import { motion as m } from "framer-motion";
-import { neonBorder } from "./Variants";
+import { neonBorder } from "./MotionVariants";
 
 function NeonBorder() {
   return (

@@ -1,11 +1,12 @@
+
 import { groq } from "next-sanity";
 
 import { client } from "../../../../sanity/lib/client";
 
 import Socials from "../../../components/Socials/Socials";
 import Contacts from "../../../components/Contacts/Contacts";
-import Banner from "../../../components/Blog/Banner";
-import Tabs from "../../../components/Blog/Tabs";
+import Banner from "../../../components/Journal/Banner";
+import Tabs from "../../../components/Journal/Tabs";
 
 const queryPortfolio = groq`
   *[_type=='portfolio']{
@@ -27,10 +28,10 @@ const queryPosts = groq`
 `;
 
 export const metadata = {
-  title: "Blog",
+  title: "Code Journal",
   openGraph: {
-    title: "Blog",
-    description: "Acme is a...",
+    title: "Code Journal",
+    description: "A sample of my ideas and creations",
   },
 };
 

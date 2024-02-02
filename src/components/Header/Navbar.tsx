@@ -2,21 +2,21 @@ import { motion as m } from "framer-motion";
 
 import NavItem from "./NavItem";
 import MobileSocials from "../Socials/MobileSocials";
-import { SolidOrangeLink } from "../Miscellaneous/UIControls";
+import { SolidOrangeLink } from "../Ui/UIControls";
 import {
   navItems,
   mobileSocials,
   blogLink,
-} from "./Variants";
+} from "./MotionVariants";
 
-import { navLinks } from "../../constants";
+import { navLinks } from "../../utils/constants";
 
 type Props = {
   toggle: () => void;
   open: boolean;
 };
 
-function NavItems({ toggle, open }: Props) {
+function Navbar({ toggle, open }: Props) {
   return (
     <m.div
       variants={navItems}
@@ -36,12 +36,13 @@ function NavItems({ toggle, open }: Props) {
       </ul>
       <SolidOrangeLink
         title={"Blog"}
-        link={"/blog?tab=posts"}
+        link={"/journal?tab=posts"}
         variants={blogLink}
+        toggle={toggle}
       />
       <MobileSocials variants={mobileSocials} />
     </m.div>
   );
 }
 
-export default NavItems;
+export default Navbar;

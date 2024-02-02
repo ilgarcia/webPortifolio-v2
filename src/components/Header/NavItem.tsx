@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion as m } from "framer-motion";
-import { navItem } from "./Variants";
+import { navItem } from "./MotionVariants";
 
 type Props = {
   title: string;

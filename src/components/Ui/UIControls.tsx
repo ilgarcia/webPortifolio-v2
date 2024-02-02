@@ -11,17 +11,20 @@ type SolidOrangeLinkProps = {
   variants: Variants;
   link: string;
   title: string;
+  toggle: () => void;
 };
 
 export function SolidOrangeLink({
   variants,
   link,
   title,
+  toggle,
 }: SolidOrangeLinkProps) {
   return (
     <m.div variants={variants}>
       <Link
         href={link}
+        onClick={toggle}
         className="w-fit border border-solid border-orange-400 shadow-[4px_4px] shadow-orange-400 text-orange-400 font-semibold rounded py-1.5 px-5 xl:px-8 text-xs xl:text-sm ease-in-out duration-200 hover:shadow-[2px_2px] hover:translate-x-[2px] hover:translate-y-[2px]"
       >
         {title}
@@ -30,31 +33,31 @@ export function SolidOrangeLink({
   );
 }
 
-type HoverDownOrangeLinkProps = {
-  link: string;
-  title: string;
-};
+// type HoverDownOrangeLinkProps = {
+//   link: string;
+//   title: string;
+// };
 
-const arrowDownVariant: Variants = {
-  hoverIn: { rotate: 90 },
-  hoverOut: { rotate: 0 },
-};
+// const arrowDownVariant: Variants = {
+//   hoverIn: { rotate: 90 },
+//   hoverOut: { rotate: 0 },
+// };
 
-export function HoverDownOrangeLink({ link, title }: HoverDownOrangeLinkProps) {
-  return (
-    <m.div initial="hoverOut" whileHover="hoverIn" className="w-fit">
-      <Link
-        href={link}
-        className="flex items-center text-orange-400 font-medium "
-      >
-        <span className="mr-3">{title}</span>
-        <m.span variants={arrowDownVariant}>
-          <BiCaretRight className="text-xl" />
-        </m.span>
-      </Link>
-    </m.div>
-  );
-}
+// export function HoverDownOrangeLink({ link, title }: HoverDownOrangeLinkProps) {
+//   return (
+//     <m.div initial="hoverOut" whileHover="hoverIn" className="w-fit">
+//       <Link
+//         href={link}
+//         className="flex items-center text-orange-400 font-medium "
+//       >
+//         <span className="mr-3">{title}</span>
+//         <m.span variants={arrowDownVariant}>
+//           <BiCaretRight className="text-xl" />
+//         </m.span>
+//       </Link>
+//     </m.div>
+//   );
+// }
 
 type HoverRightIndigoLinkProps = {
   link: string;
