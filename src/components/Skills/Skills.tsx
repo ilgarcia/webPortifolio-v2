@@ -1,6 +1,10 @@
+"use client";
+
 import { SiReact } from "react-icons/si";
+import { motion as m } from "framer-motion";
 
 import Badges from "./Badges";
+import { badgesHolder, cardOne, cardTwo } from "./MotionVariants";
 
 type Props = {
   skills: Skill[];
@@ -8,15 +12,22 @@ type Props = {
 
 function Skills({ skills }: Props) {
   return (
-    <section
+    <m.section
       id="skills"
-      className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 sk:h-screen lg:snap-start"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.6 }}
+      className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 h-screen snap-start"
+      // className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 sk:h-screen lg:snap-start"
     >
       <h2 className="absolute lg:left-1/2 top-6 lg:top-auto lg:bottom-0 font-fira font-medium text-7xl md:text-8xl tracking-tighter text-slate-800/90 -z-10">
         Skills.
       </h2>
       <div className="relative hidden sk:flex flex-col sk:col-span-2 -space-y-7 mt-8">
-        <div className="p-8 max-w-xs relative shadow-xl bg-gray-900 border border-gray-800 rounded-md">
+        <m.div
+          variants={cardOne}
+          className="p-8 max-w-xs relative shadow-xl bg-gray-900 border border-gray-800 rounded-md"
+        >
           <div className="flex items-center mb-4">
             <SiReact className="text-5xl mr-4" />
             <h3>
@@ -30,8 +41,11 @@ function Skills({ skills }: Props) {
             Passionate about UI/UX. working with a few projects and development
             experience in HTML, CSS, JS, React and NextJS frameworks.
           </p>
-        </div>
-        <div className="relative p-8 max-w-xs left-24 shadow-xl bg-gray-900 border border-gray-800 rounded-md">
+        </m.div>
+        <m.div
+          variants={cardTwo}
+          className="relative p-8 max-w-xs left-24 shadow-xl bg-gray-900 border border-gray-800 rounded-md"
+        >
           <div className="flex items-center mb-4">
             <SiReact className="text-5xl mr-4 " />
             <h3>
@@ -45,16 +59,16 @@ function Skills({ skills }: Props) {
             Excited about delving into backend development, with hands-on
             experience in Java, Node.js, and related frameworks.
           </p>
-        </div>
+        </m.div>
       </div>
-      <div className="sk:col-span-4 flex flex-wrap justify-center items-center gap-1 sm:gap-1.5 md:gap-4 my-20 sk:my-0 px-4">
+      <m.div variants={badgesHolder} className="sk:col-span-4 flex flex-wrap justify-center items-center gap-1 sm:gap-1.5 md:gap-4 my-20 sk:my-0 px-4">
         {skills.map((skill) => (
           <div key={skill._id}>
             <Badges skill={skill} />
           </div>
         ))}
-      </div>
-    </section>
+      </m.div>
+    </m.section>
   );
 }
 
