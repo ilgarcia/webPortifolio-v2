@@ -17,8 +17,7 @@ function Skills({ skills }: Props) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.6 }}
-      className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 h-screen snap-start"
-      // className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 sk:h-screen lg:snap-start"
+      className="relative grid sk:grid-cols-6 items-center max-w-7xl mx-auto my-20 sk:my-0 px-4 sk:h-screen lg:snap-start"
     >
       <h2 className="absolute lg:left-1/2 top-6 lg:top-auto lg:bottom-0 font-fira font-medium text-7xl md:text-8xl tracking-tighter text-slate-800/90 -z-10">
         Skills.
