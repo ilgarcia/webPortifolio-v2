@@ -12,7 +12,6 @@ export const cardTwo: Variants = {
 
 export const badgesHolder: Variants = {
   visible: {
-<<<<<<< HEAD
     transition: { staggerChildren: 0.06, delayChildren: 0.08 },
   },
 };
@@ -33,9 +32,3 @@ export const badges: Variants = {
     },
   },
 };
-=======
-    transition: { staggerChildren: 0.06, delayChildren: 0.08 }
-  },
-};
-
->>>>>>> fb2344d76e7afa18dbe9305dc6ca7ad6afaf73c1
