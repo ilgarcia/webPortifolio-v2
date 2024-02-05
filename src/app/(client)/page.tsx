@@ -39,7 +39,7 @@ export default async function Home() {
   // console.log(portfolio)
 
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-y-scroll touch-pan-x scroll-smooth">
+    <main className="h-screen snap-y snap-mandatory overflow-y-scroll touch-pan-y scroll-smooth">
     {/* <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll touch-pan-x scroll-smooth"> */}
       <Hero />
       <AboutMe />
