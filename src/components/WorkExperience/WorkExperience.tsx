@@ -6,6 +6,7 @@ import { HiPlus, HiMinus } from "react-icons/hi";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 import { RichTextWorkExperience } from "./RichTextWorkExperience";
+import { box, boxText, workLine } from "./MotionVariants";
 
 type Props = {
   experience: WorkExperience[];
@@ -17,19 +18,26 @@ function WorkExperience({ experience }: Props) {
   return (
     <section
       id="experience"
-      className="relative flex justify-center lg:h-screen overflow-hidden lg:snap-start"
+      className="relative flex justify-center items-center h-screen overflow-hidden snap-start"
+      // className="relative flex justify-center items-center lg:h-screen overflow-hidden lg:snap-start"
     >
       <h2 className="absolute -left-6 top-0 lg:top-auto lg:bottom-6 font-fira font-medium text-6xl md:text-8xl tracking-tighter text-slate-800/90 -z-10">
         Work Experience.
       </h2>
-      <div className="lg:absolute top-1/4 flex flex-col max-w-4xl mt-24 mb-16 lg:my-0 px-2 w-full">
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.6 }}
+        className="flex flex-col just max-w-4xl mt-24 mb-16 lg:my-0 px-2 w-full"
+      >
         {experience.map((job, id) => (
-          <div key={id} className="w-full">
+          <m.div key={id} variants={workLine} className="w-full">
             <m.button
               initial={false}
               animate={{
                 backgroundColor: id === expanded ? "#740cdc" : "#490c86",
               }}
+              whileTap={{ scale: 1.15 }}
               onClick={() => setExpanded(id === expanded ? false : id)}
               className="flex items-center justify-between bg-indigo-950 w-full mt-1.5 sm:my-1.5 py-1 sm:py-2 px-4 md:px-8 rounded-md font-fira font-medium text-sm md:text-base"
             >
@@ -61,21 +69,13 @@ function WorkExperience({ experience }: Props) {
             <AnimatePresence initial={false}>
               {id === expanded && (
                 <m.div
-                  initial="collapsed"
+                  initial="closed"
                   animate="open"
-                  exit="collapsed"
-                  variants={{
-                    open: { opacity: 1, height: "auto" },
-                    collapsed: { opacity: 0, height: 0 },
-                  }}
-                  transition={{ type: "spring", duration: 0.4, bounce: 0 }}
+                  exit="closed"
+                  variants={box}
                   className="w-full rounded-md bg-slate-800"
                 >
-                  <m.div
-                    variants={{ collapsed: { scale: 0.8 }, open: { scale: 1 } }}
-                    transition={{ duration: 0.8 }}
-                    className="px-2 md:px-8 py-3"
-                  >
+                  <m.div variants={boxText} className="px-2 md:px-8 py-3">
                     <PortableText
                       value={job.body}
                       components={RichTextWorkExperience}
@@ -84,9 +84,9 @@ function WorkExperience({ experience }: Props) {
                 </m.div>
               )}
             </AnimatePresence>
-          </div>
+          </m.div>
         ))}
-      </div>
+      </m.div>
     </section>
   );
 }

@@ -14,7 +14,8 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center h-screen border-b-8 border-slate-900 lg:snap-start overflow-hidden"
+      className="relative flex items-center h-screen border-b-8 border-slate-900 snap-start overflow-hidden"
+      // className="relative flex items-center h-screen border-b-8 border-slate-900 lg:snap-start overflow-hidden"
     >
       {/* Content */}
       <m.div

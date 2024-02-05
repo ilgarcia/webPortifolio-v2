@@ -25,7 +25,8 @@ function Contacts() {
   return (
     <section
       id="contact"
-      className="relative lg:h-screen lg:snap-start"
+      className="relative h-screen snap-start"
+      // className="relative lg:h-screen lg:snap-start"
     >
       <Image
         src={"/bg-contacts.svg"}

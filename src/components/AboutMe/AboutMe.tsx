@@ -15,7 +15,8 @@ function AboutMe() {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center my-14 lg:my-0 pt-20 lg:pt-0 lg:h-screen lg:snap-start"
+      className="relative flex items-center justify-center my-14 lg:my-0 pt-20 lg:pt-0 h-screen snap-start"
+      // className="relative flex items-center justify-center my-14 lg:my-0 pt-20 lg:pt-0 lg:h-screen lg:snap-start"
     >
       <h2 className="absolute -left-2 lg:-left-6 top-6 lg:top-auto lg:bottom-6 font-fira text-7xl md:text-8xl font-medium tracking-tighter text-slate-800/90">
         About Me.

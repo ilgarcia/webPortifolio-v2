@@ -1,10 +1,4 @@
 import React from "react";
-
-type Props = {
-  title: string;
-  classProps?: string;
-};
-
 export interface RubberTitleProps
   extends React.ButtonHTMLAttributes<HTMLHeadingElement> {
   elementType?: string;
