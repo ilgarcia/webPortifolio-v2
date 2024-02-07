@@ -20,7 +20,7 @@ function Hero() {
       <m.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.8 }}
         className="relative max-w-7xl w-full mx-auto px-2 text-base md:text-lg"
       >
         <m.p

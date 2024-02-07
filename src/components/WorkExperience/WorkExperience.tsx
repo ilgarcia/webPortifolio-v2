@@ -26,7 +26,7 @@ function WorkExperience({ experience }: Props) {
       <m.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.8 }}
         className="flex flex-col just max-w-4xl mt-24 mb-16 lg:my-0 px-2 w-full"
       >
         {experience.map((job, id) => (

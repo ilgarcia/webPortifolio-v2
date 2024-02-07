@@ -8,11 +8,18 @@ import { HoverRightIndigoLink } from "../Ui/UIControls";
 
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import { carousel, dotButton } from "./MotionVariants";
+import { flushSync } from "react-dom";
 
 type Props = {
   portfolio: Portfolio[];
   options?: EmblaOptionsType;
 };
+
+const TWEEN_FACTOR = 1.1;
+
+const numberWithinRange = (number: number, min: number, max: number): number =>
+  Math.min(Math.max(number, min), max);
 
 function Carousel({ portfolio, options }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -20,6 +27,7 @@ function Carousel({ portfolio, options }: Props) {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [tweenValues, setTweenValues] = useState<number[]>([]);
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -41,34 +49,73 @@ function Carousel({ portfolio, options }: Props) {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
+  const onScroll = useCallback(() => {
+    if (!emblaApi) return;
+
+    const engine = emblaApi.internalEngine();
+    const scrollProgress = emblaApi.scrollProgress();
+
+    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
+      let diffToTarget = scrollSnap - scrollProgress;
+
+      if (engine.options.loop) {
+        engine.slideLooper.loopPoints.forEach((loopItem) => {
+          const target = loopItem.target();
+          if (index === loopItem.index && target !== 0) {
+            const sign = Math.sign(target);
+            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
+            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
+          }
+        });
+      }
+      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
+      return numberWithinRange(tweenValue, 0, 1);
+    });
+    setTweenValues(styles);
+  }, [emblaApi, setTweenValues]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
     onInit(emblaApi);
     onSelect(emblaApi);
+    onScroll();
+    emblaApi.on("scroll", () => {
+      flushSync(() => onScroll());
+    });
     emblaApi.on("reInit", onInit);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
-  }, [emblaApi, onInit, onSelect]);
+    emblaApi.on("reInit", onScroll);
+  }, [emblaApi, onInit, onSelect, onScroll]);
 
   return (
-    <>
-      <div className="relative w-screen">
+    <m.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <m.div variants={carousel} className="relative w-screen">
         <div className="overflow-hidden" ref={emblaRef}>
           <div
             className="flex touch-pan-y -ml-4"
             style={{ backfaceVisibility: "hidden" }}
           >
-            <div className="relative flex flex-[0_0_100%] items-center pl-4">
-              <div className=" max-w-6xl mx-auto  pl-4 ">
+            <div className="relative flex flex-[0_0_100%] items-center">
+              <div
+                className="max-w-6xl mx-auto pl-4 transition-all duration-700 "
+                style={{
+                  ...(tweenValues.length && {
+                    transform: `scale(${tweenValues[selectedIndex]})`,
+                  }),
+                }}
+              >
                 <div className="flex flex-col items-center space-y-6 md:space-y-8">
                   <RubberTitle
                     title={"Portfolio & Previous Projects"}
                     elementType={"h3"}
                     classProps={"justify-center"}
                   />
-
                   <p className="max-w-lg text-center">
                     Welcome to my portfolio. As a web developer, I embark on a
                     journey to bring visions to life, every detail is carefully
@@ -84,11 +131,18 @@ function Carousel({ portfolio, options }: Props) {
             </div>
             {portfolio?.map((project, id) => (
               <div key={id} className="relative flex-[0_0_100%] pl-4">
-                <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-center px-2 md:px-8 relative">
+                <div
+                  className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-center px-2 md:px-8 relative"
+                  style={{
+                    ...(tweenValues.length && {
+                      transform: `scale(${tweenValues[selectedIndex]})`,
+                    }),
+                  }}
+                >
                   <div
                     className={`order-last ${
                       (id + 1) % 2 !== 0 && "lg:order-none"
-                    }  relative lg:static bottom-28 z-20 max-w-2xl mx-auto w-full`}
+                    } relative lg:static bottom-28 z-20 max-w-2xl mx-auto w-full`}
                   >
                     <p className="text-center lg:text-start lg:mb-6 text-lg lg:text-xl text-slate-400 font-light  mt-3">
                       {project.appType.title.toUpperCase()}
@@ -144,9 +198,12 @@ function Carousel({ portfolio, options }: Props) {
             ))}
           </div>
         </div>
-      </div>
+      </m.div>
       {portfolio.length > 0 && (
-        <div className="absolute z-30 flex items-center space-x-8 -translate-x-1/2 bottom-[15%] left-1/2">
+        <m.div
+          variants={dotButton}
+          className="absolute z-30 flex items-center space-x-8 -translate-x-1/2 bottom-[15%] left-1/2"
+        >
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
@@ -158,9 +215,9 @@ function Carousel({ portfolio, options }: Props) {
               }`}
             />
           ))}
-        </div>
+        </m.div>
       )}
-    </>
+    </m.div>
   );
 }
 

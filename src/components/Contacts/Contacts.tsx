@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { motion as m } from "framer-motion";
 
 import { DynamicIconFi } from "../Ui/DynamicIcon";
 import Footer from "../Footer/Footer";
 import { socials } from "../../data/constants";
 import { SolidIndigoButton } from "../Ui/UIControls";
+import { left, right } from "./MotionVariants";
 
 type Inputs = {
   name: string;
@@ -23,10 +25,7 @@ function Contacts() {
   };
 
   return (
-    <section
-      id="contact"
-      className="relative lg:h-screen lg:snap-start"
-    >
+    <section id="contact" className="relative lg:h-screen lg:snap-start">
       <Image
         src={"/bg-contacts.svg"}
         alt={"background contacts"}
@@ -40,8 +39,13 @@ function Contacts() {
         <h2 className="font-fira text-6xl md:text-8xl tracking-tighter text-slate-800/90 font-medium">
           Contact Me.
         </h2>
-        <div className="mt-4 lg:mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4">
-          <div className="text-center">
+        <m.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8 }}
+          className="mt-4 lg:mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4"
+        >
+          <m.div variants={left} className="text-center">
             <p className="max-w-md mx-auto leading-6 ">
               I&apos;m currently looking for a new opportunities, my inbox is
               always open. Whether you have a question or just want to say hi,
@@ -75,8 +79,9 @@ function Contacts() {
                   {social.link}
                 </p>
               ))}
-          </div>
-          <form
+          </m.div>
+          <m.form
+            variants={right}
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col space-y-1.5 md:space-y-2 w-fit mx-outo lg:col-span-2"
           >
@@ -106,8 +111,8 @@ function Contacts() {
               className="contactInput h-24 md:h-32"
             />
             <SolidIndigoButton title={"Submit"} />
-          </form>
-        </div>
+          </m.form>
+        </m.div>
       </div>
       <Footer />
     </section>
