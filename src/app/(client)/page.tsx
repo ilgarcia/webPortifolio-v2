@@ -2,13 +2,13 @@ import { groq } from "next-sanity";
 
 import { client } from "../../../sanity/lib/client";
 
-import AboutMe from "../../components/AboutMe/AboutMe";
-import Contacts from "../../components/Contacts/Contacts";
 import Hero from "../../components/Hero/Hero";
+import AboutMe from "../../components/AboutMe/AboutMe";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import Skills from "../../components/Skills/Skills";
 import WorkExperience from "../../components/WorkExperience/WorkExperience";
-import Socials from "../../components/Socials/Socials";
+import Contacts from "../../components/Contacts/Contacts";
+import { SocialIcons } from "../../components/Ui/SocialLinks";
 
 const querySkills = groq`
   *[_type=='skill']{
@@ -36,8 +36,6 @@ export default async function Home() {
   const experience = await client.fetch(queryExperience);
   const portfolio = await client.fetch(queryPortfolio);
 
-  // console.log(portfolio)
-
   return (
     <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll scroll-smooth overflow-x-hidden">
       <Hero />
@@ -46,10 +44,10 @@ export default async function Home() {
       <Skills skills={skills} />
       <WorkExperience experience={experience} />
       <Contacts />
-      <Socials />
+      <SocialIcons />
     </main>
   );
 }
 
 // export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
-export const revalidate = 60 ; // revalidate this page every 60 seconds
+export const revalidate = 60; // revalidate this page every 60 seconds

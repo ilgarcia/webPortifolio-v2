@@ -5,7 +5,7 @@ import { HiArrowCircleLeft } from "react-icons/hi";
 
 import { client } from "../../../../../../sanity/lib/client";
 import { RichTextBlog } from "../../../../../components/Journal/RichTextBlog";
-import Socials from "../../../../../components/Socials/Socials";
+import { SocialIcons } from "../../../../../components/Ui/SocialLinks";
 import Contacts from "../../../../../components/Contacts/Contacts";
 
 import Link from "next/link";
@@ -71,7 +71,6 @@ export default async function page({ params: { slug } }: Props) {
             </div>
           </div>
         </section>
-  
 
         <section className="flex flex-col gap-5 max-w-5xl mx-auto font-light transition-all duration-300 bg-slate-900 hover:bg-slate-800 p-8 rounded-2xl">
           <div className="flex justify-end max-w-6xl mt-4 mb-6 mx-auto px-4">
@@ -112,7 +111,7 @@ export default async function page({ params: { slug } }: Props) {
         </section>
       </section>
       <Contacts />
-      <Socials />
+      <SocialIcons />
     </>
   );
 }

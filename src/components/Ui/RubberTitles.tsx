@@ -1,15 +1,16 @@
 import React from "react";
+
+import { cn } from "../../lib/utils";
 export interface RubberTitleProps
   extends React.ButtonHTMLAttributes<HTMLHeadingElement> {
   elementType?: string;
   title: string;
-  classProps?: string;
 }
 
 const RubberTitle: React.FC<RubberTitleProps> = ({
   elementType,
   title,
-  classProps,
+  ...props
 }) => {
   const Element = elementType || "h1";
 
@@ -17,9 +18,10 @@ const RubberTitle: React.FC<RubberTitleProps> = ({
     Element,
     null,
     <div
-      className={`text-4xl lg:text-6xl font-bold lg:leading-10 flex flex-wrap space-x-2 lg:space-x-5 ${
-        classProps && classProps
-      }`}
+      className={cn(
+        "text-4xl lg:text-6xl font-bold lg:leading-10 flex flex-wrap space-x-2 lg:space-x-5",
+        props.className
+      )}
     >
       {title.split(" ").map((word, idW) => (
         <div key={idW} className="cursor-pointer flex lg:mb-4">

@@ -36,7 +36,15 @@ const config: Config = {
       animation: {
         rubberBand: "rubberBand 1s",
         meteorEffect: "meteor 5s linear infinite",
-        wiggle: 'wiggle 0.5s ease-in-out infinite',
+        wiggle: "wiggle 0.5s ease-in-out infinite",
+        neon: "neon 2s ease-in",
+        neonDot: "neonDot 3.5s linear infinite",
+        neonBrokenLights: "neonBrokenLights 3s linear infinite",
+        arrowLeft: "arrowLeft 1s infinite ease-in-out",
+        arrowDown: "arrowDown 0.4s linear",
+        slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        surge: "neon 1s ease-in",
       },
       keyframes: {
         rubberBand: {
@@ -57,6 +65,45 @@ const config: Config = {
         wiggle: {
           "0%, 100%": { transform: "rotate(-1deg)" },
           "50%": { transform: "rotate(1deg)" },
+        },
+        neon: {
+          "0%": { opacity: "0" },
+          "80%": { opacity: "0.6" },
+          "100%": { opacity: "1" },
+        },
+        neonDot: {
+          "0%": { opacity: "0.6" },
+          "25%": { opacity: "0.4" },
+          "50%": { opacity: "0.7" },
+          "75%": { opacity: "0.6" },
+          "100%": { opacity: "0.9" },
+        },
+        neonBrokenLights: {
+          "0%": { opacity: "0.5" },
+          "25%": { opacity: "0.7" },
+          "50%": { opacity: "0.6" },
+          "75%": { opacity: "0.4" },
+          "100%": { opacity: "0.8" },
+        },
+        arrowLeft: {
+          "0%, 100%": { transform: "translateX(0px)" },
+          "50%": { transform: "translateX(8px)" },
+        },
+        arrowDown: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(45deg)" },
+        },
+        slideDown: {
+          "0%": { height: "0" },
+          "100%": { height: `var(--radix-accordion-content-height)` },
+        },
+        slideUp: {
+          "0%": { height: `var(--radix-accordion-content-height)` },
+          "100%": { height: "0" },
+        },
+        surge: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },

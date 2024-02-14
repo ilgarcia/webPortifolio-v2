@@ -1,22 +1,5 @@
 import { Variants } from "framer-motion";
 
-export const workLine: Variants = {
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-    },
-  },
-  hidden: {
-    scale: 0.2,
-    opacity: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
 export const box: Variants = {
   closed: {
     opacity: 0,

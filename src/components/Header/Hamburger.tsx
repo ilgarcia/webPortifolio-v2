@@ -20,7 +20,7 @@ const Path = (
 );
 
 export const Hamburger = ({ toggle }: Props) => (
-  <button className="lg:hidden z-50" onClick={toggle}>
+  <button onClick={toggle} className="lg:hidden z-50">
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{

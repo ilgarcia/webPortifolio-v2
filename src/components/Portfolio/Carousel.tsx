@@ -1,42 +1,26 @@
+"use client";
+
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { motion as m } from "framer-motion";
-
-import { RubberTitle } from "../Ui/RubberTitles";
-import { urlForImage } from "../../../sanity/lib/image";
-import { HoverRightIndigoLink } from "../Ui/UIControls";
+import Link from "next/link";
 
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { carousel, dotButton } from "./MotionVariants";
-import { flushSync } from "react-dom";
+
+import { RubberTitle } from "../Ui/RubberTitles";
+import { urlForImage } from "../../../sanity/lib/image";
+import { Button } from "../Ui/Button";
 
 type Props = {
   portfolio: Portfolio[];
   options?: EmblaOptionsType;
 };
 
-const TWEEN_FACTOR = 1.1;
-
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max);
-
 function Carousel({ portfolio, options }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [tweenValues, setTweenValues] = useState<number[]>([]);
 
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
   const scrollTo = useCallback(
     (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
@@ -46,75 +30,34 @@ function Carousel({ portfolio, options }: Props) {
   }, []);
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
-  const onScroll = useCallback(() => {
-    if (!emblaApi) return;
-
-    const engine = emblaApi.internalEngine();
-    const scrollProgress = emblaApi.scrollProgress();
-
-    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-      let diffToTarget = scrollSnap - scrollProgress;
-
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          const target = loopItem.target();
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target);
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-          }
-        });
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return numberWithinRange(tweenValue, 0, 1);
-    });
-    setTweenValues(styles);
-  }, [emblaApi, setTweenValues]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
     onInit(emblaApi);
     onSelect(emblaApi);
-    onScroll();
-    emblaApi.on("scroll", () => {
-      flushSync(() => onScroll());
-    });
+
     emblaApi.on("reInit", onInit);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onScroll);
-  }, [emblaApi, onInit, onSelect, onScroll]);
+  }, [emblaApi, onInit, onSelect]);
 
   return (
-    <m.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.8 }}
-    >
-      <m.div variants={carousel} className="relative w-screen">
+    <>
+      <div className="relative w-screen">
         <div className="overflow-hidden" ref={emblaRef}>
           <div
             className="flex touch-pan-y -ml-4"
             style={{ backfaceVisibility: "hidden" }}
           >
             <div className="relative flex flex-[0_0_100%] items-center">
-              <div
-                className="max-w-6xl mx-auto pl-4 transition-all duration-700 "
-                style={{
-                  ...(tweenValues.length && {
-                    transform: `scale(${tweenValues[selectedIndex]})`,
-                  }),
-                }}
-              >
+              <div className="max-w-6xl mx-auto pl-4 transition-all duration-700 ">
                 <div className="flex flex-col items-center space-y-6 md:space-y-8">
                   <RubberTitle
                     title={"Portfolio & Previous Projects"}
                     elementType={"h3"}
-                    classProps={"justify-center"}
+                    className="justify-center"
                   />
                   <p className="max-w-lg text-center">
                     Welcome to my portfolio. As a web developer, I embark on a
@@ -122,23 +65,15 @@ function Carousel({ portfolio, options }: Props) {
                     considered to create the best user experience. Explore my
                     work, and if you like what you see, feel free to contact me!
                   </p>
-                  <HoverRightIndigoLink
-                    link={"/blog#moreProjects"}
-                    title={"More Projects"}
-                  />
+                  <Button variant={"indigoLink"} arrow={"right"}>
+                    <Link href={"/blog#moreProjects"}>More Projects</Link>
+                  </Button>
                 </div>
               </div>
             </div>
             {portfolio?.map((project, id) => (
               <div key={id} className="relative flex-[0_0_100%] pl-4">
-                <div
-                  className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-center px-2 md:px-8 relative"
-                  style={{
-                    ...(tweenValues.length && {
-                      transform: `scale(${tweenValues[selectedIndex]})`,
-                    }),
-                  }}
-                >
+                <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-center px-2 md:px-8 relative">
                   <div
                     className={`order-last ${
                       (id + 1) % 2 !== 0 && "lg:order-none"
@@ -149,7 +84,7 @@ function Carousel({ portfolio, options }: Props) {
                     </p>
                     <RubberTitle
                       title={project.title}
-                      classProps={"justify-center lg:justify-start"}
+                      className="justify-center lg:justify-start"
                       elementType={"h3"}
                     />
                     <div className="flex flex-col space-y-3 lg:space-y-5 py-2 lg:py-6 text-center lg:text-start ">
@@ -167,18 +102,16 @@ function Carousel({ portfolio, options }: Props) {
                     </div>
                     <div className="flex flex-col items-center lg:items-start space-y-2">
                       {project.githubLink && (
-                        <HoverRightIndigoLink
-                          link={project.githubLink}
-                          title={"Github"}
-                        />
+                        <Button variant={"indigoLink"} arrow={"right"} >
+                          <Link href={project.githubLink}>Github</Link>
+                        </Button>
                       )}
                       {project.externalLink && (
-                        <HoverRightIndigoLink
-                          link={project.externalLink}
-                          title={"Application"}
-                        />
+                        <Button variant={"indigoLink"} arrow={"right"} >
+                          <Link href={project.externalLink}>Application</Link>
+                        </Button>
                       )}
-                      {project.post?.slug && <m.a href={""}>Post</m.a>}
+                      {project.post?.slug && <a href={""}>Post</a>}
                     </div>
                   </div>
                   <div className="h-full">
@@ -198,12 +131,9 @@ function Carousel({ portfolio, options }: Props) {
             ))}
           </div>
         </div>
-      </m.div>
+      </div>
       {portfolio.length > 0 && (
-        <m.div
-          variants={dotButton}
-          className="absolute z-30 flex items-center space-x-8 -translate-x-1/2 bottom-[15%] left-1/2"
-        >
+        <div className="absolute z-30 flex items-center space-x-8 -translate-x-1/2 bottom-[15%] left-1/2">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
@@ -215,9 +145,9 @@ function Carousel({ portfolio, options }: Props) {
               }`}
             />
           ))}
-        </m.div>
+        </div>
       )}
-    </m.div>
+    </>
   );
 }
 

@@ -1,16 +1,4 @@
-"use client";
-
-import { useState, useCallback, useEffect } from "react";
-import Image from "next/image";
-import { motion as m } from "framer-motion";
-
 import Carousel from "./Carousel";
-import { RubberTitle } from "../Ui/RubberTitles";
-import { urlForImage } from "../../../sanity/lib/image";
-import { HoverRightIndigoLink } from "../Ui/UIControls";
-
-import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
-import useEmblaCarousel from "embla-carousel-react";
 
 type Props = {
   portfolio: Portfolio[];

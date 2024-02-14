@@ -1,5 +1,5 @@
-import * as THREE from "three";
-import React, { useRef, useMemo } from "react";
+import { useRef, useMemo } from "react";
+import { Object3D } from "three";
 import { useFrame } from "@react-three/fiber";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 export default function Particles({ count }: Props) {
   const mesh = useRef<any>();
 
-  const dummy = useMemo(() => new THREE.Object3D(), []);
+  const dummy = useMemo(() => new Object3D(), []);
   // Generate some random positions, speed factors and timings
   const particles = useMemo(() => {
     const temp = [];

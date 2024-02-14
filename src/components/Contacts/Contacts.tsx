@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { motion as m } from "framer-motion";
 
-import { DynamicIconFi } from "../Ui/DynamicIcon";
+import { SocialList } from "../Ui/SocialLinks";
 import Footer from "../Footer/Footer";
-import { socials } from "../../data/constants";
-import { SolidIndigoButton } from "../Ui/UIControls";
-import { left, right } from "./MotionVariants";
+import { Button } from "../Ui/Button";
 
 type Inputs = {
   name: string;
@@ -39,49 +36,16 @@ function Contacts() {
         <h2 className="font-fira text-6xl md:text-8xl tracking-tighter text-slate-800/90 font-medium">
           Contact Me.
         </h2>
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.8 }}
-          className="mt-4 lg:mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4"
-        >
-          <m.div variants={left} className="text-center">
+        <div className="mt-4 lg:mt-10 grid lg:grid-cols-3 lg:items-center lg:justify-items-end gap-10 lg:gap-4">
+          <div className="text-center">
             <p className="max-w-md mx-auto leading-6 ">
               I&apos;m currently looking for a new opportunities, my inbox is
               always open. Whether you have a question or just want to say hi,
               I&apos;ll try my best to get back to you!
             </p>
-
-            <ul className="flex justify-center text-orange-400 mt-8">
-              {socials
-                .filter((social) => social.showIcon)
-                .map((social) => (
-                  <li
-                    key={social.type}
-                    className="mx-3 ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
-                  >
-                    <a
-                      href={social.link}
-                      aria-label={social.title}
-                      title={social.title}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {DynamicIconFi(social.icon)}
-                    </a>
-                  </li>
-                ))}
-            </ul>
-            {socials
-              .filter((social) => !social.showIcon)
-              .map((social) => (
-                <p key={social.type} className="mx-4 mt-4">
-                  {social.link}
-                </p>
-              ))}
-          </m.div>
-          <m.form
-            variants={right}
+            <SocialList />
+          </div>
+          <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col space-y-1.5 md:space-y-2 w-fit mx-outo lg:col-span-2"
           >
@@ -110,9 +74,12 @@ function Contacts() {
               placeholder="Message"
               className="contactInput h-24 md:h-32"
             />
-            <SolidIndigoButton title={"Submit"} />
-          </m.form>
-        </m.div>
+
+            <Button variant={"indigoButton"} size={"full"}>
+              <button>Submit</button>
+            </Button>
+          </form>
+        </div>
       </div>
       <Footer />
     </section>

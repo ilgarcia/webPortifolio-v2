@@ -1,9 +1,8 @@
-
 import { groq } from "next-sanity";
 
 import { client } from "../../../../sanity/lib/client";
 
-import Socials from "../../../components/Socials/Socials";
+import { SocialIcons } from "../../../components/Ui/SocialLinks";
 import Contacts from "../../../components/Contacts/Contacts";
 import Banner from "../../../components/Journal/Banner";
 import Tabs from "../../../components/Journal/Tabs";
@@ -44,7 +43,7 @@ async function page() {
       <Banner />
       <Tabs portfolio={portfolio} posts={posts} />
       <Contacts />
-      <Socials />
+      <SocialIcons />
     </main>
   );
 }
