@@ -19,6 +19,7 @@
     "@portabletext/react": "^3.0.7",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
     "@react-three/fiber": "^8.14.1",
     "@sanity/client": "^6.4.10",
     "@sanity/icons": "^2.4.1",

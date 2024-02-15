@@ -27,8 +27,7 @@ function PostCard({ post }: Props) {
             </div>
           </div>
           <h2 className="text-2xl mb-2 text-slate-200  font-semibold">
-            {post.title} esse é um teste de texto para ver qual a melhor
-            aaaaaaa.
+            {post.title}
           </h2>
         </div>
 

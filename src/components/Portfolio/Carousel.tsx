@@ -66,7 +66,7 @@ function Carousel({ portfolio, options }: Props) {
                     work, and if you like what you see, feel free to contact me!
                   </p>
                   <Button variant={"indigoLink"} arrow={"right"}>
-                    <Link href={"/blog#moreProjects"}>More Projects</Link>
+                    <Link href={"/journal?tab=portfolio"}>More Projects</Link>
                   </Button>
                 </div>
               </div>
