@@ -9,12 +9,13 @@ import Posts from "./PostGrid";
 
 import * as Tb from "@radix-ui/react-tabs";
 
-type Props = {
-  portfolio: Portfolio[];
-  posts: Post[];
-};
+// type Props = {
+//   portfolio: Portfolio[];
+//   posts: Post[];
+// };
 
-function Tabs({ portfolio, posts }: Props) {
+function Tabs() {
+// function Tabs({ portfolio, posts }: Props) {
   const searchParams = useSearchParams();
   const tabName = searchParams.get("tab") || "posts";
 
@@ -81,10 +82,10 @@ function Tabs({ portfolio, posts }: Props) {
           </Tb.Trigger>
         </Tb.List>
         <Tb.Content className="mx-4 mt-4" value="posts">
-          <Posts posts={posts} />
+          {/* <Posts posts={posts} /> */}
         </Tb.Content>
         <Tb.Content className="mx-4 mt-4" value="portfolio">
-          <PortfolioGrid portfolio={portfolio} />
+          {/* <PortfolioGrid portfolio={portfolio} /> */}
         </Tb.Content>
       </Tb.Root>
     </Suspense>
