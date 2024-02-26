@@ -6,6 +6,8 @@ import Header from "../../components/Header/Header";
 import "../globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.ilgarcia.com"), // Change to url domain
+  // metadataBase: new URL("http://localhost:3000"), // Change to url domain
   title: "ilgarcia",
   description:
     "Hi, my name is Igor Lima Garcia i'm a software engineer specializing in building exceptional and practical digital experiences and this is my portfolio",
@@ -17,6 +19,12 @@ export const metadata: Metadata = {
     url: "https://www.linkedin.com/in/ilgarcia/",
   },
   robots: "index, follow",
+  openGraph: {
+    images: "og-image.png",
+  },
+  twitter: {
+    images: "twitter-image.png",
+  },
 };
 
 export const source = Source_Sans_3({

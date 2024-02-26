@@ -75,7 +75,7 @@ function Contacts() {
               className="contactInput h-24 md:h-32"
             />
 
-            <Button variant={"indigoButton"} size={"full"}>
+            <Button variant={"indigo"} size={"full"}>
               <button>Submit</button>
             </Button>
           </form>

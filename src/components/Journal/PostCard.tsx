@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BiCaretRight } from "react-icons/bi";
 import { urlForImage } from "../../../sanity/lib/image";
+import { Button } from "../Ui/Button";
 
 type Props = {
   post: Post;
@@ -10,7 +10,7 @@ type Props = {
 
 function PostCard({ post }: Props) {
   return (
-    <div className="group relative rounded-xl p-3 w-full h-96 bg-gradient-to-br from-slate-800 to-slate-800/[0.2] border border-slate-800 hover:border-slate-700 group-hover:border-slate-700">
+    <div className="group relative rounded-xl p-3 w-full h-[22rem] bg-gradient-to-br from-slate-800 to-slate-800/[0.2] border border-slate-800 hover:border-slate-700 group-hover:border-slate-700">
       <Link
         href={`/journal/post/${post.slug.current}`}
         className="relative inline-block h-full w-full"
@@ -38,18 +38,17 @@ function PostCard({ post }: Props) {
               src={urlForImage({ ...post.mainImage }).url()}
               alt={post.mainImage.alt}
               fill
+              sizes="100%"
               className="object-cover transition-all duration-1000  group-hover:scale-110"
             />
           </div>
         </div>
       </Link>
-      <Link
-        href={`/journal/post/${post.slug.current}`}
-        className="absolute bottom-3 right-2 flex transition-all duration-300 opacity-0 group-hover:opacity-100 hover:brightness-125 hover:shadow-md hover:shadow-indigo-500/60 justify-center items-center gap-3 bg-slate-900 border border-indigo-500 w-fit pl-4 pr-2 py-1 rounded-md font-semibold z-10"
-      >
-        Read Post
-        <BiCaretRight className="text-xl" />
-      </Link>
+      <Button variant={"indigoNeon"} className="absolute bottom-3 right-2 z-10">
+        <Link href={`/journal/post/${post.slug.current}`}>
+          Read Post
+        </Link>
+      </Button>
     </div>
   );
 }

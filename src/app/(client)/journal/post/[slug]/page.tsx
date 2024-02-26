@@ -10,6 +10,8 @@ import Contacts from "../../../../../components/Contacts/Contacts";
 
 import Link from "next/link";
 import { urlForImage } from "../../../../../../sanity/lib/image";
+import RelatedPostCard from "@/components/Journal/RelatedPostCard";
+import { RubberTitle } from "@/components/Ui/RubberTitles";
 
 type Props = {
   params: {
@@ -38,9 +40,9 @@ export default async function page({ params: { slug } }: Props) {
   }
 
   return (
-    <>
+    <section className="px-4">
       <article className="max-w-5xl pt-20 mx-auto">
-        <section className="relative rounded-2xl ml-14 mb-2 px-5 py-2 bg-slate-900 hover:bg-slate-800 before:absolute before:block before:bottom-0 before:-left-8 before:w-6 before:h-8 before:border-l-4 before:border-t-4 before:border-slate-900 ">
+        <section className="relative rounded-2xl ml-14 mb-2 px-5 py-2 bg-slate-900/75 hover:bg-slate-900 before:absolute before:block before:bottom-0 before:-left-8 before:w-6 before:h-8 before:border-l-4 before:border-t-4 before:border-slate-900 ">
           <div className="text-3xl font-semibold">{post.title}</div>
           <div className="absolute top-0 left-0 w-full h-full opacity-10 rounded-2xl overflow-hidden">
             <Image
@@ -72,8 +74,8 @@ export default async function page({ params: { slug } }: Props) {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 max-w-5xl mx-auto font-light transition-all duration-300 bg-slate-900 hover:bg-slate-800 p-8 rounded-2xl">
-          <div className="flex justify-end max-w-6xl mt-4 mb-6 mx-auto px-4">
+        <section className="flex flex-col gap-5 max-w-5xl mx-auto font-light transition-all duration-300 bg-slate-900/75 hover:bg-slate-900 p-8 rounded-2xl">
+          <div className="flex justify-end w-full mx-auto">
             <Link
               href="/blog?tab=posts"
               className="flex items-center gap-1 hover:underline hover:decoration-orange-400 hover:decoration-2"
@@ -85,34 +87,23 @@ export default async function page({ params: { slug } }: Props) {
           <PortableText value={post.body} components={RichTextBlog} />
         </section>
       </article>
-      <section className="max-w-5xl pt-20 mx-auto">
-        <h2 className="mb-6 text-4xl w-full border-b-2 border-orange-400">
-          Related posts
-        </h2>
-        <section className="grid grid-cols-3 gap-4 ">
-          {post.post?.map((p) => (
-            <a
-              href={`/blog/post/${p.slug.current}`}
-              key={p._id}
-              className="w-full rounded-lg p-4 relative overflow-hidden border border-gray-800 shadow-xl hover:brightness-125"
-            >
-              <div className="absolute inset-px bg-gradient-to-br from-slate-950 to-slate-800 -z-10" />
-              <h3 className="text-xl font-semibold">{p.title}</h3>
-              <div className="flex text-xs font-fira text-slate-400/70 uppercase">
-                {p.category?.title}&nbsp;-&nbsp;
-                {new Date(p._createdAt).toLocaleDateString("en-US", {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </div>
-            </a>
-          ))}
+      {post.post && (
+        <section className="max-w-5xl pt-20 mx-auto">
+          <RubberTitle elementType={"h2"} title={"Related posts"} />
+          <p className="mt-2 mb-6 text-slate-400 text-lg pl-3 border-l-4 border-solid border-indigo-500">You can also like to read one of the posts bellow.</p>
+          <section className="grid grid-cols-3 gap-4 ">
+            {post.post.map((relatedPost) => (
+              <RelatedPostCard
+                key={relatedPost._id}
+                relatedPost={relatedPost}
+              />
+            ))}
+          </section>
         </section>
-      </section>
+      )}
       <Contacts />
       <SocialIcons />
-    </>
+    </section>
   );
 }
 

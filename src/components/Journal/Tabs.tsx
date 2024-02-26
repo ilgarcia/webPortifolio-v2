@@ -1,35 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { groq } from "next-sanity";
 
 import PortfolioGrid from "./PortfolioGrid";
 import Posts from "./PostGrid";
 
-import { client } from "../../../sanity/lib/client";
-
 import * as Tb from "@radix-ui/react-tabs";
-
-// const queryPortfolio = groq`
-//   *[_type=='portfolio']{
-//     ...,
-//     appType->,
-//     skill[]->,
-//     post[]->,
-//   } | order(_createdAt desc)
-// `;
-
-// const queryPosts = groq`
-//   *[_type=='post']{
-//     ...,
-//     category->,
-//     skill[]->,
-//     post[]->,
-//     portfolio[]->,
-//   } | order(_createdAt desc)
-// `;
 
 type Props = {
   portfolio: Portfolio[];
@@ -40,21 +17,9 @@ function Tabs({ portfolio, posts }: Props) {
   const searchParams = useSearchParams();
   const tabName = searchParams.get("tab") || "posts";
 
-  // const [portfolio, setPortfolio] = useState([]);
-  // const [posts, setPosts] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     await client.fetch(queryPortfolio).then((data) => setPortfolio(data));
-  //     await client.fetch(queryPosts).then((data) => setPosts(data));
-  //   };
-
-  //   fetchData();
-  // });
-
   return (
     <Tb.Root
-      className="relative max-w-7xl min-h-[80vh] mx-auto  z-20"
+      className="relative max-w-7xl min-h-[60vh] mx-auto  z-20"
       defaultValue={tabName}
     >
       <Tb.List
@@ -69,7 +34,7 @@ function Tabs({ portfolio, posts }: Props) {
           className="relative left-1/2 top-1/2 w-10"
         />
         <Tb.Trigger
-          className="relative flex justify-center w-full py-4 text-center text-slate-200 [&_.divLine]:data-[state=active]:opacity-50 [&_.divLine]:data-[state=active]:scale-110 [&_.divLine]:data-[state=inactive]:opacity-0 [&_.divLine]:data-[state=inactive]:scale-0 [&_.tabText]:data-[state=active]:hover:animate-wiggle [&_.tabText]:data-[state=inactive]:text-slate-400 [&_.tabText]:data-[state=inactive]:hover:text-slate-200 [&_.tag]:data-[state=active]:translate-x-2 [&_.tag]:data-[state=inactive]:translate-x-0 [&_.tag]:data-[state=inactive]:hover:translate-x-2 [&_.tagSlash]:data-[state=active]:opacity-0 [&_.tagSlash]:data-[state=inactive]:opacity-100 [&_.tagSlash]:data-[state=inactive]:hover:opacity-0"
+          className="relative flex justify-center w-full py-4 text-center tabTrigger"
           value="posts"
         >
           <Image
@@ -91,7 +56,7 @@ function Tabs({ portfolio, posts }: Props) {
           </div>
         </Tb.Trigger>
         <Tb.Trigger
-          className="relative flex justify-center w-full py-4 text-center text-slate-200 [&_.divLine]:data-[state=active]:opacity-50 [&_.divLine]:data-[state=active]:scale-110 [&_.divLine]:data-[state=inactive]:opacity-0 [&_.divLine]:data-[state=inactive]:scale-0 [&_.tabText]:data-[state=active]:hover:animate-wiggle [&_.tabText]:data-[state=inactive]:text-slate-400 [&_.tabText]:data-[state=inactive]:hover:text-slate-200 [&_.tag]:data-[state=active]:translate-x-2 [&_.tag]:data-[state=inactive]:translate-x-0 [&_.tag]:data-[state=inactive]:hover:translate-x-2 [&_.tagSlash]:data-[state=active]:opacity-0 [&_.tagSlash]:data-[state=inactive]:opacity-100 [&_.tagSlash]:data-[state=inactive]:hover:opacity-0"
+          className="relative flex justify-center w-full py-4 text-center tabTrigger"
           value="portfolio"
         >
           <Image
@@ -113,10 +78,10 @@ function Tabs({ portfolio, posts }: Props) {
           </div>
         </Tb.Trigger>
       </Tb.List>
-      <Tb.Content className="" value="posts">
+      <Tb.Content className="mx-4 mt-4" value="posts">
         <Posts posts={posts} />
       </Tb.Content>
-      <Tb.Content className="" value="portfolio">
+      <Tb.Content className="mx-4 mt-4" value="portfolio">
         <PortfolioGrid portfolio={portfolio} />
       </Tb.Content>
     </Tb.Root>

@@ -29,7 +29,7 @@ export const RichTextBlog = {
     h3: ({ children }: any) => <h3 className="font-semibold text-3xl">{children}</h3>,
     h4: ({ children }: any) => <h4 className="font-semibold text-3xl">{children}</h4>,
     blockquote: ({ children }: any) => (
-      <blockquote className="my-5 p-5 border-l-4 border-solid border-theme-orange">
+      <blockquote className="my-5 p-3 border-l-4 border-solid border-orange-400">
         {children}
       </blockquote>
     ),

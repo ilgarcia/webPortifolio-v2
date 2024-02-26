@@ -11,8 +11,10 @@ const buttonVariants = cva(
       variant: {
         default:
           "border border-solid border-orange-400 shadow-[4px_4px] shadow-orange-400 text-orange-400 hover:shadow-[2px_2px] text-sm",
-        indigoButton:
+        indigo:
           "border border-solid border-indigo-500 shadow-[4px_4px] shadow-indigo-500 text-indigo-500 hover:shadow-[2px_2px]",
+        indigoNeon:
+          "flex transition-all duration-300 opacity-0 group-hover:opacity-100 hover:brightness-125 hover:shadow-md hover:shadow-indigo-500/60 justify-center items-center gap-3 bg-slate-900 border border-indigo-500 w-fit rounded-md font-semibold",
         indigoLink: "flex items-center text-indigo-500",
       },
       size: {
@@ -31,7 +33,8 @@ const arrowVariants = cva("-ml-6 text-xl", {
   variants: {
     variant: {
       default: "text-orange-400 ",
-      indigoButton: "text-indigo-500",
+      indigo: "text-indigo-500",
+      indigoNeon: "",
       indigoLink: "text-indigo-500",
     },
     arrow: {
