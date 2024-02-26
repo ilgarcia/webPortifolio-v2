@@ -1,6 +1,6 @@
 "use client";
 
-// import { Suspense } from "react";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -14,13 +14,17 @@ import * as Tb from "@radix-ui/react-tabs";
 //   posts: Post[];
 // };
 
+function SearchBarFallback() {
+  return <>placeholder</>;
+}
+
 function Tabs() {
-// function Tabs({ portfolio, posts }: Props) {
+  // function Tabs({ portfolio, posts }: Props) {
   const searchParams = useSearchParams();
   const tabName = searchParams.get("tab") || "posts";
 
   return (
-    // <Suspense>
+    <Suspense fallback={<SearchBarFallback />}>
       <Tb.Root
         className="relative max-w-7xl min-h-[60vh] mx-auto  z-20"
         defaultValue={"posts"}
@@ -89,7 +93,7 @@ function Tabs() {
           {/* <PortfolioGrid portfolio={portfolio} /> */}
         </Tb.Content>
       </Tb.Root>
-    // </Suspense>
+    </Suspense>
   );
 }
 
