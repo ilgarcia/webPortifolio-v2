@@ -7,7 +7,7 @@ type Props = {
 function RelatedPostCard({ relatedPost }: Props) {
   return (
     <Link
-      href={`/blog/post/${relatedPost.slug.current}`}
+      href={`/journal/post/${relatedPost.slug.current}`}
       
       className="w-full rounded-lg p-4 relative overflow-hidden border border-gray-800 shadow-xl hover:brightness-125"
     >
