@@ -1,7 +1,7 @@
 "use client";
 
 // import { Suspense } from "react";
-// import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 // import PortfolioGrid from "./PortfolioGrid";
@@ -16,8 +16,8 @@ import * as Tb from "@radix-ui/react-tabs";
 
 function Tabs() {
 // function Tabs({ portfolio, posts }: Props) {
-  // const searchParams = useSearchParams();
-  // const tabName = searchParams.get("tab") || "posts";
+  const searchParams = useSearchParams();
+  const tabName = searchParams.get("tab") || "posts";
 
   return (
     // <Suspense>
