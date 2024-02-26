@@ -5,7 +5,7 @@ import { client } from "../../../../sanity/lib/client";
 import { SocialIcons } from "../../../components/Ui/SocialLinks";
 import Contacts from "../../../components/Contacts/Contacts";
 import Banner from "../../../components/Journal/Banner";
-// import Tabs from "../../../components/Journal/Tabs";
+import Tabs from "../../../components/Journal/Tabs";
 
 const queryPortfolio = groq`
   *[_type=='portfolio']{
@@ -41,7 +41,7 @@ async function page() {
   return (
     <main>
       <Banner />
-      {/* <Tabs /> */}
+      <Tabs />
       {/* <Tabs portfolio={portfolio} posts={posts} /> */}
       <Contacts />
       <SocialIcons />

@@ -16,14 +16,15 @@ import * as Tb from "@radix-ui/react-tabs";
 
 function Tabs() {
 // function Tabs({ portfolio, posts }: Props) {
-  const searchParams = useSearchParams();
-  const tabName = searchParams.get("tab") || "posts";
+  // const searchParams = useSearchParams();
+  // const tabName = searchParams.get("tab") || "posts";
 
   return (
     <Suspense>
       <Tb.Root
         className="relative max-w-7xl min-h-[60vh] mx-auto  z-20"
-        defaultValue={tabName}
+        defaultValue={"posts"}
+        // defaultValue={tabName}
       >
         <Tb.List
           className="relative mt-6 flex justify-between items-center max-w-4xl mx-auto text-2xl font-medium font-fira"
