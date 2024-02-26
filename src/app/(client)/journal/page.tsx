@@ -41,7 +41,7 @@ async function page() {
   return (
     <main>
       <Banner />
-      <Tabs />
+      {/* <Tabs /> */}
       {/* <Tabs portfolio={portfolio} posts={posts} /> */}
       <Contacts />
       <SocialIcons />
