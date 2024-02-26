@@ -1,11 +1,11 @@
 "use client";
 
-import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+// import { Suspense } from "react";
+// import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-import PortfolioGrid from "./PortfolioGrid";
-import Posts from "./PostGrid";
+// import PortfolioGrid from "./PortfolioGrid";
+// import Posts from "./PostGrid";
 
 import * as Tb from "@radix-ui/react-tabs";
 
@@ -20,7 +20,7 @@ function Tabs() {
   // const tabName = searchParams.get("tab") || "posts";
 
   return (
-    <Suspense>
+    // <Suspense>
       <Tb.Root
         className="relative max-w-7xl min-h-[60vh] mx-auto  z-20"
         defaultValue={"posts"}
@@ -89,7 +89,7 @@ function Tabs() {
           {/* <PortfolioGrid portfolio={portfolio} /> */}
         </Tb.Content>
       </Tb.Root>
-    </Suspense>
+    // </Suspense>
   );
 }
 
