@@ -35,14 +35,13 @@ export const metadata = {
 };
 
 async function page() {
-  // const portfolio = await client.fetch(queryPortfolio);
-  // const posts = await client.fetch(queryPosts);
+  const portfolio = await client.fetch(queryPortfolio);
+  const posts = await client.fetch(queryPosts);
 
   return (
     <main>
       <Banner />
-      <Tabs />
-      {/* <Tabs portfolio={portfolio} posts={posts} /> */}
+      <Tabs portfolio={portfolio} posts={posts} />
       <Contacts />
       <SocialIcons />
     </main>

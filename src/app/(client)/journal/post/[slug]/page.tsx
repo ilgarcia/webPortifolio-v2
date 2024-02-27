@@ -77,7 +77,7 @@ export default async function page({ params: { slug } }: Props) {
         <section className="flex flex-col gap-5 max-w-5xl mx-auto font-light transition-all duration-300 bg-slate-900/75 hover:bg-slate-900 p-8 rounded-2xl">
           <div className="flex justify-end w-full mx-auto">
             <Link
-              href="/blog?tab=posts"
+              href="/journal"
               className="flex items-center gap-1 hover:underline hover:decoration-orange-400 hover:decoration-2"
             >
               <HiArrowCircleLeft className="text-2xl text-orange-400" />

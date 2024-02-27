@@ -34,7 +34,7 @@ function Navbar({ toggle, open }: Props) {
       </ul>
       <m.div variants={blogLink}>
         <Button>
-          <Link href={"/journal?tab=posts"} onClick={toggle}>
+          <Link href={"/journal"} onClick={toggle}>
             Blog
           </Link>
         </Button>
