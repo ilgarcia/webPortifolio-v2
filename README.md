@@ -24,6 +24,7 @@ This is a personal portfolio website built using Next.js whith Sanity (headless 
 - Sanity
 - Typescript
 - Tailwind
+- Figma
 
 ## Getting Started
 
