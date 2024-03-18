@@ -1,4 +1,4 @@
-# Personal Portfolio Project
+# Personal Portfolio Project - Version 2
 
 ![Portfolio](https://github.com/ilgarcia/webPortifolio-v2/assets/60369262/57bc7dd1-ce79-479d-8cba-472e21687c86)
 
