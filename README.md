@@ -1,8 +1,14 @@
-# Personal Portfolio Project - Booking
+# Personal Portfolio Project
+
+![Portfolio](https://github.com/ilgarcia/webPortifolio-v2/assets/60369262/57bc7dd1-ce79-479d-8cba-472e21687c86)
+
+You can access with the following [link.](https://www.ilgarcia.com/)
+
+---
 
 ## Description
 
-This is a personal portfolio website built using React. It serves as a showcase for your skills, projects, and experiences. The project is designed to be easily customizable and can be used by developers, designers, or anyone looking to create a personalized online presence.
+This is a personal portfolio website built using Next.js whith Sanity (headless CMS). It serves as a lab to experiment new ideas and to showcase my skills, projects, and experiences. The project is designed to be easily customizable and can be used by developers, designers, or anyone looking to create a personalized online presence.
 
 ## Features
 
@@ -14,9 +20,10 @@ This is a personal portfolio website built using React. It serves as a showcase 
 ## Technologies Used
 
 - React
-- HTML5
-- CSS3
-- [Additional libraries or tools if any]
+- Next.js
+- Sanity
+- Typescript
+- Tailwind
 
 ## Getting Started
 
@@ -25,7 +32,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/ilgarcia/webPortifolio-v2.git
    ```
    
 2. **Install dependencies:**
@@ -38,7 +45,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 3. **Run the development server:**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 *The app will be accessible with your browser at [http://localhost:3000](http://localhost:3000).*
@@ -52,11 +59,6 @@ Follow these instructions to get a copy of the project up and running on your lo
    ```
    
 3. **Deploy the contents of the build directory to your hosting platform of choice.**
-
-## Acknowledgments
-
-* [Any external libraries or resources used]
-* [Inspiration or references]
 
 ## License
 
