@@ -19,12 +19,12 @@ const RubberTitle: React.FC<RubberTitleProps> = ({
     null,
     <div
       className={cn(
-        "text-4xl lg:text-6xl font-bold lg:leading-10 flex flex-wrap space-x-2 lg:space-x-5",
+        "text-4xl lg:text-6xl font-bold lg:leading-10 flex flex-wrap",
         props.className
       )}
     >
       {title.split(" ").map((word, idW) => (
-        <div key={idW} className="cursor-pointer flex lg:mb-4">
+        <div key={idW} className="cursor-pointer flex lg:mb-4 mr-2 lg:mr-5">
           {word.split("").map((character, idC) => (
             <span
               key={idC}

@@ -40,8 +40,8 @@ export default async function Home() {
     <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll scroll-smooth overflow-x-hidden">
       <Hero />
       <AboutMe />
-      <Portfolio portfolio={portfolio} />
-      <Skills skills={skills} />
+      {/* <Portfolio portfolio={portfolio} /> */}
+      {/* <Skills skills={skills} /> */}
       <WorkExperience experience={experience} />
       <Contacts />
       <SocialIcons />
