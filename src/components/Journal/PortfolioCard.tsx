@@ -26,11 +26,6 @@ function PortfolioCard({ project, id }: Props) {
               <FiExternalLink />
             </a>
           )}
-          {project.post?.slug && (
-            <a href={""} className="hover:text-orange-400">
-              <FiLink />
-            </a>
-          )}
         </div>
       </div>
       <h4 className="text-orange-400 text-xl font-bold tracking-wide ">

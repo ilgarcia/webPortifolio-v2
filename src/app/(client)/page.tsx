@@ -10,28 +10,27 @@ import WorkExperience from "../../components/WorkExperience/WorkExperience";
 import Contacts from "../../components/Contacts/Contacts";
 import { SocialIcons } from "../../components/Ui/SocialLinks";
 
-const querySkills = groq`
+export default async function Home() {
+  const querySkills = groq`
   *[_type=='skill']{
     ...,
   } | order(_createdAt)
 `;
 
-const queryExperience = groq`
+  const queryExperience = groq`
   *[_type=='workExperience']{
     ...,
   } | order(startedAt desc)
 `;
 
-const queryPortfolio = groq`
+  const queryPortfolio = groq`
   *[_type=='portfolio' && display]{
     ...,
     appType->,
     skill[]->,
-    post[]->
   } | order(_createdAt desc)
 `;
 
-export default async function Home() {
   const skills = await client.fetch(querySkills);
   const experience = await client.fetch(queryExperience);
   const portfolio = await client.fetch(queryPortfolio);
@@ -40,11 +39,11 @@ export default async function Home() {
     <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll scroll-smooth overflow-x-hidden">
       <Hero />
       <AboutMe />
-      {/* <Portfolio portfolio={portfolio} /> */}
+      <Portfolio portfolio={portfolio} />
       {/* <Skills skills={skills} /> */}
       <WorkExperience experience={experience} />
       <Contacts />
-      <SocialIcons />
+      {/* <SocialIcons /> */}
     </main>
   );
 }

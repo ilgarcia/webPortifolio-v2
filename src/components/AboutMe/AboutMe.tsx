@@ -17,7 +17,7 @@ function AboutMe() {
       <div className="lg:grid lg:grid-cols-2 max-w-7xl mx-auto px-2 md:px-6">
         <div className="relative max-w-lg lg:max-w-none pb-6 lg:py-8 lg:pl-8">
           <RubberTitle title={"Meet the Developer"} elementType={"h3"} />
-          <p className="mt-1 lg:mt-3 font-light text-lg md:text-2xl text-slate-400">
+          <p className="mt-1 lg:mt-2 font-light text-lg md:text-2xl text-slate-400">
             Fullstack Developer | DevOps
           </p>
         </div>

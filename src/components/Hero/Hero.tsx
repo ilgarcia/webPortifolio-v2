@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { LuMouse } from "react-icons/lu";
 
-import { RubberTitle } from "../Ui/RubberTitles";
 import BgLayout from "./BgLayout";
+import { RubberTitle } from "../Ui/RubberTitles";
 
 function Hero() {
   return (

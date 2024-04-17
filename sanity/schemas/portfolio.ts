@@ -1,15 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-import { client } from "../lib/client";
-
-const getSkills = async () => {
-  const query = '*[_type=="portfolio" && display == true]';
-  const skillsObject = await client.fetch(query);
-  if (skillsObject) {
-    return skillsObject;
-  }
-};
-
 export default defineType({
   name: "portfolio",
   title: "Portfolio",
@@ -20,49 +10,6 @@ export default defineType({
       return true;
     }),
   fields: [
-    defineField({
-      name: "appType",
-      title: "App Type",
-      type: "reference",
-      to: [{ type: "appType" }],
-    }),
-    defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
-      validation: (Rule) => Rule.required().max(56),
-    }),
-    defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
-      validation: (Rule) => Rule.required().max(110),
-    }),
-    defineField({
-      name: "skill",
-      title: "Skill Reference",
-      type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "skill" } })],
-    }),
-
-    defineField({
-      name: "post",
-      title: "Post Reference",
-      type: "reference",
-      to: [{ type: "post" }],
-    }),
-
-    defineField({
-      name: "githubLink",
-      title: "Github Link",
-      type: "url",
-    }),
-
-    defineField({
-      name: "externalLink",
-      title: "External Link",
-      type: "url",
-    }),
     defineField({
       name: "mainImage",
       title: "Main image",
@@ -79,19 +26,65 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required().max(56),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    }),
+    defineField({
+      name: "appType",
+      title: "App Type",
+      type: "reference",
+      to: [{ type: "appType" }],
+    }),
+    // defineField({
+    //   name: "skill",
+    //   title: "Skill Reference",
+    //   type: "array",
+    //   of: [defineArrayMember({ type: "reference", to: { type: "skill" } })],
+    // }),
+    defineField({
+      name: "skill",
+      title: "Skill Reference",
+      type: "array",
+      of: [{ type: "skillDisplay" }],
+    }),
+    defineField({
+      name: "githubLink",
+      title: "Github Link",
+      type: "url",
+    }),
+    defineField({
+      name: "externalLink",
+      title: "External Link",
+      type: "url",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      rows: 2,
+      type: "text",
+      validation: (Rule) => Rule.required().max(110),
+    }),
+    defineField({
+      name: "body",
+      title: "Body",
+      type: "blogContent",
+    }),
+    defineField({
       name: "display",
       title: "Display",
       type: "boolean",
       initialValue: false,
-      validation: (Rule) =>
-        Rule.required().custom(async (value) => {
-          const data = await getSkills();
-          if (data.length < 2 || !value) {
-            return true;
-          } else {
-            return "Selecionar somente dois posts.";
-          }
-        }),
     }),
   ],
 });

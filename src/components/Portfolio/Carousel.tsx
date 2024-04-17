@@ -25,9 +25,11 @@ function Carousel({ portfolio, options }: Props) {
     (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
   );
+
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     setScrollSnaps(emblaApi.scrollSnapList());
   }, []);
+  
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, []);
@@ -79,12 +81,12 @@ function Carousel({ portfolio, options }: Props) {
                       (id + 1) % 2 !== 0 && "lg:order-none"
                     } relative lg:static bottom-28 z-20 max-w-2xl mx-auto w-full`}
                   >
-                    <p className="text-center lg:text-start lg:mb-6 text-lg lg:text-xl text-slate-400 font-light  mt-3">
+                    <p className="text-center lg:text-start lg:mb-1 lg:-ml-4 text-lg lg:text-xl text-slate-400 font-light mt-3">
                       {project.appType.title.toUpperCase()}
                     </p>
                     <RubberTitle
                       title={project.title}
-                      className="justify-center lg:justify-start"
+                      className="justify-center lg:justify-start lg:text-5xl"
                       elementType={"h3"}
                     />
                     <div className="flex flex-col space-y-3 lg:space-y-5 py-2 lg:py-6 text-center lg:text-start ">
@@ -111,7 +113,6 @@ function Carousel({ portfolio, options }: Props) {
                           <Link href={project.externalLink}>Application</Link>
                         </Button>
                       )}
-                      {project.post?.slug && <a href={""}>Post</a>}
                     </div>
                   </div>
                   <div className="h-full">

@@ -24,7 +24,12 @@ const RubberTitle: React.FC<RubberTitleProps> = ({
       )}
     >
       {title.split(" ").map((word, idW) => (
-        <div key={idW} className="cursor-pointer flex lg:mb-4 mr-2 lg:mr-5">
+        <div
+          key={idW}
+          className={`cursor-pointer flex lg:mb-4 ${
+            (title.split(" ").length - 1) === idW ? "" : "mr-2 lg:mr-5"
+          } `}
+        >
           {word.split("").map((character, idC) => (
             <span
               key={idC}
