@@ -4,11 +4,6 @@ export default defineType({
   name: "portfolio",
   title: "Portfolio",
   type: "document",
-  validation: (Rule) =>
-    Rule.custom((fields) => {
-      console.log(fields?.display);
-      return true;
-    }),
   fields: [
     defineField({
       name: "mainImage",
@@ -46,18 +41,13 @@ export default defineType({
       type: "reference",
       to: [{ type: "appType" }],
     }),
-    // defineField({
-    //   name: "skill",
-    //   title: "Skill Reference",
-    //   type: "array",
-    //   of: [defineArrayMember({ type: "reference", to: { type: "skill" } })],
-    // }),
     defineField({
       name: "skill",
       title: "Skill Reference",
       type: "array",
-      of: [{ type: "skillDisplay" }],
+      of: [defineArrayMember({ type: "reference", to: { type: "skill" }})],
     }),
+
     defineField({
       name: "githubLink",
       title: "Github Link",

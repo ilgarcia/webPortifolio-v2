@@ -6,7 +6,6 @@ import workExperience from "./schemas/workExperience";
 import appType from "./schemas/appType";
 import skill from "./schemas/skill";
 import portfolio from "./schemas/portfolio";
-import { skillDisplayType } from "./schemas/skillDisplay/skillDisplayType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,6 +15,5 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     workExperience,
     workContent,
     blogContent,
-    skillDisplayType,
   ],
 };

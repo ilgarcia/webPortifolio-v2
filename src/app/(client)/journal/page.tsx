@@ -8,10 +8,12 @@ import Banner from "../../../components/Journal/Banner";
 import PortfolioGrid from "../../../components/Journal/PortfolioGrid";
 
 const queryPortfolio = groq`
-  *[_type=='portfolio']{
+  *[_type=='portfolio' && title =='Portfolio (Version-2)']{
     ...,
     appType->,
-    skill[]->,
+    "teste": *[_type=='skill']{
+      title
+    }.teste[]
   } | order(_createdAt desc)
 `;
 
@@ -27,10 +29,12 @@ export const metadata = {
 async function page() {
   const portfolio = await client.fetch(queryPortfolio);
 
+  console.log(portfolio[0])
+
   return (
     <main>
       <Banner />
-      <PortfolioGrid portfolio={portfolio} />
+      {/* <PortfolioGrid portfolio={portfolio} /> */}
       <Contacts />
       {/* <SocialIcons /> */}
     </main>
