@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import { FiGithub, FiLink, FiExternalLink } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,7 +30,7 @@ function Carousel({ portfolio, options }: Props) {
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     setScrollSnaps(emblaApi.scrollSnapList());
   }, []);
-  
+
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, []);
@@ -48,7 +49,7 @@ function Carousel({ portfolio, options }: Props) {
   return (
     <>
       <div className="relative w-screen">
-        <div className="overflow-hidden" ref={emblaRef}>
+        <div ref={emblaRef}>
           <div
             className="flex touch-pan-y -ml-4"
             style={{ backfaceVisibility: "hidden" }}
@@ -74,56 +75,84 @@ function Carousel({ portfolio, options }: Props) {
               </div>
             </div>
             {portfolio?.map((project, id) => (
-              <div key={id} className="relative flex-[0_0_100%] pl-4">
-                <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-center px-2 md:px-8 relative">
+              <div key={id} className="relative flex-[0_0_100%] pl-4 ">
+                <div className="absolute hidden lg:block inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.70] bg-red-500 rounded-full blur-3xl" />
+                <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-11 gap-16 px-2 md:px-12 relative lg:shadow-xl lg:bg-gray-900 lg:border lg:border-gray-800 m-2 lg:rounded-2xl lg:transition-all lg:duration-300 lg:hover:brightness-110">
                   <div
                     className={`order-last ${
                       (id + 1) % 2 !== 0 && "lg:order-none"
-                    } relative lg:static bottom-28 z-20 max-w-2xl mx-auto w-full`}
+                    } lg:col-span-5 relative bottom-36 lg:bottom-auto z-20 max-w-2xl mx-auto w-full p-5 lg:py-10 bg-gray-900/80 rounded-2xl transition-all duration-300 hover:brightness-125 lg:bg-none lg:hover:brightness-100`}
                   >
-                    <p className="text-center lg:text-start lg:mb-1 lg:-ml-4 text-lg lg:text-xl text-slate-400 font-light mt-3">
+                    <p className="text-center lg:text-start lg:-ml-3 text-base text-orange-400 font-medium mt-3">
                       {project.appType.title.toUpperCase()}
                     </p>
                     <RubberTitle
                       title={project.title}
-                      className="justify-center lg:justify-start lg:text-5xl"
+                      className="justify-center lg:justify-start lg:text-4xl"
                       elementType={"h3"}
                     />
-                    <div className="flex flex-col space-y-3 lg:space-y-5 py-2 lg:py-6 text-center lg:text-start ">
-                      <p>{project.description}</p>
-                      <p>
-                        <span className="font-extrabold mr-1.5">
-                          Built with:
-                        </span>
-                        {project.skill?.map((data) => (
-                          <span key={data._id} className="font-light mr-1.5">
-                            {data.title}
-                          </span>
-                        ))}
+                    <div className="flex flex-col py-2 lg:pb-4 text-center lg:text-start ">
+                      <p className="p-3 lg:border-l-4 border-solid border-indigo-500/30">
+                        {project.description}
                       </p>
+                      {project.skill && (
+                        <p className="mt-5 lg:mt-10">
+                          <span className="font-extrabold mr-1">
+                            Built with:
+                          </span>
+                          {project.skill.map((data, idw) => (
+                            <span key={data._id} className="font-light mr-1">
+                              {data.title}{" "}
+                              {project.skill.length - 1 !== idw ? ", " : ""}
+                            </span>
+                          ))}
+                        </p>
+                      )}
                     </div>
-                    <div className="flex flex-col items-center lg:items-start space-y-2">
+                    <div
+                      className={`absolute top-2 right-6 lg:top-auto lg:bottom-10 flex items-center gap-5 text-2xl mt-4 text-indigo-500 ${
+                        (id + 1) % 2 === 0 ? "lg:right-4" : "lg:right-auto"
+                      }`}
+                    >
                       {project.githubLink && (
-                        <Button variant={"indigoLink"} arrow={"right"} >
-                          <Link href={project.githubLink}>Github</Link>
-                        </Button>
+                        <Link
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
+                        >
+                          <FiGithub />
+                        </Link>
+                      )}
+                      {project.slug && (
+                        <Link
+                          href={`/journal/${project.slug.current}`}
+                          className="ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
+                        >
+                          <FiLink />
+                        </Link>
                       )}
                       {project.externalLink && (
-                        <Button variant={"indigoLink"} arrow={"right"} >
-                          <Link href={project.externalLink}>Application</Link>
-                        </Button>
+                        <Link
+                          href={project.externalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
+                        >
+                          <FiExternalLink />
+                        </Link>
                       )}
                     </div>
                   </div>
-                  <div className="h-full">
-                    <div className="relative top-20 lg:top-auto lg:h-96 lg:w-full aspect-square lg:aspect-auto max-w-xs lg:max-w-xl rounded-full lg:rounded-none overflow-hidden lg:overflow-auto mx-auto">
-                      <div className="bg-indigo-950/70 lg:hidden w-full h-full relative z-10" />
+                  <div className="h-full lg:col-span-6">
+                    <div className="relative top-20 lg:top-auto lg:h-96 lg:w-full aspect-square lg:aspect-auto max-w-xs lg:max-w-xl rounded-3xl lg:rounded-none overflow-hidden lg:overflow-auto mx-auto ">
+                      {/* <div className="bg-indigo-950/70 lg:hidden w-full h-full relative z-10" /> */}
                       <Image
                         src={urlForImage({ ...project.mainImage }).url()}
                         alt={project.mainImage.alt}
                         fill
                         sizes="100%"
-                        className="object-cover lg:object-contain relative lg:static"
+                        className="object-cover lg:object-contain relative lg:static drop-shadow-md"
                       />
                     </div>
                   </div>
