@@ -40,10 +40,10 @@ export default async function Home() {
       <Hero />
       <AboutMe />
       <Portfolio portfolio={portfolio} />
-      {/* <Skills skills={skills} /> */}
+      <Skills skills={skills} />
       <WorkExperience experience={experience} />
       <Contacts />
-      {/* <SocialIcons /> */}
+      <SocialIcons />
     </main>
   );
 }

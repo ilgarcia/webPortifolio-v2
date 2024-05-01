@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 
-import { DynamicIconFi } from "./DynamicIcon";
 import { socials } from "../../data/constants";
 
 const SocialList = ({ ...props }) => {
@@ -24,7 +23,7 @@ const SocialList = ({ ...props }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {DynamicIconFi(social.icon)}
+                {social.icon}
               </a>
             </li>
           ))}
@@ -74,7 +73,7 @@ const SocialIcons = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {DynamicIconFi(social.icon)}
+                  {social.icon}
                 </a>
               </li>
             ))}

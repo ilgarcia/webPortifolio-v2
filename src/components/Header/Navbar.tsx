@@ -32,14 +32,14 @@ function Navbar({ toggle, open }: Props) {
           />
         ))}
       </ul>
-      {/* <m.div variants={blogLink}>
+      <m.div variants={blogLink}>
         <Button>
           <Link href={"/journal"} onClick={toggle}>
             Blog
           </Link>
         </Button>
       </m.div>
-      <SocialList className="lg:hidden -z-10" /> */}
+      <SocialList className="lg:hidden -z-10" />
     </m.nav>
   );
 }

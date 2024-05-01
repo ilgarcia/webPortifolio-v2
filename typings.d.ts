@@ -14,7 +14,6 @@ interface Block {
   style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
 }
 
-
 interface Portfolio extends Base {
   mainImage: Image;
   title: string;
@@ -40,6 +39,7 @@ interface Skill extends Base {
   title: string;
   icon: string;
   display: boolean;
+  media: string;
 }
 
 interface WorkExperience extends Base {
