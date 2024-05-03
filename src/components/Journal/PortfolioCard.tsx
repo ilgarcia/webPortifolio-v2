@@ -2,6 +2,7 @@ import { FiGithub, FiExternalLink, FiLink } from "react-icons/fi";
 import { CiFolderOn } from "react-icons/ci";
 
 import HoverEffect from "./HoverEffect";
+import Link from "next/link";
 
 type Props = {
   project: Portfolio;
@@ -17,14 +18,32 @@ function PortfolioCard({ project, id }: Props) {
         </div>
         <div className="flex items-center space-x-5 text-xl">
           {project.githubLink && (
-            <a href={project.githubLink} className="hover:text-orange-400">
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ease-in-out duration-500 hover:text-orange-400"
+            >
               <FiGithub />
-            </a>
+            </Link>
+          )}
+          {project.slug && (
+            <Link
+              href={`/journal/${project.slug.current}`}
+              className="ease-in-out duration-500 hover:text-orange-400"
+            >
+              <FiLink />
+            </Link>
           )}
           {project.externalLink && (
-            <a href={project.externalLink} className="hover:text-orange-400">
+            <Link
+              href={project.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ease-in-out duration-500 hover:text-orange-400"
+            >
               <FiExternalLink />
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -33,7 +52,7 @@ function PortfolioCard({ project, id }: Props) {
       </h4>
       <p className="mt-2 tracking-wide text-sm">{project.description}</p>
       <div className="absolute bottom-6 left-6 flex flex-wrap space-x-4 font-fira tracking-wide leading-relaxed text-xs">
-        {project.skill?.map((data) => (
+        {project.skill?.slice(0, 4).map((data) => (
           <div key={data._id}>{data.title}</div>
         ))}
       </div>

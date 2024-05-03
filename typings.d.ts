@@ -31,10 +31,6 @@ interface AppType extends Base {
   title: string;
 }
 
-// interface Category extends Base {
-//   title: string;
-// }
-
 interface Skill extends Base {
   title: string;
   icon: string;
@@ -50,18 +46,6 @@ interface WorkExperience extends Base {
   display: boolean;
   body: Block[];
 }
-
-// interface Post extends Base {
-//   title: string;
-//   slug: Slug;
-//   mainImage: Image;
-//   description: string;
-//   category: Category;
-//   body: Block[];
-//   skill?: Skill[];
-//   post?: Post[];
-//   portfolio?: Portfolio[];
-// }
 
 interface Image {
   _type: "image";
