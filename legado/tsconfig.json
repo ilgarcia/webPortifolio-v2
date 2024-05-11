@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -7,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -20,16 +21,16 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "target": "ES2017"
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/hero/HeroCanvas.tsx",
-    "src/components/hero/Particles.tsx"
-    // "sanity/schemas/workExperience.ts"
+    "src/components/Hero/WaveEffects.tsx",
+    "sanity/schemas/workExperience.ts",
+    "src/components/Hero/WaveAnimation.tsx"
   ],
   "exclude": ["node_modules"]
 }

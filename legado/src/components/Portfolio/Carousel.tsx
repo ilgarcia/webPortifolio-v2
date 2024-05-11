@@ -148,7 +148,7 @@ function Carousel({ portfolio, options }: Props) {
                     <div className="relative top-20 lg:top-auto lg:h-96 lg:w-full aspect-square lg:aspect-auto max-w-xs lg:max-w-xl rounded-3xl lg:rounded-none overflow-hidden lg:overflow-auto mx-auto ">
                       {/* <div className="bg-indigo-950/70 lg:hidden w-full h-full relative z-10" /> */}
                       <Image
-                        src={urlForImage({ ...project.mainImage })}
+                        src={urlForImage({ ...project.mainImage }).url()}
                         alt={project.mainImage.alt}
                         fill
                         sizes="100%"
