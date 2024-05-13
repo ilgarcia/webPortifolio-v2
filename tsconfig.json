@@ -29,7 +29,6 @@
     ".next/types/**/*.ts",
     "src/components/hero/HeroCanvas.tsx",
     "src/components/hero/Particles.tsx"
-    // "sanity/schemas/workExperience.ts"
   ],
   "exclude": ["node_modules"]
 }
