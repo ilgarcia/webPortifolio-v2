@@ -10,7 +10,7 @@ import Contacts from "../../../../components/Contacts/Contacts";
 
 import Link from "next/link";
 import { urlForImage } from "../../../../../sanity/lib/image";
-import { RubberTitle } from "@/components/Ui/RubberTitles";
+import { RubberTitle } from "../../../../components/Ui/RubberTitles";
 
 type Props = {
   params: {

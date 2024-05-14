@@ -37,8 +37,6 @@ const config: Config = {
         rubberBand: "rubberBand 1s",
         meteorEffect: "meteor 4s linear infinite",
         wiggle: "wiggle 0.5s ease-in-out infinite",
-        neon: "neon 1.5s ease-in",
-        neonDot: "neonDot 2.5s linear infinite",
         neonBrokenLights: "neonBrokenLights 2s linear infinite",
         arrowLeft: "arrowLeft 1s infinite ease-in-out",
         arrowDown: "arrowDown 0.4s linear",
@@ -65,18 +63,6 @@ const config: Config = {
         wiggle: {
           "0%, 100%": { transform: "rotate(-1deg)" },
           "50%": { transform: "rotate(1deg)" },
-        },
-        neon: {
-          "0%": { opacity: "0" },
-          "80%": { opacity: "0.6" },
-          "100%": { opacity: "1" },
-        },
-        neonDot: {
-          "0%": { opacity: "0.6" },
-          "25%": { opacity: "0.4" },
-          "50%": { opacity: "0.7" },
-          "75%": { opacity: "0.6" },
-          "100%": { opacity: "0.9" },
         },
         neonBrokenLights: {
           "0%": { opacity: "0.5" },
