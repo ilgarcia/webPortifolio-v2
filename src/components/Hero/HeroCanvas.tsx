@@ -3,7 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "./Particles";
 
-export function HeroCanvas({ ...props }) {
+export default function HeroCanvas({ ...props }) {
   return (
     <div className="absolute top-0 left-0  w-full h-full -z-20 animate-surge">
       <Canvas

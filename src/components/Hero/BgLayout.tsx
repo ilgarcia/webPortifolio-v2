@@ -1,5 +1,8 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { HeroCanvas } from "./HeroCanvas";
+
+const HeroCanvas = dynamic(() => import("./HeroCanvas"), { ssr: false });
+// import { HeroCanvas } from "./HeroCanvas";
 
 function BgLayout() {
   return (
