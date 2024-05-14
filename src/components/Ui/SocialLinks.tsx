@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 
-import { useRef } from "react";
+// import { useRef } from "react";
+// import { motion as m, useInView } from "framer-motion";
+
 import Link from "next/link";
-import { motion as m, useInView } from "framer-motion";
 
 import { socials } from "../../data/constants";
 
@@ -15,7 +16,7 @@ const SocialList = ({ ...props }) => {
           .map((social) => (
             <li
               key={social.type}
-              className="mx-3 ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
+              className="mx-3 ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125 text-xl sm:text-2xl"
             >
               <Link
                 href={social.link}
@@ -41,31 +42,33 @@ const SocialList = ({ ...props }) => {
 };
 
 const SocialIcons = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
+  // const ref = useRef(null);
+  // const isInView = useInView(ref);
 
   return (
-    <div ref={ref}>
-      <m.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, y: 300 },
-          visible: {
-            opacity: !isInView ? 1 : 0,
-            y: !isInView ? 0 : 300,
-            transition: { duration: 1, delay: 0.2 },
-          },
-        }}
+    // <div ref={ref}>
+    <div>
+      <div
+      // <m.div
+        // initial="hidden"
+        // animate="visible"
+        // variants={{
+        //   hidden: { opacity: 0, y: 300 },
+        //   visible: {
+        //     opacity: !isInView ? 1 : 0,
+        //     y: !isInView ? 0 : 300,
+        //     transition: { duration: 1, delay: 0.2 },
+        //   },
+        // }}
         className="hidden lg:block fixed bottom-0 right-14 left-auto text-orange-300 w-10"
       >
-        <ul className="flex flex-col items-center m-0 p-0 after:contents-[''] after:block after:w-px after:h-20 after:mt-3 after:bg-orange-300/50">
+        <ul className="flex flex-col items-center m-0 p-0 after:contents-[''] after:block after:w-px after:h-20 after:mt-3 after:bg-orange-300/50 ">
           {socials
             .filter((social) => social.showIcon)
             .map((social) => (
               <li
                 key={social.type}
-                className="my-2 p-2 mx-auto ease-in-out transition-all duration-500 hover:-translate-y-1 hover:text-slate-100 bg-slate-800 rounded-full shadow shadow-orange-300/50"
+                className="my-2 p-2 mx-auto ease-in-out transition-all duration-500 hover:-translate-y-1 hover:text-slate-100 bg-slate-800 rounded-xl shadow shadow-orange-300/50 text-lg"
               >
                 <Link
                   href={social.link}
@@ -79,7 +82,7 @@ const SocialIcons = () => {
               </li>
             ))}
         </ul>
-      </m.div>
+      </div>
     </div>
   );
 };

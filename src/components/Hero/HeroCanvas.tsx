@@ -5,7 +5,7 @@ import Particles from "./Particles";
 
 export function HeroCanvas({ ...props }) {
   return (
-    <div {...props}>
+    <div className="absolute top-0 left-0  w-full h-full -z-20 animate-surge">
       <Canvas
         linear
         dpr={[1, 2]}

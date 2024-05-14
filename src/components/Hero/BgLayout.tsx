@@ -12,7 +12,7 @@ function BgLayout() {
         fill
         sizes="100%"
       />
-      <HeroCanvas className="absolute top-0 left-0  w-full h-full -z-20 animate-surge" />
+      <HeroCanvas />
     </>
   );
 }

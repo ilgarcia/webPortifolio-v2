@@ -40,7 +40,7 @@ const arrowVariants = cva("-ml-6 text-xl", {
     arrow: {
       default: "hidden ",
       right: "group-hover:animate-arrowLeft",
-      down: "group-hover:animate-arrowDown",
+  
     },
   },
   defaultVariants: {

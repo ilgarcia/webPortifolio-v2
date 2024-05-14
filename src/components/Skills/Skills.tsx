@@ -7,7 +7,7 @@ type Props = {
   skills: Skill[];
 };
 
-function DynamicIconSi(icon: string): JSX.Element {
+function DynamicIcon(icon: string): JSX.Element {
   if (icon.includes("Si")) {
     const IconComponent = Si[icon as keyof typeof Si];
     return <IconComponent className="text-xl sm:text-2xl lg:text-4xl" />;
@@ -65,7 +65,7 @@ function Skills({ skills }: Props) {
           .filter((skill) => skill.display)
           .map((skill) => (
             <div key={skill._id}>
-              <Badges title={skill.title} Icon={DynamicIconSi(skill.icon)} />
+              <Badges title={skill.title} Icon={DynamicIcon(skill.icon)} />
             </div>
           ))}
       </div>

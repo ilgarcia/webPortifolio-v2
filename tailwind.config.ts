@@ -36,13 +36,11 @@ const config: Config = {
       animation: {
         rubberBand: "rubberBand 1s",
         meteorEffect: "meteor 4s linear infinite",
-        wiggle: "wiggle 0.5s ease-in-out infinite",
-        neonBrokenLights: "neonBrokenLights 2s linear infinite",
+        neonBrokenLights: "neonBrokenLights 1.8s linear infinite",
         arrowLeft: "arrowLeft 1s infinite ease-in-out",
-        arrowDown: "arrowDown 0.4s linear",
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
-        surge: "neon 1s ease-in",
+        surge: "surge 1s linear",
       },
       keyframes: {
         rubberBand: {
@@ -60,12 +58,9 @@ const config: Config = {
             opacity: "0",
           },
         },
-        wiggle: {
-          "0%, 100%": { transform: "rotate(-1deg)" },
-          "50%": { transform: "rotate(1deg)" },
-        },
         neonBrokenLights: {
-          "0%": { opacity: "0.5" },
+          "0%": { opacity: "1" },
+          "150%": { opacity: "0.5" },
           "25%": { opacity: "0.7" },
           "50%": { opacity: "0.6" },
           "75%": { opacity: "0.4" },
@@ -74,10 +69,6 @@ const config: Config = {
         arrowLeft: {
           "0%, 100%": { transform: "translateX(0px)" },
           "50%": { transform: "translateX(8px)" },
-        },
-        arrowDown: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(45deg)" },
         },
         slideDown: {
           "0%": { height: "0" },
@@ -88,7 +79,7 @@ const config: Config = {
           "100%": { height: "0" },
         },
         surge: {
-          "0%": { opacity: "0" },
+          "0%": { opacity: "0.1" },
           "100%": { opacity: "1" },
         },
       },
