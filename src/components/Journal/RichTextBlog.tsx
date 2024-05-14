@@ -9,7 +9,7 @@ export const RichTextBlog = {
       return (
         <div className="relative w-full h-80 mx-auto">
           <Image
-            src={urlForImage(value).url()}
+            src={urlForImage(value)}
             alt="Blog Post Image"
             fill
             sizes="100%"
