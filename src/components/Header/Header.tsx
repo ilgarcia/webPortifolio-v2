@@ -21,7 +21,7 @@ function Header() {
   return (
     <header
       ref={ref}
-      className="fixed top-0 lg:-left-3 w-full z-40 backdrop-blur"
+      className="fixed top-0 lg:-left-3 w-full z-40 backdrop-blur-lg"
     >
       <div className="flex items-center max-w-8xl mx-auto px-4 py-2.5 lg:py-3.5">
         <LogoNeon />

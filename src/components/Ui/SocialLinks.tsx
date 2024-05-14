@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion as m, useInView } from "framer-motion";
 
 import { socials } from "../../data/constants";
@@ -16,7 +17,7 @@ const SocialList = ({ ...props }) => {
               key={social.type}
               className="mx-3 ease-in-out duration-500 hover:-translate-y-0.5 hover:brightness-125 focus:brightness-125"
             >
-              <a
+              <Link
                 href={social.link}
                 aria-label={social.title}
                 title={social.title}
@@ -24,7 +25,7 @@ const SocialList = ({ ...props }) => {
                 rel="noreferrer"
               >
                 {social.icon}
-              </a>
+              </Link>
             </li>
           ))}
       </ul>
@@ -66,7 +67,7 @@ const SocialIcons = () => {
                 key={social.type}
                 className="my-2 p-2 mx-auto ease-in-out transition-all duration-500 hover:-translate-y-1 hover:text-slate-100 bg-slate-800 rounded-full shadow shadow-orange-300/50"
               >
-                <a
+                <Link
                   href={social.link}
                   aria-label={social.title}
                   title={social.title}
@@ -74,7 +75,7 @@ const SocialIcons = () => {
                   rel="noreferrer"
                 >
                   {social.icon}
-                </a>
+                </Link>
               </li>
             ))}
         </ul>
