@@ -83,7 +83,6 @@ export default async function page({ params: { slug } }: Props) {
               See more posts
             </Link>
           </div>
-          Textos
           <PortableText value={portfolio.body} components={RichTextBlog} />
         </section>
       </article>
