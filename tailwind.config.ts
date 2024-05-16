@@ -40,7 +40,7 @@ const config: Config = {
         arrowLeft: "arrowLeft 1s infinite ease-in-out",
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
-        surge: "surge 2.5s linear",
+        surge: "surge 4s linear",
       },
       keyframes: {
         rubberBand: {

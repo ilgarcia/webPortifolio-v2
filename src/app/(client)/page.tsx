@@ -48,5 +48,5 @@ export default async function Home() {
   );
 }
 
-// export const revalidate = 60; // revalidate this page every 60 seconds
-export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
+export const revalidate = 60; // revalidate this page every 60 seconds
+// export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day

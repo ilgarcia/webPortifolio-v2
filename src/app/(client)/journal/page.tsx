@@ -38,5 +38,5 @@ async function page() {
 
 export default page; 
 
-// export const revalidate = 60; // revalidate this page every 60s
-export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
+export const revalidate = 60; // revalidate this page every 60s
+// export const revalidate = 60 * 60 * 24; // revalidate this page every 1 day
