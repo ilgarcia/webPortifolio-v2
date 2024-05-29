@@ -46,6 +46,7 @@
 }
 
 @layer components {
+
   .nav-link {
     @apply [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:relative before:bottom-[1px] before:text-orange-400 before:mr-1 before:mb-0.5 before:text-right before:text-[12px] duration-300 ease-in-out hover:text-orange-400 hover:scale-110;
   }

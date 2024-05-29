@@ -1,42 +1,99 @@
-import Link from "next/link";
+"use client";
 
-import NavItem from "./NavItem";
+import Link from "next/link";
+import { motion as m, Variants } from "framer-motion";
+
 import { Button } from "../Ui/Button";
 import { navLinks } from "../../data/constants";
-import { cn } from "../../lib/utils";
+
+const variants: Variants = {
+  open: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+  closed: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  open: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  },
+};
+
+const buttonVariants: Variants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.9,
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  },
+};
+
+export function Navbar() {
+  return (
+    <m.nav
+      initial="closed"
+      animate="open"
+      className="hidden lg:flex flex-row justify-center items-center font-fira text-sm space-x-7 z-50"
+    >
+      <m.ul
+        variants={variants}
+        className="flex items-center space-x-6"
+      >
+        {navLinks.map((item) => (
+          <m.li key={item.id} variants={itemVariants} className="nav-link">
+            <Link href={`/#${item.id}`}>{item.title}</Link>
+          </m.li>
+        ))}
+        <m.div variants={buttonVariants}>
+          <Button>
+            <Link href={"/journal"}>Blog</Link>
+          </Button>
+        </m.div>
+      </m.ul>
+    </m.nav>
+  );
+}
 
 type Props = {
   toggle: () => void;
-  open: boolean;
 };
 
-function Navbar({ toggle, open }: Props) {
+export function SideNavbar({ toggle }: Props) {
   return (
-    <nav
-      className={cn(
-        "absolute top-full lg:static flex flex-col lg:flex-row justify-center items-center right-0 [width:min(70vw,300px)] lg:w-fit font-fira text-base lg:text-sm lg:space-x-7 space-y-5 lg:space-y-0 z-50 lg:visible duration-100",
-        open ? "" : "invisible"
-      )}
-    >
-      <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0">
+    <nav className="flex flex-col font-fira text-base space-y-5">
+      <m.ul variants={variants} className="flex flex-col space-y-4">
         {navLinks.map((item) => (
-          <NavItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            toggle={toggle}
-          />
+          <m.li key={item.id} variants={itemVariants} className="nav-link">
+            <Link href={`/#${item.id}`} onClick={toggle}>
+              {item.title}
+            </Link>
+          </m.li>
         ))}
-      </ul>
-      <div>
+      </m.ul>
+      <m.div variants={buttonVariants}>
         <Button>
           <Link href={"/journal"} onClick={toggle}>
             Blog
           </Link>
         </Button>
-      </div>
+      </m.div>
     </nav>
   );
 }
-
-export default Navbar;
