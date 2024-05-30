@@ -10,6 +10,9 @@ const variants: Variants = {
   open: {
     transition: {
       staggerChildren: 0.1,
+      type: "spring",
+      damping: 500,
+      stiffness: 50,
     },
   },
   closed: {
@@ -52,12 +55,14 @@ export function Navbar() {
       animate="open"
       className="hidden lg:flex flex-row justify-center items-center font-fira text-sm space-x-7 z-50"
     >
-      <m.ul
-        variants={variants}
-        className="flex items-center space-x-6"
-      >
+      <m.ul variants={variants} className="flex items-center space-x-6">
         {navLinks.map((item) => (
-          <m.li key={item.id} variants={itemVariants} className="nav-link">
+          <m.li
+            key={item.id}
+            variants={itemVariants}
+            whileTap={{ scale: 0.95 }}
+            className="nav-link"
+          >
             <Link href={`/#${item.id}`}>{item.title}</Link>
           </m.li>
         ))}

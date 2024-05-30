@@ -1,5 +1,3 @@
-// "use client";
-
 import { LogoNeon } from "../Ui/Logo";
 import { Navbar } from "./Navbar";
 

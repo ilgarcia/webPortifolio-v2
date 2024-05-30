@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Source_Sans_3, Fira_Code, Sriracha } from "next/font/google";
 
 import Header from "../../components/Header/Header";
+// import Image from "next/image";
 
 import "../globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.ilgarcia.com"), 
+  metadataBase: new URL("https://www.ilgarcia.com"),
   title: "ilgarcia",
   description:
     "Hi, my name is Igor Lima Garcia i'm a software engineer specializing in building exceptional and practical digital experiences and this is my portfolio",
@@ -57,9 +58,7 @@ export default function RootLayout({
       lang="en"
       className={`${source.className} ${firaCode.variable} ${sriracha.variable}`}
     >
-      <body className="relative">
-        {/* Transform in image */}
-        <div className="absolute top-0 -left-2 w-full h-full bg-[linear-gradient(to_right,_#34d39908_1px,_transparent_1px),linear-gradient(#34d39908_1px,_transparent_1px)] -z-50 bg-[length:100px_100px]" />
+      <body className="relative bg-[url('/bgGrid.svg')]">
         <Header />
         {children}
       </body>
